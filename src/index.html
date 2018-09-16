@@ -4,8 +4,7 @@
     <title>In (sta) surance</title>
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/x-icon" href="assets/static/favicon/favicon.ico" />
-    <link rel="apple-touch-icon-precomposed" href="assets/static/favicon/favicon-152.png">
-    <link rel="shortcut icon" sizes="192x192" href="assets/static/favicon/favicon-192.png">
+
 
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -31,12 +30,9 @@
         .center {
             position: absolute;
 
-            text-align: center;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-
-            width: 25%;
+            display: inline-block;
+            margin: auto;
+            width: 65%;
         }
 
         .x {
@@ -58,7 +54,9 @@
 <body class="no-scroll">
 
 
-
+        <div id="loading">
+                Loading the model...
+            </div>
 
     <div class="wrapper">
         <div class="intro" style="display: none">
@@ -176,7 +174,7 @@
                                                     </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Your Name</label>
-                                                        <input name="name2" type="password" class="form-control">
+                                                        <input name="name2" type="text" class="form-control" x-webkit-speech>
                                                     </div>
                                                 </div>
                                             </div>
@@ -201,7 +199,13 @@
                                             <div class="col-sm-6">
             
                                                         <div class="center x">
-                                                            <video class="center" autoplay playsinline muted id="webcam"></video>
+                                                            <video ></video>
+                                                         <video  class="center"autoplay playsinline muted id="webcam" style=" -moz-transform: scaleX(-1);
+                                                        -o-transform: scaleX(-1);
+                                                        -webkit-transform: scaleX(-1);
+                                                        transform: scaleX(-1);
+                                                        ">
+                                                </video>
                                                             <canvas class="center" id="overlay" />
                                                         </div>
             
@@ -283,12 +287,9 @@
                                     </div>
                                     <div class="tab-pane" id="Health">
                                         <div class="row">
+                                                <div class="col-sm-6">
                                             <div id="info" style='display:none'>
                                             </div>
-                                            <div id="loading">
-                                                Loading the model...
-                                            </div>
-
                                             <div id='main' style='display:none'>
                                                 <video id="video" playsinline style=" -moz-transform: scaleX(-1);
                                                         -o-transform: scaleX(-1);
@@ -299,14 +300,11 @@
                                                 </video>
                                                 <canvas id="output" />
                                             </div>
+                                            </div>
 
 
 
-                                        </div>
-                                        <div class="row">
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-12">
+                                            <div class="col-sm-6">
                                                 <h4 class="info-text"> Health Index</h4>
                                             </div>
                                             <div class="col-sm-6">
@@ -326,7 +324,7 @@
                                     <div class="tab-pane" id="Verify">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <h4 class="info-text"> Please verify , feel free to edit our predicts</h4>
+                                                <h4 class="info-text"> Please verify  your details </h4>
                                             </div>
                                             <div class="col-sm-8">
                                                 <div class="input-group">

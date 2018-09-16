@@ -98,9 +98,11 @@ async function run() {
                 age_tag.val(predicted_ages[0] )
                 //console.log("How old: ", predicted_ages[0] - 10)
         })
+        
 
         faceapi.drawDetection('overlay', locations.map(det => det.forSize(width, height)))
 
+        document.getElementById('loading').style.display = 'none';
         await tf.nextFrame()
     }
 }
@@ -379,7 +381,7 @@ export async function bindPage() {
   // Load the PoseNet model weights with architecture 0.75
   const net = await posenet.load(0.75);
 
-  document.getElementById('loading').style.display = 'none';
+  
   document.getElementById('main').style.display = 'block';
 
   let video;
