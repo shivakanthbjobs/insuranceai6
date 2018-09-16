@@ -23,10 +23,10 @@ let modelLoaded = false;
 
 async function init() {
     try {
-        age_model = await tf.loadModel('assets/age_models/model.json')
+        age_model = await tf.loadModel('./age_models/model.json')
 
-        faceapi.loadFaceDetectionModel('assets/models')
-        faceapi.loadFaceLandmarkModel('assets/models')
+        faceapi.loadFaceDetectionModel('./models')
+        faceapi.loadFaceLandmarkModel('./models')
 
         await webcam.setup()
 
@@ -162,7 +162,7 @@ async function loadVideo() {
 }
 
 const guiState = {
-  algorithm: 'multi-pose',
+  algorithm: 'single-pose',
   input: {
     mobileNetArchitecture: isMobile() ? '0.50' : '0.75',
     outputStride: 16,
@@ -407,4 +407,3 @@ navigator.getUserMedia = navigator.getUserMedia ||
 
 
 init()
-//bindPage();
