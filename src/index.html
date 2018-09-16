@@ -26,69 +26,38 @@
     <link href="assets/materialwizard/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/materialwizard/assets/css/material-bootstrap-wizard.css" rel="stylesheet" />
 
-    
+
     <style>
-            .center {
-                position: absolute; 
-        
-                text-align: center;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-        
-                width: 25%;
-            }
-        
-            .x {
-                position: static; 
-            }
-        
-            .text {
-                text-align: center;
-                margin: auto;
-            }
-        </style>
-        
+        .center {
+            position: absolute;
+
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            width: 25%;
+        }
+
+        .x {
+            position: static;
+        }
+
+        .text {
+            text-align: center;
+            margin: auto;
+        }
+    </style>
+
 </head>
 
 <body class="no-scroll">
 
-    
-    <div class="text">
-        <p class="text" id="gender"></p>
-        <p class="text" id="age"></p>
-    </div>
 
-    <div class="center x">
-        <video class="center" autoplay playsinline muted id="webcam" ></video>
-        <canvas class="center" id="overlay" />
-    </div>
-
-    <div class="center x">
-        <canvas class="center" id="face" />
-    </div>
-
-
-    <div id="info" style='display:none'>
-    </div>
-    <div id="loading">
-        Loading the model...
-    </div>
-
-    <div id='main' style='display:none'>
-        <video id="video" playsinline style=" -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        display: none;
-        ">
-        </video>
-        <canvas id="output" />
-    </div>
 
 
     <div class="wrapper">
-        <div class="intro">
+        <div class="intro" style="display: none">
             <div class="intro__inner">
                 <h1 class="intro__title">
                     <span class="hidden-text">Insurance AI</span>
@@ -190,7 +159,7 @@
                                 <div class="tab-content">
                                     <div class="tab-pane" id="BasicInfo">
                                         <div class="row">
-                                                
+
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -226,14 +195,17 @@
                                                 <h4 class="info-text"> Age and Gender</h4>
                                             </div>
                                             <div class="col-sm-6">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Gender</label>
-                                                    <select class="form-control">
-                                                        <option disabled="" selected=""></option>
-                                                        <option value="Male"> Male </option>
-                                                        <option value="Female"> Female </option>
-                                                    </select>
-                                                </div>
+            
+                                                        <div class="center x">
+                                                            <video class="center" autoplay playsinline muted id="webcam"></video>
+                                                            <canvas class="center" id="overlay" />
+                                                        </div>
+            
+                                                        <div class="center x">
+                                                            <canvas class="center" id="face" />
+                                                        </div>
+
+
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="input-group">
@@ -241,10 +213,19 @@
                                                         <i class="material-icons">Age</i>
                                                     </span>
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label">Your Age</label>
-                                                        <input name="name" type="text" class="form-control">
+                                                        
+                                                        <input name="age" id="age" type="text" class="form-control">
                                                     </div>
                                                 </div>
+                                                <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="material-icons">Gender</i>
+                                                        </span>
+                                                        <div class="form-group label-floating">
+                                                        
+                                                            <input name="gender" id="gender" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
                                             </div>
                                         </div>
                                     </div>
@@ -267,7 +248,7 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane" id="Habits">
-                                            
+
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <h4 class="info-text"> Age and Gender</h4>
@@ -298,6 +279,27 @@
                                     </div>
                                     <div class="tab-pane" id="Health">
                                         <div class="row">
+                                            <div id="info" style='display:none'>
+                                            </div>
+                                            <div id="loading">
+                                                Loading the model...
+                                            </div>
+
+                                            <div id='main' style='display:none'>
+                                                <video id="video" playsinline style=" -moz-transform: scaleX(-1);
+                                                        -o-transform: scaleX(-1);
+                                                        -webkit-transform: scaleX(-1);
+                                                        transform: scaleX(-1);
+                                                        display: none;
+                                                        ">
+                                                </video>
+                                                <canvas id="output" />
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="row">
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -318,92 +320,92 @@
                                     </div>
 
                                     <div class="tab-pane" id="Verify">
-                                            <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <h4 class="info-text"> Please verify , feel free to edit our predicts</h4>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h4 class="info-text"> Please verify , feel free to edit our predicts</h4>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">Name</i> :
+                                                        <b class="faq__question">John Doe </b>
                                                     </div>
-                                                    <div class="col-sm-8">
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">
-        
-                                                            </span>
-                                                            <div class="input-group-addon">
-                                                                <i class="faq__answer">Name</i> :
-                                                                <b class="faq__question">John Doe </b>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">
-        
-                                                            </span>
-                                                            <div class="input-group-addon">
-                                                                <i class="faq__answer">E-Mail</i> :
-                                                                <b class="faq__question">JohnDoe@gmail.com </b>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">
-        
-                                                            </span>
-                                                            <div class="input-group-addon">
-                                                                <i class="faq__answer">Gender</i> :
-                                                                <b class="faq__question">Male </b>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">
-        
-                                                            </span>
-                                                            <div class="input-group-addon">
-                                                                <i class="faq__answer">Age</i> :
-                                                                <b class="faq__question">35 </b>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">
-        
-                                                            </span>
-                                                            <div class="input-group-addon">
-                                                                <i class="faq__answer">Height</i> :
-                                                                <b class="faq__question">5.8 Inches </b>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">
-        
-                                                            </span>
-                                                            <div class="input-group-addon">
-                                                                <i class="faq__answer">Smoking</i> :
-                                                                <b class="faq__question">No </b>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">
-        
-                                                            </span>
-                                                            <div class="input-group-addon">
-                                                                <i class="faq__answer">Alcohol Consumption </i> :
-                                                                <b class="faq__question">No </b>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">
-        
-                                                            </span>
-                                                            <div class="input-group-addon">
-                                                                <i class="faq__answer">Health</i> :
-                                                                <b class="faq__question">very Healthy </b>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">
-        
-                                                            </span>
-        
-                                                        </div>
-                                                    </div>
-        
                                                 </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">E-Mail</i> :
+                                                        <b class="faq__question">JohnDoe@gmail.com </b>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">Gender</i> :
+                                                        <b class="faq__question">Male </b>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">Age</i> :
+                                                        <b class="faq__question">35 </b>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">Height</i> :
+                                                        <b class="faq__question">5.8 Inches </b>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">Smoking</i> :
+                                                        <b class="faq__question">No </b>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">Alcohol Consumption </i> :
+                                                        <b class="faq__question">No </b>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">Health</i> :
+                                                        <b class="faq__question">very Healthy </b>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="wizard-footer">
@@ -439,7 +441,7 @@
         <footer class="footer">
             <a href="#" target="_blank" class="link link--privacy">Privacy &amp; Terms</a>
         </footer>
-       
+
     </div>
     <script type="text/javascript">
 
@@ -474,7 +476,7 @@
         }
 
     </script>
-    
+
 </body>
 
 <!--  materialwizard  Core JS Files   -->

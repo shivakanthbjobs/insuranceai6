@@ -23,10 +23,10 @@ let modelLoaded = false;
 
 async function init() {
     try {
-        age_model = await tf.loadModel('./age_models/model.json')
+        age_model = await tf.loadModel('assets/age_models/model.json')
 
-        faceapi.loadFaceDetectionModel('./models')
-        faceapi.loadFaceLandmarkModel('./models')
+        faceapi.loadFaceDetectionModel('assets/models')
+        faceapi.loadFaceLandmarkModel('assets/models')
 
         await webcam.setup()
 
@@ -63,7 +63,7 @@ async function run() {
         faceImages = await faceapi.extractFaces(input.inputs[0], alignedFaceBoxes)
 
         // do things to each face
-        const gender_tag = $('#gender')
+        const gender_tag =  $('#gender')
         const age_tag = $('#age')
         faceImages.forEach(async (faceCanvas, i) => {
                 const faceEl = $('#face')
@@ -86,16 +86,16 @@ async function run() {
 
                 const predicted_genders = results[0].dataSync()
                 if (predicted_genders[0] > 0.5) {
-                    gender_tag.text("Female")
+                    gender_tag.val("Female")
                     //console.log("Female")
                 } else {
-                    gender_tag.text("Male")
+                    gender_tag.val("Male")
                     //console.log("Male")
                 }
                 
                 const ages = tf.range(0, 101, 1).reshape([101, 1])
                 const predicted_ages = results[1].dot(ages).flatten().dataSync()
-                age_tag.text(predicted_ages[0] )
+                age_tag.val(predicted_ages[0] )
                 //console.log("How old: ", predicted_ages[0] - 10)
         })
 
