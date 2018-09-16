@@ -8,12 +8,12 @@ npm install -g yarn
 ```
 
 
-#### Install dependent  libraries
+#### installs the  dependent  libraries
 ```
 yarn
 ```
 
-#### starts the server 
+#### starts the webserver  and launches the application in the browser
 ```
 yarn start
 ```
