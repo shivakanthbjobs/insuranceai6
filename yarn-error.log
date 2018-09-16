@@ -1,0 +1,84 @@
+Arguments: 
+  D:\Users\shbuddha\Downloads\AAAMySW\node-v8.9.3-win-x64\node.exe D:\Users\shbuddha\Downloads\AAAMySW\node-v8.9.3-win-x64\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\CapgeminiScripts\Support Tools\;C:\Program Files\nodejs\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\CapgeminiScripts\Support Tools\;C:\Program Files (x86)\Google\Chrome\Application;C:\Users\shbuddha\AppData\Local\Programs\Git\cmd;C:\Users\shbuddha\AppData\Local\GitHubDesktop\bin;C:\Guidewire\jdk1.8.0_92\bin;C:\Guidewire\apache-ant-1.8.2\bin;C:\Users\shbuddha\AppData\Local\Microsoft\WindowsApps;D:\Users\shbuddha\Downloads\AAAMySW\node-v8.9.3-win-x64;C:\Users\shbuddha\AppData\Local\Continuum\anaconda3\Scripts;C:\Users\shbuddha\AppData\Local\Continuum\anaconda3;
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  8.9.3
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: D:\WS3\age-and-gender-detection-in-real-time-with-tensorflowjs\package.json: Unexpected token } in JSON at position 1541
+      at JSON.parse (<anonymous>)
+      at D:\Users\shbuddha\Downloads\AAAMySW\node-v8.9.3-win-x64\node_modules\yarn\lib\cli.js:1130:59
+      at Generator.next (<anonymous>)
+      at step (D:\Users\shbuddha\Downloads\AAAMySW\node-v8.9.3-win-x64\node_modules\yarn\lib\cli.js:92:30)
+      at D:\Users\shbuddha\Downloads\AAAMySW\node-v8.9.3-win-x64\node_modules\yarn\lib\cli.js:103:13
+      at <anonymous>
+
+npm manifest: 
+  {
+    "name": "tfjs-examples-webcam-transfer-learning",
+    "version": "0.1.0",
+    "description": "",
+    "main": "index.js",
+    "license": "Apache-2.0",
+    "private": true,
+    "engines": {
+      "node": ">=8.9.0"
+    },
+    "dependencies": {
+      "@tensorflow-models/posenet": "^0.2.2",
+      "@tensorflow/tfjs": "^0.11.7",
+      "express": "^4.16.3",
+      "face-api.js": "^0.7.0",
+      "jquery": "^3.3.1",
+      "vega-embed": "^3.18.1",
+      "stats.js": "^0.17.0"
+    },
+    "scripts": {
+      "dev": "webpack-dev-server --mode development --host localhost --port 3000 --disableHostCheck true --open",
+      "start": "webpack-serve --host localhost --port 3000 --disableHostCheck true --open",
+      "build": "rm dist/* -fr & webpack --config ./webpack.config.js",
+      "test": "webpack-serve --config ./testwebpack.config.js --host localhost --port 3000 --disableHostCheck true --open",
+      "video_test": "webpack-serve --config ./videotestwebpack.config.js --open"
+    },
+    "devDependencies": {
+      "babel-plugin-transform-runtime": "~6.23.0",
+      "babel-polyfill": "~6.26.0",
+      "babel-preset-env": "~1.6.1",
+      "clang-format": "~1.2.2",
+      "copy-webpack-plugin": "^4.5.1",
+      "cross-env": "^5.1.6",
+      "html-webpack-include-assets-plugin": "^1.0.4",
+      "html-webpack-plugin": "^3.2.0",
+      "parcel-bundler": "~1.8.1",
+      "webpack": "^4.12.0",
+      "webpack-cli": "^3.0.8",
+      "webpack-dev-server": "^3.1.4",
+      "webpack-serve": "^1.0.4",
+      "babel-preset-es2017": "^6.24.1",
+      "dat.gui": "^0.7.1",
+      "eslint": "^4.19.1",
+      "eslint-config-google": "^0.9.1",
+    },
+    
+    "browserslist": [
+      "> 1%",
+      "ie >= 11",
+      "ios >= 10",
+      "android >= 6"
+    ]
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
