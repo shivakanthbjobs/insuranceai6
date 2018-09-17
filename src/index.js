@@ -33,7 +33,7 @@ async function init() {
         video_element = $('#webcam').get(0)
 
         console.log('initialization completed')
-        await bindPage()
+        await bindPage()  
         run()
     } catch (e) {
         console.log(e)
