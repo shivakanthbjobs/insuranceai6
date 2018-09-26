@@ -223,20 +223,15 @@
                                                 <h4 class="info-text"> Age and Gender</h4>
                                             </div>
                                             <div class="col-sm-6">
-                                                    <a href="javascript:stopCurrentVideoStream()">Stop Age Camera</a>
-                                                <div class="center x" id="AgeCameraContainer">
-                                                    <video class="center" autoplay playsinline muted id="webcam" style=" -moz-transform: scaleX(-1);
-                                                        -o-transform: scaleX(-1);
-                                                        -webkit-transform: scaleX(-1);
-                                                        transform: scaleX(-1);
-                                                        ">
-                                                    </video>
-                                                    <canvas class="center" style="display: none" id="overlay" />
-                                                </div>
-
-                                                <div class="center x"  style="display: none"> 
-                                                    <canvas class="center" id="face" />
-                                                </div>
+                                                    
+                                                    <p id="rate">rate</p>
+                                                <video autoplay></video>
+                                                <input type="button" id="predict-button" value="predict"> 
+                                                <script>
+                                                   
+                                            
+                                                </script>
+                                            
 
 
                                             </div>
@@ -482,6 +477,7 @@
         </footer>
 
     </div>
+    <script src="assets/materialwizard/assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
     <script type="text/javascript">
 
 
@@ -517,6 +513,36 @@
         function stopAgeCamera(){
             $("#webcam").remove()
         }
+
+
+         // get video dom element
+         const video = document.querySelector('video');
+                                                    
+                                                    // request access to webcam
+                                                    navigator.mediaDevices.getUserMedia({video: {width: 426, height: 240}}).then((stream) => video.srcObject = stream);
+                                                    
+                                                    // returns a frame encoded in base64
+                                            
+                                                    $("#predict-button").click( function(event)  {
+                                            
+                                                        const canvas = document.createElement('canvas');
+                                                        canvas.width = video.videoWidth;
+                                                        canvas.height = video.videoHeight;
+                                                        canvas.getContext('2d').drawImage(video, 0, 0);
+                                                        const data = canvas.toDataURL('image/png');
+                                                        
+                                            
+                                                        let message = {
+                                                            image:data   
+                                                        }
+                                                        console.log(message)
+                                                        $.post("http://localhost:5000/predict",JSON.stringify(message), function (response){
+                                                            $("#age").text(response.age)
+                                                            $("#gender").text(response.gender)
+                                                            $("#rate").text(response.rate)
+                                                            console.log(response)
+                                                        })
+                                                    });
 
     </script>
 
