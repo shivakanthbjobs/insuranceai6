@@ -31,11 +31,9 @@
 
     <style>
         .center {
-            position: absolute;
-
             display: inline-block;
             margin: auto;
-            width: 65%;
+            width: 85%;
         }
 
         .x {
@@ -47,40 +45,38 @@
             margin: auto;
         }
 
-        .ac{
+        .ac {
             display: none;
         }
-.intro-content {
-    position: absolute;
-    z-index: 1000;
-    text-align: center;
-}
-
     </style>
 
 </head>
 
 <body class="no-scroll">
-        
-        <div class="intro-content container">
-                <h1 class="splash-title fade-in">IN(STA)SURANCE </h1>
-                <div class="buttonwrapper">
-                    <a href="#" class="fancy-button pop-onhover bg-gradient1   "><span>Buy A Policy</span></a>
-                    <a href="#" class="fancy-button pop-onhover bg-gradient3 "><span>Watch a Demo </span></a>
-                </div>
-            </div>
 
-	<div class="splash fade-in" id="particles-js">
-       
-	</div>
+    <div class="intro-content container">
+        <h1 class="splash-title fade-in">IN(STA)SURANCE </h1>
+        <div class="buttonwrapper">
+            <a href="#" class="fancy-button pop-onhover bg-gradient1   ">
+                <span>Buy A Policy</span>
+            </a>
+            <a href="#" class="fancy-button pop-onhover bg-gradient3 ">
+                <span>Watch a Demo </span>
+            </a>
+        </div>
+    </div>
+
+    <div class="splash fade-in" id="particles-js">
+
+    </div>
 
 
 
-        <div id="loading">
-                Loading the model...
-            </div>
+    <div id="loading">
+        Loading the model...
+    </div>
 
-    <div class="wrapper" >
+    <div class="wrapper">
         <div class="intro" style="display: none">
             <div class="intro__inner">
                 <h1 class="intro__title">
@@ -125,7 +121,7 @@
             </div>
         </div>
 
-        <div class="wizard__wrapper"  id="main-content">
+        <div class="wizard__wrapper" id="main-content">
             <div class="wizard" id="wizard">
                 <div class="wizard__inner">
                     <a href="#" class="wizard__sound-button">
@@ -144,14 +140,14 @@
             </div>
         </div>
         <!--   Big container   -->
-        
+
         <div class="container">
-                <form id="myForm" action = "http://localhost:5000/getQuote" method="POST">
-            <div class="row">
-                <div class="col-sm-12">
-                    <!--      Wizard container        -->
-                    <div class="wizard-container">
-                        <div class="card wizard-card" data-color="red" id="wizard">
+            <form id="myForm" action="http://localhost:5000/getQuote" method="POST">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!--      Wizard container        -->
+                        <div class="wizard-container">
+                            <div class="card wizard-card" data-color="red" id="wizard">
                                 <!--        You can switch " data-color="blue" "  with one of the next bright colors: "green", "orange", "red", "purple"             -->
                                 <div class="wizard-header">
                                     <h3 class="wizard-title">
@@ -184,25 +180,27 @@
                                 <div class="tab-content">
                                     <div class="tab-pane" id="BasicInfo">
                                         <div class="row">
-                                                
-                                                  
+
+
 
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <h4 class="info-text"> Let's start with the basic details. </h4>
-                                                <a href="http://localhost:5000/oauthgmail"><img src="assets/images/gmail.png" title="gmail" alt="gmail"></a>
+                                                <a href="http://localhost:5000/oauthgmail">
+                                                    <img src="assets/images/gmail.png" title="gmail" alt="gmail">
+                                                </a>
                                             </div>
-                                           
+
                                             <div class="col-sm-6">
-                                                   
+
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="material-icons">Name</i>
                                                     </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Your Name</label>
-                                                        <input name="Name" type="text" name = "Name" value="shiva" class="form-control" x-webkit-speech>
+                                                        <input name="Name" type="text" name="Name" value="shiva" class="form-control" x-webkit-speech>
                                                     </div>
                                                 </div>
                                             </div>
@@ -213,7 +211,7 @@
                                                     </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Your Email</label>
-                                                        <input name="Email" value="sss@gmail.com"  name = "Email" type="text" class="form-control">
+                                                        <input name="Email" value="sss@gmail.com" name="Email" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -225,21 +223,20 @@
                                                 <h4 class="info-text"> Age and Gender</h4>
                                             </div>
                                             <div class="col-sm-6">
-            
-                                                        <div class="center x">
-                                                            <video ></video>
-                                                         <video  class="center"autoplay playsinline muted id="webcam" style=" -moz-transform: scaleX(-1);
+                                                    <a href="javascript:stopCurrentVideoStream()">Stop Age Camera</a>
+                                                <div class="center x" id="AgeCameraContainer">
+                                                    <video class="center" autoplay playsinline muted id="webcam" style=" -moz-transform: scaleX(-1);
                                                         -o-transform: scaleX(-1);
                                                         -webkit-transform: scaleX(-1);
                                                         transform: scaleX(-1);
                                                         ">
-                                                </video>
-                                                            <canvas class="center" id="overlay" />
-                                                        </div>
-            
-                                                        <div class="center x">
-                                                            <canvas class="center" id="face" />
-                                                        </div>
+                                                    </video>
+                                                    <canvas class="center" style="display: none" id="overlay" />
+                                                </div>
+
+                                                <div class="center x"  style="display: none"> 
+                                                    <canvas class="center" id="face" />
+                                                </div>
 
 
                                             </div>
@@ -249,19 +246,19 @@
                                                         <i class="material-icons">Age</i>
                                                     </span>
                                                     <div class="form-group label-floating">
-                                                        
-                                                        <input name="Age" id="age" value="25" name = "Age" type="text" class="form-control">
+
+                                                        <input name="Age" id="age" value="25" name="Age" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="input-group">
-                                                        <span class="input-group-addon">
-                                                            <i class="material-icons">Gender</i>
-                                                        </span>
-                                                        <div class="form-group label-floating">
-                                                        
-                                                            <input name="Gender" id="gender" name = "Gender"  value="F" type="text" class="form-control">
-                                                        </div>
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">Gender</i>
+                                                    </span>
+                                                    <div class="form-group label-floating">
+
+                                                        <input name="Gender" id="gender" name="Gender" value="F" type="text" class="form-control">
                                                     </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -292,8 +289,8 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Smoking</label>
-                                                    <select  name="Smoker" class="form-control">
-                                                        <option disabled="" ></option>
+                                                    <select name="Smoker" class="form-control">
+                                                        <option disabled=""></option>
                                                         <option value="N" selected=""> I do not Smoker </option>
                                                         <option value="Female"> Occasional Smoker </option>
                                                         <option value="Y"> Regular Smoker </option>
@@ -304,8 +301,8 @@
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Alcohol Consumption</label>
                                                     <select name="Drinker" class="form-control">
-                                                        <option disabled="" ></option>
-                                                        <option value="N" selected="">  I dont Drink Alcohol </option>
+                                                        <option disabled=""></option>
+                                                        <option value="N" selected=""> I dont Drink Alcohol </option>
                                                         <option value="Female"> Occasionally consume Alcoohol (Social Drinker) </option>
                                                         <option value="Y"> Regular consumption of AlcoholSmoker </option>
                                                     </select>
@@ -315,19 +312,29 @@
                                     </div>
                                     <div class="tab-pane" id="Health">
                                         <div class="row">
-                                                <div class="col-sm-6">
-                                            <div id="info" style='display:none'>
-                                            </div>
-                                            <div id='main' style='display:none'>
-                                                <video id="video" playsinline style=" -moz-transform: scaleX(-1);
-                                                        -o-transform: scaleX(-1);
-                                                        -webkit-transform: scaleX(-1);
-                                                        transform: scaleX(-1);
-                                                        display: none;
-                                                        ">
-                                                </video>
-                                                <canvas id="output" />
-                                            </div>
+                                            <div class="col-sm-6">
+                                                    <div id="loading">
+                                                            Loading the model...
+                                                        </div>
+                                                       <input  onclick="javascript:startVideoStream()"   value ="Start Webcam" type="button">
+                                                       <input  onclick="javascript:stopCurrentVideoStream()" value ="Stop Webcam" type="button"> 
+                                                        <div id="main" style="display:none">
+                                                            <video autoplay="true" id="video" style=" -moz-transform: scaleX(-1);
+                                                            -o-transform: scaleX(-1);
+                                                            -webkit-transform: scaleX(-1);
+                                                            transform: scaleX(-1);
+                                                            display: none;
+                                                            ">
+                                                            </video>
+                                                            <canvas id="output">
+                                                        </canvas></div>
+                                                    
+
+                                                        <style>
+                                                        .dg.main .close-button.close-bottom{
+                                                            display: none;
+                                                        }
+                                                        </style>
                                             </div>
 
 
@@ -339,8 +346,8 @@
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Health</label>
                                                     <select name="Health" class="form-control">
-                                                        <option disabled="" ></option>
-                                                        <option value="H" selected="" > Healthy </option>
+                                                        <option disabled=""></option>
+                                                        <option value="H" selected=""> Healthy </option>
                                                         <option value="UH"> Normal Heath </option>
                                                         <option value="NH"> Not Heathy </option>
                                                     </select>
@@ -352,7 +359,7 @@
                                     <div class="tab-pane" id="Verify">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <h4 class="info-text"> Please verify  your details </h4>
+                                                <h4 class="info-text"> Please verify your details </h4>
                                             </div>
                                             <div class="col-sm-8">
                                                 <div class="input-group">
@@ -442,7 +449,7 @@
                                     <div class="pull-right">
                                         <input type='button' class='btn btn-next btn-fill btn-danger btn-wd' name='next' value='Next' />
                                         <!-- <input type='button' class='btn btn-finish btn-fill btn-danger btn-wd' name='finish' value='Get My Quote' /> -->
-                                       
+
                                         <a onclick="document.getElementById('myForm').submit();" class="btn btn-finish btn-fill btn-danger btn-wd"> Get Quote</a>
                                     </div>
                                     <div class="pull-left">
@@ -460,15 +467,15 @@
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
+                            </div>
                         </div>
+                        <!-- wizard container -->
                     </div>
-                    <!-- wizard container -->
                 </div>
-            </div>
-            <!-- row -->
-        </form>
+                <!-- row -->
+            </form>
         </div>
-       
+
         <!--  big container -->
         <footer class="footer">
             <a href="#" target="_blank" class="link link--privacy">Privacy &amp; Terms</a>
@@ -507,6 +514,10 @@
             }
         }
 
+        function stopAgeCamera(){
+            $("#webcam").remove()
+        }
+
     </script>
 
 </body>
@@ -521,9 +532,14 @@
 <script type="text/javascript" src="assets/splash/js/main.js"></script>
 
 <!-- <script src="assets/materialwizard/assets/js/jquery.validate.min.js"></script> -->
-<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
- <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
- <script type="text/javascript" src="assets/particles/particles.js"></script>
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+<script type="text/javascript" src="assets/particles/particles.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.2/build/dat.gui.js"></script>
+<script src="https://unpkg.com/@tensorflow/tfjs"></script>
+<script src="https://unpkg.com/@tensorflow-models/posenet"></script>
+<script src="assets/posenet/demo_util.js"></script>
+<script src="assets/posenet/camera.js"></script>
 
 </html>

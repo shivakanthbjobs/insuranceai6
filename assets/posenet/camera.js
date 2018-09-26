@@ -21,7 +21,6 @@
 // import {drawKeypoints, drawSkeleton} from './demo_util';
 const maxVideoSize = 513;
 const canvasSize = 400;
-const stats = new Stats();
 
 async function getCameras() {
   const devices = await navigator.mediaDevices.enumerateDevices();
@@ -110,60 +109,58 @@ function setupGui(cameras, net) {
 
   const gui = new dat.GUI({width: 300});
 
-  gui.add(guiState, 'camera', cameraOptions).onChange((deviceId) => {
-    loadVideo(deviceId);
-  });
-  const algorithmController = gui.add(
-    guiState, 'algorithm', ['single-pose', 'multi-pose'] );
+  // gui.add(guiState, 'camera', cameraOptions).onChange((deviceId) => {
+  //   loadVideo(deviceId);
+  // });
+  
+  // const algorithmController = gui.add(
+  //   guiState, 'algorithm', ['single-pose', 'multi-pose'] );
 
-  let input = gui.addFolder('Input');
-  const architectureController =
-    input.add(guiState.input, 'mobileNetArchitecture', ['1.01', '1.00', '0.75', '0.50']);
-  input.add(guiState.input, 'outputStride', [8, 16, 32]);
-  input.add(guiState.input, 'imageScaleFactor').min(0.2).max(1.0);
-  input.open();
+  // let input = gui.addFolder('Input');
+  // const architectureController =
+  //   input.add(guiState.input, 'mobileNetArchitecture', ['1.01', '1.00', '0.75', '0.50']);
+  // input.add(guiState.input, 'outputStride', [8, 16, 32]);
+  // input.add(guiState.input, 'imageScaleFactor').min(0.2).max(1.0);
+  // input.open();
 
-  let single = gui.addFolder('Single Pose Detection');
-  single.add(guiState.singlePoseDetection, 'minPoseConfidence', 0.0, 1.0);
-  single.add(guiState.singlePoseDetection, 'minPartConfidence', 0.0, 1.0);
-  single.open();
+  // let single = gui.addFolder('Single Pose Detection');
+  // single.add(guiState.singlePoseDetection, 'minPoseConfidence', 0.0, 1.0);
+  // single.add(guiState.singlePoseDetection, 'minPartConfidence', 0.0, 1.0);
+  // single.open();
 
-  let multi = gui.addFolder('Multi Pose Detection');
-  multi.add(
-    guiState.multiPoseDetection, 'maxPoseDetections').min(1).max(20).step(1);
-  multi.add(guiState.multiPoseDetection, 'minPoseConfidence', 0.0, 1.0);
-  multi.add(guiState.multiPoseDetection, 'minPartConfidence', 0.0, 1.0);
-  multi.add(guiState.multiPoseDetection, 'nmsRadius').min(0.0).max(40.0);
+  // let multi = gui.addFolder('Multi Pose Detection');
+  // multi.add(
+  //   guiState.multiPoseDetection, 'maxPoseDetections').min(1).max(20).step(1);
+  // multi.add(guiState.multiPoseDetection, 'minPoseConfidence', 0.0, 1.0);
+  // multi.add(guiState.multiPoseDetection, 'minPartConfidence', 0.0, 1.0);
+  // multi.add(guiState.multiPoseDetection, 'nmsRadius').min(0.0).max(40.0);
 
-  let output = gui.addFolder('Output');
-  output.add(guiState.output, 'showVideo');
-  output.add(guiState.output, 'showSkeleton');
-  output.add(guiState.output, 'showPoints');
-  output.open();
+  // let output = gui.addFolder('Output');
+  // output.add(guiState.output, 'showVideo');
+  // output.add(guiState.output, 'showSkeleton');
+  // output.add(guiState.output, 'showPoints');
+  // output.open();
 
 
-  architectureController.onChange(function(architecture) {
-    guiState.changeToArchitecture = architecture;
-  });
+  // architectureController.onChange(function(architecture) {
+  //   guiState.changeToArchitecture = architecture;
+  // });
 
-  algorithmController.onChange(function(value) {
-    switch (guiState.algorithm) {
-    case 'single-pose':
-      multi.close();
-      single.open();
-      break;
-    case 'multi-pose':
-      single.close();
-      multi.open();
-      break;
-    }
-  });
+  // algorithmController.onChange(function(value) {
+  //   switch (guiState.algorithm) {
+  //   case 'single-pose':
+  //     multi.close();
+  //     single.open();
+  //     break;
+  //   case 'multi-pose':
+  //     single.close();
+  //     multi.open();
+  //     break;
+  //   }
+  // });
 }
 
-function setupFPS() {
-  stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
-  document.body.appendChild(stats.dom);
-}
+
 
 function detectPoseInRealTime(video, net) {
   const canvas = document.getElementById('output');
@@ -182,7 +179,7 @@ function detectPoseInRealTime(video, net) {
       guiState.changeToArchitecture = null;
     }
 
-    stats.begin();
+    
 
     const imageScaleFactor = guiState.input.imageScaleFactor;
     const outputStride = Number(guiState.input.outputStride);
@@ -233,7 +230,6 @@ function detectPoseInRealTime(video, net) {
       }
     });
 
-    stats.end();
 
     requestAnimationFrame(poseDetectionFrame);
   }
@@ -241,7 +237,7 @@ function detectPoseInRealTime(video, net) {
   poseDetectionFrame();
 }
 
-async function bindPage() {
+async function startVideoStream() {
   const net = await posenet.load();
 
   document.getElementById('loading').style.display = 'none';
@@ -257,11 +253,10 @@ async function bindPage() {
   const video = await loadVideo(cameras[0].deviceId);
 
   setupGui(cameras, net);
-  setupFPS();
+  //setupFPS();
   detectPoseInRealTime(video, net);
 }
-
+``
 navigator.getUserMedia = navigator.getUserMedia ||
   navigator.webkitGetUserMedia ||
   navigator.mozGetUserMedia;
-bindPage();
