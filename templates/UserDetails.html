@@ -1,0 +1,50 @@
+<html>
+   <body>
+   
+      <form action = "http://localhost:5000/getQuote" method = "POST">
+         <p>Name <input type = "text" name = "Name" /></p>
+         <p>Email <input type = "text" name = "Email" /></p>
+         <p>Age <input type = "text" name = "Age" /></p>
+         <p>Gender <input type ="text" name = "Gender" /></p>
+		 <p>Height <input type ="text" name = "Height" /></p>
+		 <div >
+                                                <div >
+                                                    <label >Smoking</label>
+                                                    <select name="Smoker">
+                                                        <option disabled="" selected=""></option>
+                                                        <option value="Y"> Yes </option>
+                                                        <option value="N"> No </option>
+                                                    </select>
+                                                </div>
+          </div>
+		  <div >
+                                                <div >
+                                                    <label >Alcohol Consumption</label>
+                                                    <select name="Drinker" >
+                                                        <option disabled="" selected=""></option>
+                                                        <option value="Y"> Yes </option>
+                                                        <option value="N"> No </option>
+                                                    </select>
+                                                </div>
+           </div>
+		    <div >
+                                            <div >
+                                                <h4 > Health Index</h4>
+                                            </div>
+                                            <div >
+                                                <div >
+                                                    <label >Health</label>
+                                                    <select name="Health">
+                                                        <option disabled="" selected=""></option>
+                                                        <option value="H"> Healthy </option>
+                                                        <option value="UnH"> Un- Healthy </option>
+                                                        <option value="MH"> Medium Heathy </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+            </div>
+         <p><input type = "submit" value = "submit" /></p>
+      </form>
+      
+   </body>
+</html>

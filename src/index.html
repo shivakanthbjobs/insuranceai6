@@ -50,18 +50,28 @@
         .ac{
             display: none;
         }
+.intro-content {
+    position: absolute;
+    z-index: 1000;
+    text-align: center;
+}
+
     </style>
 
 </head>
 
 <body class="no-scroll">
-	<div class="splash fade-in" id="particles-js">
-        <h1 class="splash-title fade-in">IN(STA)SURANCE </h1>
-        <div class="buttonwrapper">
-            <a href="#" class="fancy-button pop-onhover bg-gradient1   "><span>Buy A Policy</span></a>
-            <a href="#" class="fancy-button pop-onhover bg-gradient3 "><span>Watch a Demo </span></a>
-        </div>
+        
+        <div class="intro-content container">
+                <h1 class="splash-title fade-in">IN(STA)SURANCE </h1>
+                <div class="buttonwrapper">
+                    <a href="#" class="fancy-button pop-onhover bg-gradient1   "><span>Buy A Policy</span></a>
+                    <a href="#" class="fancy-button pop-onhover bg-gradient3 "><span>Watch a Demo </span></a>
+                </div>
+            </div>
 
+	<div class="splash fade-in" id="particles-js">
+       
 	</div>
 
 
@@ -134,13 +144,14 @@
             </div>
         </div>
         <!--   Big container   -->
+        
         <div class="container">
+                <form id="myForm" action = "http://localhost:5000/getQuote" method="POST">
             <div class="row">
                 <div class="col-sm-12">
                     <!--      Wizard container        -->
                     <div class="wizard-container">
                         <div class="card wizard-card" data-color="red" id="wizard">
-                            <form action="" method="">
                                 <!--        You can switch " data-color="blue" "  with one of the next bright colors: "green", "orange", "red", "purple"             -->
                                 <div class="wizard-header">
                                     <h3 class="wizard-title">
@@ -173,20 +184,25 @@
                                 <div class="tab-content">
                                     <div class="tab-pane" id="BasicInfo">
                                         <div class="row">
+                                                
+                                                  
 
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <h4 class="info-text"> Let's start with the basic details.</h4>
+                                                <h4 class="info-text"> Let's start with the basic details. </h4>
+                                                <a href="http://localhost:5000/oauthgmail"><img src="assets/images/gmail.png" title="gmail" alt="gmail"></a>
                                             </div>
+                                           
                                             <div class="col-sm-6">
+                                                   
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="material-icons">Name</i>
                                                     </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Your Name</label>
-                                                        <input name="name2" type="text" class="form-control" x-webkit-speech>
+                                                        <input name="Name" type="text" name = "Name" value="shiva" class="form-control" x-webkit-speech>
                                                     </div>
                                                 </div>
                                             </div>
@@ -197,7 +213,7 @@
                                                     </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Your Email</label>
-                                                        <input name="name" type="text" class="form-control">
+                                                        <input name="Email" value="sss@gmail.com"  name = "Email" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -234,7 +250,7 @@
                                                     </span>
                                                     <div class="form-group label-floating">
                                                         
-                                                        <input name="age" id="age" type="text" class="form-control">
+                                                        <input name="Age" id="age" value="25" name = "Age" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="input-group">
@@ -243,7 +259,7 @@
                                                         </span>
                                                         <div class="form-group label-floating">
                                                         
-                                                            <input name="gender" id="gender" type="text" class="form-control">
+                                                            <input name="Gender" id="gender" name = "Gender"  value="F" type="text" class="form-control">
                                                         </div>
                                                     </div>
                                             </div>
@@ -261,7 +277,7 @@
                                                     </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Your Height</label>
-                                                        <input name="name2" type="password" class="form-control">
+                                                        <input name="Height" value="30" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -276,22 +292,22 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Smoking</label>
-                                                    <select class="form-control">
-                                                        <option disabled="" selected=""></option>
-                                                        <option value="Male"> I do not Smoker </option>
+                                                    <select  name="Smoker" class="form-control">
+                                                        <option disabled="" ></option>
+                                                        <option value="N" selected=""> I do not Smoker </option>
                                                         <option value="Female"> Occasional Smoker </option>
-                                                        <option value="Female"> Regular Smoker </option>
+                                                        <option value="Y"> Regular Smoker </option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Alcohol Consumption</label>
-                                                    <select class="form-control">
-                                                        <option disabled="" selected=""></option>
-                                                        <option value="Male"> I dont Drink Alcohol </option>
+                                                    <select name="Drinker" class="form-control">
+                                                        <option disabled="" ></option>
+                                                        <option value="N" selected="">  I dont Drink Alcohol </option>
                                                         <option value="Female"> Occasionally consume Alcoohol (Social Drinker) </option>
-                                                        <option value="Female"> Regular consumption of AlcoholSmoker </option>
+                                                        <option value="Y"> Regular consumption of AlcoholSmoker </option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -322,11 +338,11 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Health</label>
-                                                    <select class="form-control">
-                                                        <option disabled="" selected=""></option>
-                                                        <option value="Male"> Healthy </option>
-                                                        <option value="Female"> Normal Heath </option>
-                                                        <option value="Female"> Not Heathy </option>
+                                                    <select name="Health" class="form-control">
+                                                        <option disabled="" ></option>
+                                                        <option value="H" selected="" > Healthy </option>
+                                                        <option value="UH"> Normal Heath </option>
+                                                        <option value="NH"> Not Heathy </option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -426,7 +442,8 @@
                                     <div class="pull-right">
                                         <input type='button' class='btn btn-next btn-fill btn-danger btn-wd' name='next' value='Next' />
                                         <!-- <input type='button' class='btn btn-finish btn-fill btn-danger btn-wd' name='finish' value='Get My Quote' /> -->
-                                        <a href="quote.html" class="btn btn-finish btn-fill btn-danger btn-wd"> Get Quote</a>
+                                       
+                                        <a onclick="document.getElementById('myForm').submit();" class="btn btn-finish btn-fill btn-danger btn-wd"> Get Quote</a>
                                     </div>
                                     <div class="pull-left">
                                         <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
@@ -443,14 +460,15 @@
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
-                            </form>
                         </div>
                     </div>
                     <!-- wizard container -->
                 </div>
             </div>
             <!-- row -->
+        </form>
         </div>
+       
         <!--  big container -->
         <footer class="footer">
             <a href="#" target="_blank" class="link link--privacy">Privacy &amp; Terms</a>

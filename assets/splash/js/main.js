@@ -6,6 +6,7 @@ $( document ).ready(function() {
 	$(".bg-gradient1").click(function()
 	{
 		$(".splash").slideUp("800", function() {
+			$(".intro-content").hide()
 			  $(".wrapper").delay(100).animate({"opacity":"1.0"},800);
 		 });
 	});
@@ -34,5 +35,6 @@ $(window).scroll(function() {
 	  $(".splash").slideUp("800", function() {
 	  $("html, body").animate({"scrollTop":"0px"},100);
 	  $(".wrapper").delay(100).animate({"opacity":"1.0"},800);
+	  $(".intro-content").hide()
  });
  });
