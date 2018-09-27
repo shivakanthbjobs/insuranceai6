@@ -68,7 +68,7 @@ $(document).ready(function(){
             var $wizard = navigation.closest('.wizard-card');
 
             $first_li = navigation.find('li:first-child a').html();
-            $moving_div = $('<div class="moving-tab">' + $first_li + '</div>');
+            $moving_div = $('<div class="moving-tab">' + $first_li + '</div>').trigger("cssFontSet");
             $('.wizard-card .wizard-navigation').append($moving_div);
 
             refreshAnimation($wizard, index);
@@ -105,6 +105,7 @@ $(document).ready(function(){
 
             setTimeout(function(){
                 $('.moving-tab').text(button_text);
+                tabChanged(button_text)
             }, 150);
 
             var checkbox = $('.footer-checkbox');
@@ -255,3 +256,24 @@ function debounce(func, wait, immediate) {
 		if (immediate && !timeout) func.apply(context, args);
 	};
 };
+
+function tabChanged(button_text) {
+    stopCurrentVideoStream()
+    
+    if(button_text=="Verify"){
+        $("#NameVerify").text( $( "#Name").val())
+        $("#EmailVerify").text( $( "#Email").val())
+        $("#GenderVerify").text( $( "#Gender").val())
+        $("#AgeVerify").text( $( "#Age").val())
+        $("#HeightOfPersonVerify").text( $( "#HeightOfPerson").val())
+        $("#WeightVerify").text( $( "#Weight").val())
+        $("#SmokerVerify").text( $( "#Smoker").val())
+        $("#DrinkerVerify").text( $( "#Drinker").val())
+        $("#FitnessVerify").text( $( "#Fitness").val())
+   }
+
+   if(button_text=="Health Estimate"){
+    startVideoStream()
+   }
+   
+}

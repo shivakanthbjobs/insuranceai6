@@ -84,6 +84,9 @@ def index():
     #return res.read()
     return render_template('index.html')
  
+@app.route('/')
+def home():
+    return render_template('UserDetails.html')
  
 
  
@@ -98,23 +101,119 @@ def getPolicyQuote():
        Gender = request.form['Gender']
        Smoker = request.form['Smoker']
        Drinker = request.form['Drinker']
-       Health = request.form['Health']
+       Health = request.form['Fitness']
+       Weight = request.form['Weight']
        print('Sudhir Test Form fields')
 	   
-       bmicategory='B0'
-       factor = int((int(Age)-25)/10)
-       ageRange = 25 + (factor+1)*10
-       print(ageRange)
-       premiumKey=str(ageRange)+bmicategory+Smoker+Drinker+Gender+Health
-       print(premiumKey)
-       config = configparser.RawConfigParser()
-       config.read('ConfigFile.properties')
-       Premium = config.get('PolicyPremiumSection', premiumKey)
-       print(Premium)
+       Premium = PremiumCalculation(200000, Age, Height, Gender, Smoker, Drinker, Health, Weight)
+       PremiumGold = PremiumCalculation(400000, Age, Height, Gender, Smoker, Drinker, Health, Weight)
+       PremiumPlatinum = PremiumCalculation(1000000, Age, Height, Gender, Smoker, Drinker, Health, Weight)
+       print('Premium is - '+ str(Premium))
+       print('PremiumGold is - '+ str(PremiumGold))
+       print('PremiumPlatinum is - '+ str(PremiumPlatinum))
+	   
+	   
+	   
+	   
 
 	
     print('Sudhir form ends')
     return render_template('QuoteDetails.html', **locals())
+ 
+
+def PremiumCalculation(PV, Age, Height, Gender, Smoker, Drinker, Health, Weight):
+       ageRange = 25
+	   
+       if int(Age) >= 25:
+          factor = int((int(Age)-25)/10)
+          ageRange = 25 + (factor+1)*10
+       else:
+          ageRange = 25
+		 
+	   
+       print(ageRange)
+       #premiumKey=str(ageRange)+bmicategory+Smoker+Drinker+Gender+Health
+       #print(premiumKey)
+	   
+       #config = configparser.RawConfigParser()
+       #config.read('ConfigFile.properties')
+       #Premium = config.get('PolicyPremiumSection', premiumKey)
+       #print(Premium)
+       bmicategory = (float(Weight)) / ((float(Height)/100)* (float(Height)/100))
+	   
+       bmicategoryValue = 0
+       print('bmicategory '+ str(bmicategory))
+       if bmicategory < 18:
+          bmicategoryValue = 5
+       elif bmicategory > 27:
+          bmicategoryValue = 10
+       else:
+          bmicategoryValue = 0
+		  
+       print(str(bmicategoryValue))
+	   
+       #Constants	 
+       #PremiumValue
+       #PV = 400000
+       #Policy Claim Rate
+       PCR = 50
+       #Policy Per Unit Value
+       PPUV = 100
+       #Policy Factor
+       PF = 500
+       #Tax Rate
+       TR = 18
+	   
+       #Premium Factor
+       PmF = ((PV/PPUV)+((PV/PPUV)*PCR/100))
+	   
+       print('PmF - '+ str(PmF))
+	   
+       #Risk Factor for SMoker
+       RFSmoker = 0
+       if Smoker == 'Y':
+          RFSmoker = 20
+       print('Smoker'+str(RFSmoker))
+	   
+       #Risk Factor if Drinker
+       RFDrinker = 0
+       if Drinker == 'Y':
+          RFDrinker = 15
+
+       print('Drinker'+str(RFDrinker))
+
+       #Risk Factor on Gender
+       RFGender = 0	   
+       if Gender == 'F':
+         RFGender = 5
+       print('Gender ' + str(RFGender))
+	   
+       #Risk Factor for Health
+       RFHealth = 0
+       if Health == 'MH':
+           RFHealth = 5
+       elif Health == 'UnH':
+           RFHealth = 10
+	   
+	   
+       print('Health ' + str(RFHealth))
+   	   
+	   
+       #Risk Factor
+       print('Age risk factor is ' + str((int(ageRange/10))*5))
+       RF = ((((int(ageRange/10))*5)) + bmicategoryValue + RFSmoker + RFDrinker + RFGender + RFHealth)
+       print('Risk Factor calulated is ' + str(RF))
+	   
+       #TAX
+       Tax = PmF * TR / 100
+       print('Tax is ' + str(Tax))
+	   
+       #Premium
+       Premium = (PmF + (PmF * RF/100) + PF + Tax )
+	   
+       print('Premium is - '+ str(Premium))
+	   
+       return Premium
  
 @app.route('/login')
 def login():

@@ -22,7 +22,7 @@
     <script src="bundle.js"></script> -->
 
     <!-- CSS Files -->
-    <link href="assets/materialwizard/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/materialwizard/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/materialwizard/assets/css/material-bootstrap-wizard.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/splash/css/styles.css">
     <link rel="stylesheet" href="assets/particles/particles.css">
@@ -53,10 +53,12 @@
 </head>
 
 <body class="no-scroll">
+    <div class="intro-content ">
+            <img src="assets/images/logo3d.png"  >
 
-    <div class="intro-content container">
-        <h1 class="splash-title fade-in">IN(STA)SURANCE </h1>
-        <div class="buttonwrapper">
+    </div>
+
+    <div class="buttonwrapper down-content">
             <a href="#" class="fancy-button pop-onhover bg-gradient1   ">
                 <span>Buy A Policy</span>
             </a>
@@ -64,7 +66,6 @@
                 <span>Watch a Demo </span>
             </a>
         </div>
-    </div>
 
     <div class="splash fade-in" id="particles-js">
 
@@ -158,22 +159,20 @@
                                 <div class="wizard-navigation">
                                     <ul>
                                         <li>
-                                            <a href="#BasicInfo" data-toggle="tab">Basic Info</a>
+                                            <a href="#BasicInfo" data-toggle="tab" id="BasicInfoTab">Basic Info</a>
                                         </li>
                                         <li>
-                                            <a href="#Selfie" data-toggle="tab">Selfie (Age /Gender)</a>
+                                            <a href="#Selfie" data-toggle="tab" id="SelfieTab">Selfie (Age /Gender)</a>
                                         </li>
                                         <li>
-                                            <a href="#Height" data-toggle="tab">Height (BMI)</a>
+                                            <a href="#Height" data-toggle="tab" id="HeightTab">Height and Habits</a>
+                                        </li>
+                                       
+                                        <li>
+                                            <a href="#Health" data-toggle="tab" id="HealthTab">Health Estimate</a>
                                         </li>
                                         <li>
-                                            <a href="#Habits" data-toggle="tab">Habits </a>
-                                        </li>
-                                        <li>
-                                            <a href="#Health" data-toggle="tab">Health Estimate </a>
-                                        </li>
-                                        <li>
-                                            <a href="#Verify" data-toggle="tab">Verify </a>
+                                            <a href="#Verify" data-toggle="tab" id="VerifyTab">Verify</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -200,7 +199,7 @@
                                                     </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Your Name</label>
-                                                        <input name="Name" type="text" name="Name" value="shiva" class="form-control" x-webkit-speech>
+                                                        <input name="Name" type="text" name="Name" id="Name" value="shiva" class="form-control" x-webkit-speech>
                                                     </div>
                                                 </div>
                                             </div>
@@ -211,7 +210,7 @@
                                                     </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Your Email</label>
-                                                        <input name="Email" value="sss@gmail.com" name="Email" type="text" class="form-control">
+                                                        <input id="Email" value="sss@gmail.com" name="Email" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -223,22 +222,10 @@
                                                 <h4 class="info-text"> Age and Gender</h4>
                                             </div>
                                             <div class="col-sm-6">
-                                                    <a href="javascript:stopCurrentVideoStream()">Stop Age Camera</a>
-                                                <div class="center x" id="AgeCameraContainer">
-                                                    <video class="center" autoplay playsinline muted id="webcam" style=" -moz-transform: scaleX(-1);
-                                                        -o-transform: scaleX(-1);
-                                                        -webkit-transform: scaleX(-1);
-                                                        transform: scaleX(-1);
-                                                        ">
-                                                    </video>
-                                                    <canvas class="center" style="display: none" id="overlay" />
-                                                </div>
-
-                                                <div class="center x"  style="display: none"> 
-                                                    <canvas class="center" id="face" />
-                                                </div>
-
-
+                                                    
+                                                    <p id="rate">rate</p>
+                                                <video id="ageGenderVideo" autoplay></video>
+                                                <input type="button" id="predict-button" value="predict"> 
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="input-group">
@@ -247,7 +234,7 @@
                                                     </span>
                                                     <div class="form-group label-floating">
 
-                                                        <input name="Age" id="age" value="25" name="Age" type="text" class="form-control">
+                                                        <input name="Age" id="Age" value="25" name="Age" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="input-group">
@@ -256,7 +243,7 @@
                                                     </span>
                                                     <div class="form-group label-floating">
 
-                                                        <input name="Gender" id="gender" name="Gender" value="F" type="text" class="form-control">
+                                                        <input name="Gender" id="Gender"  value="F" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -274,41 +261,61 @@
                                                     </span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Your Height</label>
-                                                        <input name="Height" value="30" type="text" class="form-control">
+                                                        <input name="Height"  id="HeightOfPerson" value="30" type="text" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="col-sm-6">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="material-icons">Weight</i>
+                                                        </span>
+                                                        <div class="form-group label-floating">
+                                                            <label class="control-label">Your Weight</label>
+                                                            <input id="Weight" name="Weight" value="90" type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
                                         </div>
+                                        <div class="row">
+                                                <div class="col-sm-6">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <i class="material-icons">Smoking</i>
+                                                            </span>
+                                                            <div class="form-group label-floating">
+                                                                    <label class="control-label">Smoking</label>
+                                                                    <select name="Smoker" id="Smoker" class="form-control">
+                                                                        <option disabled=""></option>
+                                                                        <option value="N" selected=""> I do not Smoker </option>
+                                                                        <option value="Female"> Occasional Smoker </option>
+                                                                        <option value="Y"> Regular Smoker </option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>        
+                                                    
+                                                    <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">
+                                                                    <i class="material-icons">Alcohol </i>
+                                                                </span>
+                                                                <div class="form-group label-floating">
+                                                                        <label class="control-label">Alcohol Consumption</label>
+                                                                        <select name="Drinker" id="Drinker" class="form-control">
+                                                                            <option disabled=""></option>
+                                                                            <option value="N" selected=""> I dont Drink Alcohol </option>
+                                                                            <option value="Female"> Occasionally consume Alcoohol (Social Drinker) </option>
+                                                                            <option value="Y"> Regular consumption of AlcoholSmoker </option>
+                                                                        </select>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                            </div>
                                     </div>
                                     <div class="tab-pane" id="Habits">
 
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <h4 class="info-text"> Age and Gender</h4>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Smoking</label>
-                                                    <select name="Smoker" class="form-control">
-                                                        <option disabled=""></option>
-                                                        <option value="N" selected=""> I do not Smoker </option>
-                                                        <option value="Female"> Occasional Smoker </option>
-                                                        <option value="Y"> Regular Smoker </option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Alcohol Consumption</label>
-                                                    <select name="Drinker" class="form-control">
-                                                        <option disabled=""></option>
-                                                        <option value="N" selected=""> I dont Drink Alcohol </option>
-                                                        <option value="Female"> Occasionally consume Alcoohol (Social Drinker) </option>
-                                                        <option value="Y"> Regular consumption of AlcoholSmoker </option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
+
                                     </div>
                                     <div class="tab-pane" id="Health">
                                         <div class="row">
@@ -316,10 +323,9 @@
                                                     <div id="loading">
                                                             Loading the model...
                                                         </div>
-                                                       <input  onclick="javascript:startVideoStream()"   value ="Start Webcam" type="button">
-                                                       <input  onclick="javascript:stopCurrentVideoStream()" value ="Stop Webcam" type="button"> 
+
                                                         <div id="main" style="display:none">
-                                                            <video autoplay="true" id="video" style=" -moz-transform: scaleX(-1);
+                                                            <video  autoplay="true" id="video" style=" -moz-transform: scaleX(-1);
                                                             -o-transform: scaleX(-1);
                                                             -webkit-transform: scaleX(-1);
                                                             transform: scaleX(-1);
@@ -345,7 +351,7 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Health</label>
-                                                    <select name="Health" class="form-control">
+                                                    <select name="Fitness" id="Fitness" class="form-control">
                                                         <option disabled=""></option>
                                                         <option value="H" selected=""> Healthy </option>
                                                         <option value="UH"> Normal Heath </option>
@@ -368,7 +374,7 @@
                                                     </span>
                                                     <div class="input-group-addon">
                                                         <i class="faq__answer">Name</i> :
-                                                        <b class="faq__question">John Doe </b>
+                                                        <b class="faq__question" id="NameVerify">John Doe </b>
                                                     </div>
                                                 </div>
                                                 <div class="input-group">
@@ -377,7 +383,7 @@
                                                     </span>
                                                     <div class="input-group-addon">
                                                         <i class="faq__answer">E-Mail</i> :
-                                                        <b class="faq__question">JohnDoe@gmail.com </b>
+                                                        <b class="faq__question" id="EmailVerify">JohnDoe@gmail.com </b>
                                                     </div>
                                                 </div>
                                                 <div class="input-group">
@@ -386,7 +392,7 @@
                                                     </span>
                                                     <div class="input-group-addon">
                                                         <i class="faq__answer">Gender</i> :
-                                                        <b class="faq__question">Male </b>
+                                                        <b class="faq__question" id="GenderVerify">Male </b>
                                                     </div>
                                                 </div>
                                                 <div class="input-group">
@@ -395,7 +401,7 @@
                                                     </span>
                                                     <div class="input-group-addon">
                                                         <i class="faq__answer">Age</i> :
-                                                        <b class="faq__question">35 </b>
+                                                        <b class="faq__question" id="AgeVerify">35 </b>
                                                     </div>
                                                 </div>
                                                 <div class="input-group">
@@ -404,16 +410,25 @@
                                                     </span>
                                                     <div class="input-group-addon">
                                                         <i class="faq__answer">Height</i> :
-                                                        <b class="faq__question">5.8 Inches </b>
+                                                        <b class="faq__question" id="HeightOfPersonVerify">5.8 Inches </b>
                                                     </div>
                                                 </div>
+                                                <div class="input-group">
+                                                        <span class="input-group-addon">
+    
+                                                        </span>
+                                                        <div class="input-group-addon">
+                                                            <i class="faq__answer">Weight</i> :
+                                                            <b class="faq__question" id="WeightVerify">5.8 Inches </b>
+                                                        </div>
+                                                    </div>
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
 
                                                     </span>
                                                     <div class="input-group-addon">
-                                                        <i class="faq__answer">Smoking</i> :
-                                                        <b class="faq__question">No </b>
+                                                        <i class="faq__answer" >Smoking</i> :
+                                                        <b class="faq__question" id="SmokerVerify">No </b>
                                                     </div>
                                                 </div>
                                                 <div class="input-group">
@@ -422,7 +437,7 @@
                                                     </span>
                                                     <div class="input-group-addon">
                                                         <i class="faq__answer">Alcohol Consumption </i> :
-                                                        <b class="faq__question">No </b>
+                                                        <b class="faq__question" id="DrinkerVerify">No </b>
                                                     </div>
                                                 </div>
                                                 <div class="input-group">
@@ -431,7 +446,7 @@
                                                     </span>
                                                     <div class="input-group-addon">
                                                         <i class="faq__answer">Health</i> :
-                                                        <b class="faq__question">very Healthy </b>
+                                                        <b class="faq__question" id="FitnessVerify">very Healthy </b>
                                                     </div>
                                                 </div>
                                                 <div class="input-group">
@@ -482,6 +497,7 @@
         </footer>
 
     </div>
+    <script src="assets/materialwizard/assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
     <script type="text/javascript">
 
 
@@ -518,6 +534,38 @@
             $("#webcam").remove()
         }
 
+
+         // get video dom element
+const video = document.querySelector('video');
+            
+            // request access to webcam
+            navigator.mediaDevices.getUserMedia({video: {width: 426, height: 240}}).then((stream) => video.srcObject = stream);
+            
+            // returns a frame encoded in base64
+    
+            $("#predict-button").click( function(event)  {
+    
+                const canvas = document.createElement('canvas');
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                canvas.getContext('2d').drawImage(video, 0, 0);
+                const data = canvas.toDataURL('image/png');
+                
+    
+                let message = {
+                    image:data   
+                }
+                console.log(message)
+                $.post("http://localhost:5000/predict",JSON.stringify(message), function (response){
+                    $("#age").text(response.age)
+                    $("#gender").text(response.gender)
+                    $("#rate").text(response.rate)
+                    console.log(response)
+                })
+            });
+
+            
+
     </script>
 
 <script type="text/javascript" src="main.js"></script></body>
@@ -541,5 +589,6 @@
 <script src="https://unpkg.com/@tensorflow-models/posenet"></script>
 <script src="assets/posenet/demo_util.js"></script>
 <script src="assets/posenet/camera.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
 
 </html>
