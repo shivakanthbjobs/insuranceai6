@@ -6,20 +6,19 @@
     <head>
 
         <!-- TITLE OF SITE -->
-        <title>FUSION | Free Portfolio Template</title>
+        <title>In(STA)surance</title>
 
         <!-- Meta -->
         <meta charset="utf-8">
-        <meta name="description" content="Free Responsive Bootstrap Portfolio Template for Personal and Agency Websites" />
-        <meta name="keywords" content="Portfolio, Free Template, Free Portfolio" />
-        <meta name="developer" content="TemplateOcean">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
         <!-- FAV AND TOUCH ICONS   -->
-        <link rel="icon" href="assets/fusion/images/favicon.ico">
+
         <link rel="apple-touch-icon" href="assets/fusion/images/apple-touch-icon.png">
         <link rel="apple-touch-icon" sizes="72x72" href="assets/fusion/images/apple-touch-icon-72x72.png">
         <link rel="apple-touch-icon" sizes="114x114" href="assets/fusion/images/apple-touch-icon-114x114.png">
+
+          <script src="assets/materialwizard/assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
 
         <!-- GOOGLE FONTS -->
         <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,700,900' rel='stylesheet' type='text/css'>
@@ -43,6 +42,10 @@
         <link rel="stylesheet" href="assets/fusion/css/style.css">
         <link rel="stylesheet" href="assets/fusion/css/responsive.css">
 
+        <link rel="stylesheet" href="assets/splash/css/styles.css">
+        <link rel="stylesheet" href="assets/particles/particles.css">
+        <link rel="stylesheet" href="assets/button/button.css">
+
         <!--[if lt IE 9]>
             <script src="assets/fusion/js/plagin-js/html5shiv.js"></script>
             <script src="assets/fusion/js/plagin-js/respond.min.js"></script>
@@ -50,7 +53,27 @@
 
 
     </head>
-    <body class="style-1">
+    <body class="style-1" >
+            <div class="intro-content ">
+                    <img src="../assets/images/logo3d.png">
+                </div>
+        
+                <div class="buttonwrapper down-content">
+                    <a href="#" class="fancy-button pop-onhover bg-gradient1   ">
+                        <span>Buy A Policy</span>
+                        
+                    </a>
+                    <a href="#" class="fancy-button pop-onhover bg-gradient3 ">
+                        <span>Watch a Demo </span>
+                    </a>
+                    <h2 style="color: white">In(sta)surance enables the customer to purchase an insurance policy in Smart, Instant and Quick manner in a highly-engaging process which will get all the relevant data of the customer in a non-intrusive manner.
+                        </h2>
+        
+                </div>
+        
+            <div class="splash fade-in" id="particles-js">
+        
+            </div>
 
 
         <!-- Start: Preloader Section
@@ -85,18 +108,18 @@
                     </button>
 
                     <!-- TEMPLATE LOGO LIGHT -->
-                    <a class="navbar-brand light-logo" href="#"><img src="assets/fusion/images/logo.png" alt="" class="img-responsive"></a>
+                    <a class="navbar-brand light-logo" href="#"><img src="assets/images/logo3d.png" alt="" class="img-responsive"></a>
 
                 </div>
 
                 <!-- Main Menu List -->
                 <div class="navbar-collapse" id="js-navbar-menu">
                     <ul class="nav navbar-nav navbar-right" id="navbar-nav">
-                        <li><a class="btn-nav" href="#2">services</a></li>
-                        <li><a class="btn-nav" href="#3">portfolio</a></li>
-                        <li><a class="btn-nav" href="#6">testimonials</a></li>
-                        <li><a class="btn-nav" href="#7">team</a></li>
-                        <li><a class="btn-nav" href="#8">Contact Us</a></li>
+                            <li><a class="btn-nav" href="#2">Basics</a></li>
+                            <li><a class="btn-nav" href="#3">Selfie</a></li>
+                            <li><a class="btn-nav" href="#6">LifeStyle</a></li>
+                            <li><a class="btn-nav" href="#7">Fitness</a></li>
+                            <li><a class="btn-nav" href="#8">Verify</a></li>
                     </ul>
                 </div>
 
@@ -176,7 +199,7 @@
                                             <div class="navbar-header">
 
                                                 <!-- TEMPLATE LOGO LIGHT -->
-                                                <a class="navbar-brand light-logo" href="#"><img src="assets/fusion/images/logo.png" alt="" class="img-responsive"></a>
+                                                <a class="navbar-brand light-logo" href="#"><img src="assets/images/logo3d.png" alt="" class="img-responsive"></a>
 
                                             </div>
 
@@ -1391,7 +1414,7 @@
                                                     <div class="overflow">
                                                         <div class="logo-outer">
                                                             <a href="index.html" class="logo-link">
-                                                                <img src="assets/fusion/images/logo.png" alt="" class="img-responsive logo">
+                                                                <img src="assets/images/logo3d.png" alt="" class="img-responsive logo">
                                                             </a>
                                                         </div>
                                                     </div>
@@ -1622,7 +1645,6 @@
 
         <!-- SCRIPTS
         ========================================-->
-        <script src="assets/fusion/js/plagin-js/jquery-1.11.3.js"></script>
         <script src="assets/fusion/js/plagin-js/preloader.js"></script>
         <script src="assets/fusion/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/fusion/js/plagin-js/plagin.js"></script>
@@ -1631,8 +1653,56 @@
         ==========================================-->
         <script src="assets/fusion/js/custom-scripts.js"></script>
 
+        <script type="text/javascript" src="assets/splash/js/main.js"></script>
+
+        <!-- <script src="assets/materialwizard/assets/js/jquery.validate.min.js"></script> -->
+        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script type="text/javascript" src="assets/particles/particles.js"></script>
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.2/build/dat.gui.js"></script>
+        <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+        <script src="https://unpkg.com/@tensorflow-models/posenet"></script>
+        <script src="assets/posenet/demo_util.js"></script>
+        <script src="assets/posenet/camera.js"></script>
+
+        
+    <script type="text/javascript">
+     
+        // get video dom element
+        const video = document.querySelector('video');
+
+        // request access to webcam
+        navigator.mediaDevices.getUserMedia({
+            video: {
+                width: 426,
+                height: 240
+            }
+        }).then((stream) => video.srcObject = stream);
+
+        // returns a frame encoded in base64
+
+        $("#predict-button").click(function(event) {
+
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0);
+            const data = canvas.toDataURL('image/png');
 
 
+            let message = {
+                image: data
+            }
+            console.log(message)
+            $.post("http://localhost:5000/predict", JSON.stringify(message), function(response) {
+                $("#age").text(response.age)
+                $("#gender").text(response.gender)
+                $("#rate").text(response.rate)
+                console.log(response)
+            })
+        });
+        </script>
     </body>
 
 </html>
