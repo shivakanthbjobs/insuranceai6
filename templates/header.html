@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% assets "js_all" %}
+<script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %} {% assets "css_all" %}
+<link rel=stylesheet type="text/css" href="{{ ASSET_URL }}"> {% endassets %}
+<style>
+    header .branding {
+        display: flex;
+        align-items: center;
+    }
+</style>
+<html lang="en">
+
+<head>
+    <title>
+        Hackathon
+    </title>
+</head>
+
+<header class="header-6">
+    <div class="branding">
+        <clr-icon shape="vm"></clr-icon>
+    </div>
+
+</header>
+<body>
+    {% block body %}{% endblock %}
+</body>
+</html>

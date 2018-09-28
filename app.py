@@ -1,6 +1,6 @@
 from flask import Flask, redirect, url_for, session
 from flask_oauth import OAuth
-from flask import Flask, render_template,request
+from flask import Flask, render_template,redirect, request, url_for, jsonify, session
 from flask import flash
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 import os
@@ -16,6 +16,7 @@ from imutils.face_utils import rect_to_bb
 from flask import request
 from flask import jsonify
 from flask import Flask
+from flask_assets import Bundle, Environment
 from imageio import imread
 import base64
 import io
@@ -27,23 +28,32 @@ from keras.models import load_model
 from keras.preprocessing.image import ImageDataGenerator
 from keras.preprocessing.image import img_to_array
 from PIL import Image
-
+import math
  
 import configparser 
 
  
 
-GOOGLE_CLIENT_ID = ''
-GOOGLE_CLIENT_SECRET = ''
+GOOGLE_CLIENT_ID = '346115038766-gueouf98f2kjdn9qudipgolko0kmscfu.apps.googleusercontent.com'
+GOOGLE_CLIENT_SECRET = 'SX9Y6XNhDecgC3chMQVofjGG'
 REDIRECT_URI = '/oauth2callback'  # one of the Redirect URIs from Google APIs console
  
 SECRET_KEY = 'development key'
 DEBUG = True
  
+
+
+
 app = Flask(__name__)
 app.debug = DEBUG
 app.secret_key = SECRET_KEY
-oauth = OAuth()
+oauth = OAuth() 
+
+env = Environment(app)
+js = Bundle('js/jquery-2.2.4.min.js', 'js/jquery.magnific-popup.js')
+env.register('js_all', js)
+css = Bundle('css/fontawesome-all.min.css', 'css/popup-box.css', 'css/style.css')
+env.register('css_all', css)
  
 google = oauth.remote_app('google',
                           base_url='https://www.google.com/accounts/',
@@ -104,10 +114,18 @@ def getPolicyQuote():
        Health = request.form['Fitness']
        Weight = request.form['Weight']
        print('Sudhir Test Form fields')
+
+       PolicySilver = 200000
+       PolicyGold = 400000
+       PolicyDiamond = 1000000	
+
+       PolicySilverPerMonth = math.ceil(PolicySilver/12)
+       PolicyGoldPerMonth = math.ceil(PolicyGold/12)
+       PolicyDiamondPerMonth = math.ceil(PolicyDiamond/12)	
 	   
-       Premium = PremiumCalculation(200000, Age, Height, Gender, Smoker, Drinker, Health, Weight)
-       PremiumGold = PremiumCalculation(400000, Age, Height, Gender, Smoker, Drinker, Health, Weight)
-       PremiumPlatinum = PremiumCalculation(1000000, Age, Height, Gender, Smoker, Drinker, Health, Weight)
+       Premium = PremiumCalculation(PolicySilver, Age, Height, Gender, Smoker, Drinker, Health, Weight)
+       PremiumGold = PremiumCalculation(PolicyGold, Age, Height, Gender, Smoker, Drinker, Health, Weight)
+       PremiumPlatinum = PremiumCalculation(PolicyDiamond, Age, Height, Gender, Smoker, Drinker, Health, Weight)
        print('Premium is - '+ str(Premium))
        print('PremiumGold is - '+ str(PremiumGold))
        print('PremiumPlatinum is - '+ str(PremiumPlatinum))

@@ -1,99 +1,96 @@
- <html>
-   <body>
- <div  id="Verify">
-                                        <div >
-                                            <div >
-                                                <h4 > Please verify  your details </h4>
-                                            </div>
-                                            <div >
-                                                <div >
+ {% extends "header.html" %} {% block body %}
 
-                                                    <div >
-                                                        <i >Name</i> :
-                                                        <b >{{Name}} </b>
-                                                    </div>
-                                                </div>
-                                                <div >
+<!-- /plans -->
+<div class="plans-section">
+	<div class="plans-main">
+		<h1 class="w3l-inner-h-title">Pricing Tables</h1>
+				 <div class="price-grid">
+					<div class="price-block agile">
+						<div class="price-gd-top pric-clr1">
+							<i class="fab fa-accusoft"></i>
+							<h4>Silver</h4>
+							<h3>$ {{Premium}}</h3>
+							<p>Premium Per Month : {{PolicySilverPerMonth}}</p>
+							<p>Domiciliary Coverage :  10%</p>
+							<p>Hospitalization Coverage : 15%</p>
+							<p>Total  Claim Amount : {{PolicySilver}}</p>
 
-                                                    <div >
-                                                        <i >E-Mail</i> :
-                                                        <b >{{Email}} </b>
-                                                    </div>
-                                                </div>
-                                                <div >
+						</div>
+						<div class="price-gd-bottom">
+							   
+							<div class="price-selet pric-sclr1">		    			   
+								<a href="#" >Buy Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="price-grid ">
+					<div class="price-block price-block1 agile">
+						<div class="price-gd-top pric-clr2">
+							<i class="fab fa-adn"></i>
+							<h4>Gold</h4>
+							<h3>$ {{PremiumGold}}</h3>
+							<p>Premium Per Month : {{PolicyGoldPerMonth}}</p>
+							<p>Domiciliary Coverage : 10%</p>
+							<p>Hospitalization Coverage : 15%</p>
+							<p>Total  Claim Amount : {{PolicyGold}}</p>
+						</div>
+						<div class="price-gd-bottom">
+							
+							<div class="price-selet pric-sclr2">
+								<a href="#small-dialog" class="w3_agileits_sign_up2 popup-with-zoom-anim ab scroll" >Buy Now</a>
 
-                                                    <div >
-                                                        <i >Gender</i> :
-                                                        <b >{{Gender}} </b>
-                                                    </div>
-                                                </div>
-                                                <div >
- 
-                                                    <div >
-                                                        <i >Age</i> :
-                                                        <b >{{Age}} </b>
-                                                    </div>
-                                                </div>
-                                                <div >
-
-                                                    <div >
-                                                        <i >Height</i> :
-                                                        <b >{{Height}} Inches </b>
-                                                    </div>
-                                                </div>
-                                                <div >
-
-                                                    <div >
-                                                        <i >Smoking</i> :
-                                                        <b >{{Smoker}} </b>
-                                                    </div>
-                                                </div>
-                                                <div >
-                                                    <div >
-                                                        <i >Alcohol Consumption </i> :
-                                                        <b >{{Drinker}} </b>
-                                                    </div>
-                                                </div>
-                                                <div >
-   
-                                                    <div >
-                                                        <i >Health</i> :
-                                                        <b >{{Health}} </b>
-                                                    </div>
-                                                </div>
-												<div >
-   
-                                                    <div >
-                                                        <i >Weight</i> :
-                                                        <b >{{Weight}} </b>
-                                                    </div>
-                                                </div>
-												<div >
-   
-                                                    <div >
-                                                        <i >Premium Details</i> :
-                                                        <b >$ {{Premium}} </b>
-                                                    </div>
-                                                </div>
-												<div >
-   
-                                                    <div >
-                                                        <i >Premium Gold Details</i> :
-                                                        <b >$ {{PremiumGold}} </b>
-                                                    </div>
-                                                </div>
-												<div >
-   
-                                                    <div >
-                                                        <i >Premium Platinum Details</i> :
-                                                        <b >$ {{PremiumPlatinum}} </b>
-                                                    </div>
-                                                </div>
-      
-                                            </div>
-
-                                        </div>
-
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="price-grid1 lost">
+					<div class="price-block price-block2 agile">
+						<div class="price-gd-top pric-clr3">
+							<i class="fab fa-angellist"></i>
+							<h4>Diamond</h4>
+							<h3>$ {{PremiumPlatinum}}</h3>
+							<p>Premium Per Month : {{PolicyDiamondPerMonth}}</p>
+							<p>Domiciliary Coverage : 10%</p>
+							<p>Hospitalization Coverage : 15%</p>
+							<p>Total  Claim Amount : {{PolicyGold}}</p>
+						</div>
+						<div class="price-gd-bottom">
+							
+							<div class="price-selet pric-sclr3">
+								<a href="#small-dialog" class="w3_agileits_sign_up2 popup-with-zoom-anim  ab scroll" >Buy Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+	</div>
 </div>
-</body>
-</html>
+<!-- //plans -->
+	
+<!-- copyright -->
+<div class="copyright-agile">
+	<p>&copy; 2018 Hackathon Pricing Tables. All rights reserved | Design by Hackathon</p>
+</div>
+<!-- //copyright -->
+<!-- //popup signup form -->
+
+<!-- pop-up-box -->
+
+		<script>
+			$(document).ready(function() {
+				$('.popup-with-zoom-anim').magnificPopup({
+					type: 'inline',
+					fixedContentPos: false,
+					fixedBgPos: true,
+					overflowY: 'auto',
+					closeBtnInside: true,
+					preloader: false,
+					midClick: true,
+					removalDelay: 300,
+					mainClass: 'my-mfp-zoom-in'
+				});														
+			});
+		</script>
+	<!--//pop-up-box -->
+{% endblock %}  

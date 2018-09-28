@@ -9,7 +9,7 @@ module.exports = {
     ],
     plugins: [
         //new CopyWebpackPlugin(['models', 'age_models']),
-        new CopyWebpackPlugin([{from: 'models', to: 'models'}, {from: 'age_models', to: 'age_models'}]),
+        new CopyWebpackPlugin([ {from: 'assets', to: 'assets'}]),
         new HtmlWebpackPlugin({
             template: './src/index.html'
         })
