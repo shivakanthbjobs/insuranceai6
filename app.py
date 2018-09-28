@@ -34,8 +34,8 @@ import configparser
 
  
 
-GOOGLE_CLIENT_ID = '346115038766-gueouf98f2kjdn9qudipgolko0kmscfu.apps.googleusercontent.com'
-GOOGLE_CLIENT_SECRET = 'SX9Y6XNhDecgC3chMQVofjGG'
+GOOGLE_CLIENT_ID = ''
+GOOGLE_CLIENT_SECRET = ''
 REDIRECT_URI = '/oauth2callback'  # one of the Redirect URIs from Google APIs console
  
 SECRET_KEY = 'development key'
