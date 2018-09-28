@@ -54,45 +54,50 @@
 
     </head>
     <body class="style-1" >
-            <div class="intro-content ">
-                    <img src="../assets/images/logo3d.png">
+
+ <!-- Start: Loader Section
+        =================================== -->
+        <div id="main-preloader" class="main-preloader semi-dark-background">
+                <div class="main-preloader-inner center">
+    
+                    <h1 class="preloader-percentage center">
+                        <span class="preloader-percentage-text">0</span> <!-- Show Percentage Number -->
+                        <span class="percentage">%</span>
+                    </h1>
+                    <div class="preloader-bar-outer">
+                        <div class="preloader-bar"></div> <!-- Percentage Precess Bar -->
+                    </div>
+    
+                </div>
+            </div>
+            <!-- End: Preloader Section
+            =================================== -->
+
+        <!-- Start: Splash Screen
+        =================================== -->   
+        <div class="intro-content " style="z-index: 2200;">
+                    <img src="../assets/images/logo3d.png"   style="z-index: 2200;">
                 </div>
         
-                <div class="buttonwrapper down-content">
-                    <a href="#" class="fancy-button pop-onhover bg-gradient1   ">
+                <div class="buttonwrapper down-content" style="z-index: 2200;">
+                    <a href="#" class="fancy-button pop-onhover bg-gradient1   " style="z-index: 2200;">
                         <span>Buy A Policy</span>
                         
                     </a>
-                    <a href="#" class="fancy-button pop-onhover bg-gradient3 ">
+                    <a href="#" class="fancy-button pop-onhover bg-gradient3 " style="z-index: 2200;">
                         <span>Watch a Demo </span>
                     </a>
-                    <h2 style="color: white">In(sta)surance enables the customer to purchase an insurance policy in Smart, Instant and Quick manner in a highly-engaging process which will get all the relevant data of the customer in a non-intrusive manner.
+                    <h2 style="color: white" style="z-index: 2200;">In(sta)surance enables the customer to purchase an insurance policy in Smart, Instant and Quick manner in a highly-engaging process which will get all the relevant data of the customer in a non-intrusive manner.
                         </h2>
         
                 </div>
         
-            <div class="splash fade-in" id="particles-js">
+            <div class="splash fade-in" id="particles-js"  style="z-index: 2000;">
         
             </div>
 
 
-        <!-- Start: Preloader Section
-        =================================== -->
-        <div id="main-preloader" class="main-preloader semi-dark-background">
-            <div class="main-preloader-inner center">
-
-                <h1 class="preloader-percentage center">
-                    <span class="preloader-percentage-text">0</span> <!-- Show Percentage Number -->
-                    <span class="percentage">%</span>
-                </h1>
-                <div class="preloader-bar-outer">
-                    <div class="preloader-bar"></div> <!-- Percentage Precess Bar -->
-                </div>
-
-            </div>
-        </div>
-        <!-- End: Preloader Section
-        =================================== -->
+       
 
 
 
@@ -148,77 +153,178 @@
                     <!--Start: 1st Page Slider Section
                         - HOME PAGE
                     ====================================-->
-                    <div class="section section-item home-section overflow hide-overlay overlay-color bg-image-1" data-heading="">
-                        <div class="inner-container ">
-                            <div class="container">
-                                <div class="row">
-
-                                    <div class="col-xs-8 col-xs-offset-2">
+                    <div class=" section section-item combine-section hide-overlay overflow" data-heading="">
+                            <div class="overlay-color relative bg-image-2">
+    
+                                <div class="inner-container contact-us" id="contact">
+                                    <div class="container">
                                         <div class="row">
-
-                                            <div class="home-content-outer text-center">
-
+    
+                                            <!-- Start: Section Heading -->
+                                            <div class="section-header col-sm-10 col-sm-offset-1">
                                                 <div class="overflow">
-                                                    <div class="heading-outer left-right relative">
-                                                        <div class="heading-outer top-bottom relative">
-                                                            <div class="overflow p-t-40 p-l-40 p-r-40 p-b-40">
-                                                                <div class="section-heading-outer">
-                                                                    <h1 class="heading">We're <span class="color">Fusion</span>, We Build Things for Human</h1>
+                                                    <div class="section-heading-outer m-b-15">
+                                                        <p class="sub-heading">Basic Details </p>
+                                                    </div>
+                                                </div>
+                                                <div class="overflow">
+                                                    <div class="section-heading-outer p-l-50 p-r-50">
+                                                        <h2 class="section-heading">Welcome to New Policy Wizard</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End: Section Heading -->
+    
+                                            <div class="clearfix"></div>
+    
+                                            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 overflow">
+                                                <div class="row single-form-outer">
+                                                        <form action = "http://localhost:5000/getQuote" method="post" class="dark-background single-form">
+    
+    
+                                                        <div class="message col-xs-12">
+                                                            <p class="email-loading"><img src="assets/fusion/images/loading.gif" alt="">&nbsp;&nbsp;&nbsp;Sending...</p>
+                                                            <p class="email-success"><i class="icon icon-icon-check-alt2"></i> Your quote has successfully been sent.</p>
+                                                            <p class="email-failed"><i class="icon icon-icon-close-alt2"></i> Something went wrong!</p>
+                                                        </div>
+    
+    
+                                                        <div class="col-xs-6">
+                                                            <div class="input-outer">
+                                                                <div class="group relative">
+                                                                    <input name="Name" value="shiav" class="contact-name form-control" id="contact-name" type="text"  required="">
+                                                                    <label class="input-label" for="contact-name">
+                                                                        <span class="label-text">YOUR NAME</span>
+                                                                    </label>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
+    
+                                                        <div class="col-xs-6">
+                                                            <div class="input-outer ">
+                                                                <div class="group relative">
+                                                                    <input name="Email" value="asdf@asdf.com" class="contact-email form-control" id="contact-email" type="email"  required="">
+                                                                    <label class="input-label" for="contact-email">
+                                                                        <span class="label-text">YOUR EMAIL</span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+    
+                                                        <div class="col-xs-6">
+                                                            <div class="input-outer ">
+                                                                <div class="group relative">
+                                                                    <input name="Height" value="90" class="contact-company form-control" id="contact-company" type="text"  required="">
+                                                                    <label class="input-label" for="contact-company">
+                                                                        <span class="label-text">Height</span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+    
+                                                        <div class="col-xs-6">
+                                                            <div class="input-outer ">
+                                                                <div class="group relative">
+                                                                    <input name="Weight" value="90" class="contact-subject form-control" id="contact-subject" type="text"  required="">
+                                                                    <label class="input-label" for="contact-subject">
+                                                                        <span class="label-text">Weight</span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-                                                <div class="overflow m-t-30">
-                                                    <div class="list-view">
-                                                        <ul class="nav">
-                                                            <li><a class="btn-mask" href="#">DESIGN</a></li>
-                                                            <li><a class="btn-mask" href="#">STRATEGY</a></li>
-                                                            <li><a class="btn-mask" href="#">BRANDING</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <!-- Next Section Arrow -->
-                                    <div class="footer-button">
-                                        <div class="overflow m-t-30">
-                                            <div class="btn-form-outer">  <!-- Button Area -->
-                                                <a href="#2" class="btn"><i class="icon icon-arrow-carrot-down"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Home Page Buttom Navigation -->
-                                    <nav class="navbar navbar-fixed-top main-navbar-top home-nav overflow">
-                                        <div class="container relative home-nav-inner">
-                                            <div class="navbar-header">
-
-                                                <!-- TEMPLATE LOGO LIGHT -->
-                                                <a class="navbar-brand light-logo" href="#"><img src="assets/images/logo3d.png" alt="" class="img-responsive"></a>
-
-                                            </div>
-
-                                            <div class="navbar-collapse-right" >
-                                                <ul class="nav navbar-nav navbar-right">
-                                                    <li>
-                                                        <a class="btn-nav btn-mask" href="#8">Get in Teach <i class="icon icon-arrow-right"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                        </div>
-                                    </nav>
-                                    <!-- End: Home Page Buttom Navigation -->
-
-                                </div>
+                           
+    
+                                                        <div class="col-xs-6">
+                                                            <div class="input-outer ">
+                                                                <div class="group relative">
+                                                                    <input name="Age" value="35" class="contact-subject form-control" id="contact-subject" type="text"  required="">
+                                                                    <label class="input-label" for="contact-subject">
+                                                                        <span class="label-text">Age</span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                                <div class="input-outer ">
+                                                                    <div class="group relative">
+                                                                        <input name="Gender" value="M" class="contact-subject form-control" id="contact-subject" type="text"  required="">
+                                                                        <label class="input-label" for="contact-subject">
+                                                                            <span class="label-text">Gender</span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                             
+                                                        <div class="col-xs-12" > 
+                                                                <div class="input-outer ">
+                                                                    <div class="group relative">
+                                                                            <select name="Smoker">
+                                                                                    <option disabled=""></option>
+                                                                                    <option value="Y" selected=""> Yes </option>
+                                                                                    <option value="N"> No </option>
+                                                                                </select>	
+                                                                        <label class="input-label" for="contact-message">
+                                                                            <span class="label-text">Smoking </span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>  
+                                                            <div class="col-xs-12" > 
+                                                                    <div class="input-outer ">
+                                                                        <div class="group relative">
+                                                                                <label >Health</label>
+                                                                                <select name="Fitness">
+                                                                                    <option disabled="" selected=""></option>
+                                                                                    <option value="H" selected> Healthy </option>
+                                                                                    <option value="UnH"> Un- Healthy </option>
+                                                                                    <option value="MH"> Medium Heathy </option>
+                                                                                </select>
+                                                                            <label class="input-label" for="contact-message">
+                                                                                <span class="label-text">Health </span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>  
+    
+                                                        <div class="col-xs-12" > 
+                                                            <div class="input-outer ">
+                                                                <div class="group relative">
+                                                                        <select name="Drinker"  id="Drinker" class="form-control">
+                                                                                <option disabled=""></option>
+                                                                                <option value="N" selected=""> I dont Drink Alcohol </option>
+                                                                                <option value="Female"> Occasionally consume Alcoohol (Social Drinker) </option>
+                                                                                <option value="Y"> Regular consumption of AlcoholSmoker </option>
+                                                                            </select>
+                                                                    <label class="input-label" for="contact-message">
+                                                                        <span class="label-text">Alcohol Consumption</span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+    
+                                                        <!-- Subject Button -->
+                                                        <div class="btn-form text-center col-xs-12">
+                                                            <div class="button-outer relative">
+                                                                    <input type = "submit" value = "submit" />
+                                                                <button class="btn btn-fill right-icon">GET IN TOUCH <i class="icon icon-arrow-right"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+    
+                                                </div> <!-- /#testimonials-1 -->
+                                            </div> <!-- End: .col-xs-12 -->
+    
+                                            <div class="clearfix"></div>
+    
+    
+                                        </div> <!-- End: .row -->
+                                    </div> <!-- End: .container -->
+                                </div> <!-- End: .inner-container -->
+    
                             </div>
+    
                         </div>
-                    </div>
                     <!--End: 1st Page Slider Section
                         - HOME PAGE
                     ====================================-->
@@ -674,13 +780,13 @@
 
                                                     <div class="overflow">
                                                         <div class="heading-outer">
-                                                            <h2 class="heading">Project One</h2>
+                                                            <h2 class="heading">Selfie</h2>
                                                         </div>
                                                     </div> <!-- End: .overflow -->
 
                                                     <div class="overflow">
                                                         <ul class="nav list">
-                                                            <li><p class="sub-heading">BRANDING &AMP; DESIGN</p></li>
+                                                            <li><p class="sub-heading">AGE &AMP; DESIGN</p></li>
                                                             <li><p class="sub-heading">MARCH 2016</p></li>
                                                         </ul>
                                                     </div> <!-- End: .overflow -->

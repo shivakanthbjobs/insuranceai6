@@ -103,7 +103,7 @@ footer {
 	bottom: 0;
 	left: 0;
 	min-height: 360px;
-	z-index: 999;
+	z-index: 1999;
 	background-size: cover;
 	background-attachment: fixed;
 	text-align: center;
