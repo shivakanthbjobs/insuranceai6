@@ -1,0 +1,548 @@
+<html lang="en">
+
+<head>
+    <title>	</title>
+    <meta charset="UTF-8">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+    <meta itemprop="name" content="In(sta) surance">
+    <meta itemprop="description" content="Insta-Surance: Instant Insurance Policy with a Selfie , Web Camera and more ">
+    <meta itemprop="image" content=/assets/static/share-image.jpg">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Caveat:700|Poppins:400,500,600,700" rel="stylesheet">
+    <script src="assets/materialwizard/assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+    <!-- <link href="style.css" rel="stylesheet">
+    <script src="bundle.js"></script> -->
+
+    <!-- CSS Files -->
+    <link href="../assets/materialwizard/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/materialwizard/assets/css/material-bootstrap-wizard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/splash/css/styles.css">
+    <link rel="stylesheet" href="assets/particles/particles.css">
+    <link rel="stylesheet" href="assets/button/button.css">
+
+
+    <style>
+        .center {
+            display: inline-block;
+            margin: auto;
+            width: 85%;
+        }
+
+        .x {
+            position: static;
+        }
+
+        .text {
+            text-align: center;
+            margin: auto;
+        }
+
+        .ac {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body class="no-scroll">
+    <div class="intro-content ">
+        <img src="assets/images/logo3d.png">
+    </div>
+
+    <div class="buttonwrapper down-content">
+        <a href="#" class="fancy-button pop-onhover bg-gradient1   ">
+            <span>Buy A Policy</span>
+            
+        </a>
+        <a href="#" class="fancy-button pop-onhover bg-gradient3 ">
+            <span>Watch a Demo </span>
+        </a>
+        <h2 style="color: white">In(sta)surance enables the customer to purchase an insurance policy in Smart, Instant and Quick manner in a highly-engaging process which will get all the relevant data of the customer in a non-intrusive manner.
+            </h2>
+
+    </div>
+
+    <div class="splash fade-in" id="particles-js">
+
+    </div>
+
+
+
+
+
+    <div class="wrapper">
+        <div class="wizard__wrapper" id="main-content">
+            <div class="wizard" id="wizard">
+                <div class="wizard__inner">
+                    <a href="#" class="wizard__sound-button">
+                        <div class="wizard__sound-icon wizard__sound-icon--on"></div>
+                    </a>
+                    <div class="wizard__text">
+                        <div class="wizard__text-inner"></div>
+                        <div class="wizard__timer">
+                            <div class="wizard__timer-fill"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="wizard__skip-button" style="display: none;">Text
+                        <span> Assistant</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--   Big container   -->
+
+        <div class="container">
+            <form id="myForm" action="http://localhost:5000/getQuote" method="POST">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!--      Wizard container        -->
+                        <div class="wizard-container">
+                            <div class="card wizard-card" data-color="red" id="wizard">
+                                <!--        You can switch " data-color="blue" "  with one of the next bright colors: "green", "orange", "red", "purple"             -->
+                                <div class="wizard-header">
+                                    <h3 class="wizard-title">
+                                        New Health Policy Wizard
+                                    </h3>
+                                    <!-- <h5>This information will let us know more about you.</h5> -->
+                                </div>
+                                <div class="wizard-navigation">
+                                    <ul>
+                                        <li>
+                                            <a href="#BasicInfo" data-toggle="tab" id="BasicInfoTab">Basic Info</a>
+                                        </li>
+                                        <li>
+                                            <a href="#Selfie" data-toggle="tab" id="SelfieTab">Selfie (Age /Gender)</a>
+                                        </li>
+                                        <li>
+                                            <a href="#Height" data-toggle="tab" id="HeightTab">Height and Habits</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#Health" data-toggle="tab" id="HealthTab">Health Estimate</a>
+                                        </li>
+                                        <li>
+                                            <a href="#Verify" data-toggle="tab" id="VerifyTab">Verify</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="BasicInfo">
+                                        <div class="row">
+
+
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h4 class="info-text"> Let's start with the basic details. </h4>
+                                                <a href="http://localhost:5000/oauthgmail">
+                                                    <img src="assets/images/gmail.png" title="gmail" alt="gmail">
+                                                </a>
+                                            </div>
+
+                                            <div class="col-sm-6">
+
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">Name</i>
+                                                    </span>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Your Name</label>
+                                                        <input name="Name" type="text" name="Name" id="Name" value="shiva" class="form-control" x-webkit-speech>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">E-mail</i>
+                                                    </span>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Your Email</label>
+                                                        <input id="Email" value="sss@gmail.com" name="Email" type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="Selfie">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h4 class="info-text"> Age and Gender</h4>
+                                            </div>
+                                            <div class="col-sm-6">
+
+                                                <p id="rate">rate</p>
+                                                <video id="ageGenderVideo" autoplay></video>
+                                                <input type="button" id="predict-button" value="predict">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">Age</i>
+                                                    </span>
+                                                    <div class="form-group label-floating">
+
+                                                        <input name="Age" id="Age" value="25" name="Age" type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">Gender</i>
+                                                    </span>
+                                                    <div class="form-group label-floating">
+
+                                                        <input name="Gender" id="Gender" value="F" type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="Height">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h4 class="info-text"> Need your height to calculate BMI</h4>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">Height</i>
+                                                    </span>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Your Height</label>
+                                                        <input name="Height" id="HeightOfPerson" value="30" type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">Weight</i>
+                                                    </span>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Your Weight</label>
+                                                        <input id="Weight" name="Weight" value="90" type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">Smoking</i>
+                                                    </span>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Smoking</label>
+                                                        <select name="Smoker" id="Smoker" class="form-control">
+                                                            <option disabled=""></option>
+                                                            <option value="N" selected=""> I do not Smoker </option>
+                                                            <option value="Female"> Occasional Smoker </option>
+                                                            <option value="Y"> Regular Smoker </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">Alcohol </i>
+                                                    </span>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Alcohol Consumption</label>
+                                                        <select name="Drinker" id="Drinker" class="form-control">
+                                                            <option disabled=""></option>
+                                                            <option value="N" selected=""> I dont Drink Alcohol </option>
+                                                            <option value="Female"> Occasionally consume Alcoohol (Social Drinker) </option>
+                                                            <option value="Y"> Regular consumption of AlcoholSmoker </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="Habits">
+
+
+                                    </div>
+                                    <div class="tab-pane" id="Health">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div id="loading">
+                                                    Loading the model...
+                                                </div>
+
+                                                <div id="main" style="display:none">
+                                                    <video autoplay="true" id="video" style=" -moz-transform: scaleX(-1);
+                                                            -o-transform: scaleX(-1);
+                                                            -webkit-transform: scaleX(-1);
+                                                            transform: scaleX(-1);
+                                                            display: none;
+                                                            ">
+                                                    </video>
+                                                    <canvas id="output">
+                                                    </canvas></div>
+
+
+                                                <style>
+                                                    .dg.main .close-button.close-bottom{
+                                                            display: none;
+                                                        }
+                                                        </style>
+                                            </div>
+
+
+
+                                            <div class="col-sm-6">
+                                                <h4 class="info-text"> Health Index</h4>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Health</label>
+                                                    <select name="Fitness" id="Fitness" class="form-control">
+                                                        <option disabled=""></option>
+                                                        <option value="H" selected=""> Healthy </option>
+                                                        <option value="UH"> Normal Heath </option>
+                                                        <option value="NH"> Not Heathy </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane" id="Verify">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h4 class="info-text"> Please verify your details </h4>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">Name</i> :
+                                                        <b class="faq__question" id="NameVerify">John Doe </b>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">E-Mail</i> :
+                                                        <b class="faq__question" id="EmailVerify">JohnDoe@gmail.com </b>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">Gender</i> :
+                                                        <b class="faq__question" id="GenderVerify">Male </b>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">Age</i> :
+                                                        <b class="faq__question" id="AgeVerify">35 </b>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">Height</i> :
+                                                        <b class="faq__question" id="HeightOfPersonVerify">5.8 Inches </b>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">Weight</i> :
+                                                        <b class="faq__question" id="WeightVerify">5.8 Inches </b>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">Smoking</i> :
+                                                        <b class="faq__question" id="SmokerVerify">No </b>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">Alcohol Consumption </i> :
+                                                        <b class="faq__question" id="DrinkerVerify">No </b>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+                                                    <div class="input-group-addon">
+                                                        <i class="faq__answer">Health</i> :
+                                                        <b class="faq__question" id="FitnessVerify">very Healthy </b>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+
+                                                    </span>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wizard-footer">
+                                    <div class="pull-right">
+                                        <input type='button' class='btn btn-next btn-fill btn-danger btn-wd' name='next' value='Next' />
+                                        <!-- <input type='button' class='btn btn-finish btn-fill btn-danger btn-wd' name='finish' value='Get My Quote' /> -->
+
+                                        <a onclick="document.getElementById('myForm').submit();" class="btn btn-finish btn-fill btn-danger btn-wd"> Get Quote</a>
+                                    </div>
+                                    <div class="pull-left">
+                                        <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
+                                        <!-- <div class="footer-checkbox">
+                                            <div class="col-sm-12">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes">
+                                                    </label>
+                                                    Subscribe to our newsletter
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- wizard container -->
+                    </div>
+                </div>
+                <!-- row -->
+            </form>
+        </div>
+
+        <!--  big container -->
+        <footer class="footer">
+            <a href="#" target="_blank" class="link link--privacy">Privacy &amp; Terms</a>
+        </footer>
+
+    </div>
+
+<!--  materialwizard  Core JS Files   -->
+<script src="assets/materialwizard/assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+<script src="assets/materialwizard/assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/materialwizard/assets/js/jquery.bootstrap.js" type="text/javascript"></script>
+<!--  Plugin for the Wizard -->
+<script src="assets/materialwizard/assets/js/material-bootstrap-wizard.js"></script>
+
+<script type="text/javascript" src="assets/splash/js/main.js"></script>
+
+<!-- <script src="assets/materialwizard/assets/js/jquery.validate.min.js"></script> -->
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script type="text/javascript" src="assets/particles/particles.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.2/build/dat.gui.js"></script>
+<script src="https://unpkg.com/@tensorflow/tfjs"></script>
+<script src="https://unpkg.com/@tensorflow-models/posenet"></script>
+<script src="assets/posenet/demo_util.js"></script>
+<script src="assets/posenet/camera.js"></script>
+
+    <script type="text/javascript">
+        function getAndroidVersion() {
+            var ua = (navigator.userAgent).toLowerCase();
+            var match = ua.match(/android\s([0-9\.]*)/);
+            return match ? parseInt(match[1], 10) : false;
+        }
+
+        if (
+            (navigator.userAgent.indexOf('MSIE') > -1) ||
+            (navigator.userAgent.indexOf('Trident') > -1) ||
+            (navigator.userAgent.indexOf('Edge') > -1) ||
+            !(
+                typeof document.querySelector('.wizard__browser-warning').classList === 'object' &&
+                typeof document.querySelector('.wizard__browser-warning').classList.forEach === 'function'
+            )) {
+            document.querySelector('.wizard__browser-warning').style.display = 'block';
+            document.querySelector('.wizard__launch-skip-paragraph').style.display = 'none';
+            document.getElementById('start-tutorial-button').style.display = 'none';
+            document.getElementById('is-compatible').style.display = 'none';
+        }
+        if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) ||
+            /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0, 4))) {
+
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia ||
+                (getAndroidVersion() && getAndroidVersion() < 7)) {
+                document.getElementById('is-not-compatible').style.display = 'block';
+                document.getElementById('is-compatible').style.display = 'none';
+            }
+        }
+
+        function stopAgeCamera() {
+            $("#webcam").remove()
+        }
+
+
+        // get video dom element
+        const video = document.querySelector('video');
+
+        // request access to webcam
+        navigator.mediaDevices.getUserMedia({
+            video: {
+                width: 426,
+                height: 240
+            }
+        }).then((stream) => video.srcObject = stream);
+
+        // returns a frame encoded in base64
+
+        $("#predict-button").click(function(event) {
+
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0);
+            const data = canvas.toDataURL('image/png');
+
+
+            let message = {
+                image: data
+            }
+            console.log(message)
+            $.post("http://localhost:5000/predict", JSON.stringify(message), function(response) {
+                $("#age").text(response.age)
+                $("#gender").text(response.gender)
+                $("#rate").text(response.rate)
+                console.log(response)
+            })
+        });
+    </script>
+
+</body>
+
+</html>
