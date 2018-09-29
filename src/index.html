@@ -75,16 +75,36 @@
 
         <!-- Start: Splash Screen
         =================================== -->   
-        <!-- <div class="intro-content " style="z-index: 2200;">
-                    <img src="../assets/images/logo3d.png"   style="z-index: 2200;">
+        
+        <div class="intro-content " style="z-index: 2200;">
+        
+        
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+            
+              <iframe id="iframeYoutube" width="560" height="315"  src="https://www.youtube.com/embed/e80BbX05D7Y" frameborder="0" allowfullscreen></iframe> 
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+            <img src="../assets/images/logo3d.png"   style="z-index: 2200;">
                 </div>
         
-                <div class="buttonwrapper down-content" style="z-index: 2200;">
-                    <a href="#" class="fancy-button pop-onhover bg-gradient1   " style="z-index: 2200;">
+                <div  class="buttonwrapper down-content" style="z-index: 2200;">
+                    <a href="#" onclick="changeVideo('e80BbX05D7Y','privacy')"  class="fancy-button pop-onhover bg-gradient1   " style="z-index: 2200;">
                         <span>Buy A Policy</span>
                         
                     </a>
-                    <a href="#" class="fancy-button pop-onhover bg-gradient3 " style="z-index: 2200;">
+                    <a onclick="changeVideo('e80BbX05D7Y','myModal')" href="#" class="fancy-button pop-onhover bg-gradient3 " style="z-index: 2200;">
                         <span>Watch a Demo </span>
                     </a>
                     <h2 style="color: white" style="z-index: 2200;">In(sta)surance enables the customer to purchase an insurance policy in Smart, Instant and Quick manner in a highly-engaging process which will get all the relevant data of the customer in a non-intrusive manner.
@@ -94,11 +114,55 @@
         
             <div class="splash fade-in" id="particles-js"  style="z-index: 2000;">
         
-            </div> -->
+            </div>
 
 
        
 
+<div class="modal fade" id="privacy" tabindex="-1" role="dialog" aria-labelledby="privacyLabel">
+  <div class="modal-dialog " role="document" background:black>
+    <div class="modal-content container" style="background: black;width:auto;">
+      <div class="modal-body">
+      
+            <h3>Privacy Policy of In(sta)surance:</h3>
+            <p>In(sta)surance&nbsp;operates the&nbsp;website, which provides the SERVICE.</p>
+            <p>This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service, the&nbsp;In(sta)surance</p>
+            <p>If you choose to use our Service, then you agree to the collection and use of information in relation with this policy. The Personal Information that we collect are used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.</p>
+            <p>The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at&nbsp;Website, unless otherwise defined in this Privacy Policy.</p>
+            <h3>Information Collection and Use</h3>
+            <p>For a better experience while using our Service, we may require you to provide us with certain personally identifiable information, including but not limited to your name, photo, health information, phone number, and postal address. The information that we collect will be used to contact or identify you.</p>
+            <p>&nbsp;</p>
+            <h3>Service Providers</h3>
+            <p>We may employ third-party companies and individuals due to the following reasons:</p>
+            <ul>
+            <li>To facilitate our Service;</li>
+            <li>To provide the Service on our behalf;</li>
+            <li>To perform Service-related services; or</li>
+            <li>To assist us in analyzing how our Service is used.</li>
+            </ul>
+            <p>We want to inform our Service users that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.</p>
+            <h3>Security</h3>
+            <p>We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.</p>
+            <h3>Changes to This Privacy Policy</h3>
+            <p>We may update our Privacy Policy from time to time. Thus, we advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately, after they are posted on this page.</p>
+            <h3>Contact Us</h3>
+            <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.</p>
+            <h3>By clicking &ldquo;Submit&rdquo; I agree that:</h3>
+            <ul>
+            <li>I have read and accepted the User Agreement and Privacy Policy.</li>
+            <li>I may receive communications from the portal and can change my notification preferences in portal.</li>
+            <li>I am more than 18 years old.</li>
+            </ul>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
         <!-- Start: Navbar  Area
@@ -132,7 +196,7 @@
                 <!-- Right Side Navigation Button -->
                 <div class="navbar-collapse-right" >
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a class="btn-nav" href="#8">Get in Teach <i class="icon icon-arrow-right"></i></a></li>
+                        <li><a class="btn-nav" onclick="changeVideo('e80BbX05D7Y','privacy')"	 href="#8">Privacy Terms <i class="icon icon-arrow-right"></i></a></li>
                     </ul>
                 </div>
 
@@ -1490,6 +1554,22 @@ $.post("http://localhost:5000/predict", JSON.stringify(message), function(respon
 
  HTMLVideoElement.stop 
 </script> 
+
+<script>
+    $(document).ready(function(){
+  $("#myModal").on("hidden.bs.modal",function(){
+    $("#iframeYoutube").attr("src","#");
+  })
+})
+
+function changeVideo(vId,modelName){
+    if(modelName=='myModal') {
+  var iframe=document.getElementById("iframeYoutube");
+  iframe.src="https://www.youtube.com/embed/"+vId;
+}
+  $("#"+modelName).modal("show");
+}
+</script>
 </body>
 
 </html>
