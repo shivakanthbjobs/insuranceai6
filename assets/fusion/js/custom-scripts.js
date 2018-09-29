@@ -65,8 +65,10 @@
 
 
       afterLoad: function(anchorLink, index){
-
+        stopWebCamOnly('videoOutput')
+        stopWebCamOnly('posenetOutput')
         // console.log(index);
+  
 
         if( index !== 1 ) {
           $('.navbar-top-js').addClass('navbar-home');
@@ -103,7 +105,21 @@
           if( '#' + index === $(this).attr('href') ) {
             $(this).closest( navigationClickFullPage ).find('.active').removeClass('active');
             $(this).addClass('active');
-          }
+
+            if($(this).attr('href') =='#2'){
+              startWebCamOnly('video','videoOutput','videoContainer')
+            }             
+            else if($(this).attr('href') =='#4'){
+              startWebCamOnly('posenetVideo','posenetOutput','posenetContainer')
+            }
+            
+            else {
+
+            }
+
+
+
+          } 
           
         });
 
