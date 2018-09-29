@@ -75,7 +75,7 @@
 
         <!-- Start: Splash Screen
         =================================== -->   
-        <div class="intro-content " style="z-index: 2200;">
+        <!-- <div class="intro-content " style="z-index: 2200;">
                     <img src="../assets/images/logo3d.png"   style="z-index: 2200;">
                 </div>
         
@@ -94,7 +94,7 @@
         
             <div class="splash fade-in" id="particles-js"  style="z-index: 2000;">
         
-            </div>
+            </div> -->
 
 
        
@@ -178,8 +178,8 @@
                                             <div class="clearfix"></div>
     
                                             <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 overflow">
-                                                <div class="row single-form-outer">
-                                                        <form action = "http://localhost:5000/getQuote" method="post" class="dark-background single-form">
+                                                <div class="row single-form-outer dark-background single-form">
+                                                        <div class="dark-background single-form">
     
     
                                                         <div class="message col-xs-12">
@@ -238,7 +238,7 @@
                                                         <div class="col-xs-6">
                                                             <div class="input-outer ">
                                                                 <div class="group relative">
-                                                                    <input name="Age" value="35" class="contact-subject form-control" id="contact-subject" type="text"  required="">
+                                                                    <input name="Age" id="Age" class="contact-subject form-control" id="contact-subject" type="text"  required="">
                                                                     <label class="input-label" for="contact-subject">
                                                                         <span class="label-text">Age</span>
                                                                     </label>
@@ -248,7 +248,7 @@
                                                         <div class="col-xs-6">
                                                                 <div class="input-outer ">
                                                                     <div class="group relative">
-                                                                        <input name="Gender" value="M" class="contact-subject form-control" id="contact-subject" type="text"  required="">
+                                                                        <input name="Gender" id="Gender" class="contact-subject form-control" id="contact-subject" type="text"  required="">
                                                                         <label class="input-label" for="contact-subject">
                                                                             <span class="label-text">Gender</span>
                                                                         </label>
@@ -256,25 +256,26 @@
                                                                 </div>
                                                             </div>
                                                              
-                                                        <div class="col-xs-12" > 
+                                                        <div class="col-xs-6" > 
                                                                 <div class="input-outer ">
                                                                     <div class="group relative">
-                                                                            <select name="Smoker">
+                                                                            <select name="Smoker" id="Smoker" class="form-control">
                                                                                     <option disabled=""></option>
-                                                                                    <option value="Y" selected=""> Yes </option>
-                                                                                    <option value="N"> No </option>
-                                                                                </select>	
+                                                                                    <option value="N" selected=""> I do not Smoker </option>
+                                                                                    <option value="N"> Occasional Smoker </option>
+                                                                                    <option value="Y"> Regular Smoker </option>
+                                                                                </select>
                                                                         <label class="input-label" for="contact-message">
                                                                             <span class="label-text">Smoking </span>
                                                                         </label>
                                                                     </div>
                                                                 </div>
                                                             </div>  
-                                                            <div class="col-xs-12" > 
+                                                            <div class="col-xs-6" > 
                                                                     <div class="input-outer ">
                                                                         <div class="group relative">
                                                                                 <label >Health</label>
-                                                                                <select name="Fitness">
+                                                                                <select name="Health" class="form-control">
                                                                                     <option disabled="" selected=""></option>
                                                                                     <option value="H" selected> Healthy </option>
                                                                                     <option value="UnH"> Un- Healthy </option>
@@ -287,7 +288,7 @@
                                                                     </div>
                                                                 </div>  
     
-                                                        <div class="col-xs-12" > 
+                                                        <div class="col-xs-6" > 
                                                             <div class="input-outer ">
                                                                 <div class="group relative">
                                                                         <select name="Drinker"  id="Drinker" class="form-control">
@@ -306,11 +307,10 @@
                                                         <!-- Subject Button -->
                                                         <div class="btn-form text-center col-xs-12">
                                                             <div class="button-outer relative">
-                                                                    <input type = "submit" value = "submit" />
-                                                                <button class="btn btn-fill right-icon">GET IN TOUCH <i class="icon icon-arrow-right"></i></button>
+                                                                <button class="btn btn-fill right-icon">GET QUOTE <i class="icon icon-arrow-right"></i></button>
                                                             </div>
                                                         </div>
-                                                    </form>
+                                                    </div>
     
                                                 </div> <!-- /#testimonials-1 -->
                                             </div> <!-- End: .col-xs-12 -->
@@ -332,392 +332,7 @@
 
 
 
-                    <!--Start: 2nd Page Slider Section
-                        - SERVICES PAGE
-                    ====================================-->
-                    <div class=" section section-item combine-section hide-overlay overflow semi-dark-background" data-heading="">
 
-                        <div class="inner-container services-section " id="services">
-                             <div class="container">
-                                <div class="row">
-
-
-                                    <!-- Start: Section Heading -->
-                                    <div class="section-header col-sm-8 col-sm-offset-2">
-                                        <div class="overflow">
-                                            <div class="line-outer">
-                                                <div class="line"></div>
-                                            </div>
-                                        </div>
-                                        <div class="overflow">
-                                            <div class="section-heading-outer m-b-15">
-                                                <p class="sub-heading">OUR SERVICES</p>
-                                            </div>
-                                        </div>
-                                        <div class="overflow">
-                                            <div class="section-heading-outer p-l-50 p-r-50">
-                                                <h2 class="section-heading">Our team will take your business presence to new level</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End: Section Heading -->
-
-                                    <div class="clearfix"></div>
-
-                                    <!-- Start: Each Services Section -->
-                                    <div class="each-services-outer overflow section-separator sp-bottom">
-
-                                        <div class="each-services col-xs-4">
-                                            <div class="each-services-inner">
-
-                                                <div class="overflow">
-                                                    <div class="features-icon-outer">
-                                                        <i class="icon icon-icon-documents-alt features-icon"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="overflow">
-                                                    <div class="title-outer">
-                                                        <h4 class="title">Strategy.</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="overflow">
-                                                    <div class="pera-outer">
-                                                        <p>Ship it user story iterate engaging co-working intuitive pitch deck hacker prototype SpaceTeam user centered design big data.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="overflow m-t-30">
-                                                    <div class="btn-form-outer">  <!-- Button Area -->
-                                                        <a href="#services-1" class="btn right-icon btn-services btn-mask">LEARN MORE <i class="icon icon-arrow-right"></i></a>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div> <!-- End: .each-services -->
-
-                                        <div class="each-services col-xs-4">
-                                            <div class="each-services-inner">
-
-                                                <div class="overflow">
-                                                    <div class="features-icon-outer">
-                                                        <i class="icon icon-icon-pencil-edit-alt features-icon"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="overflow">
-                                                    <div class="title-outer">
-                                                        <h4 class="title">Branding.</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="overflow">
-                                                    <div class="pera-outer">
-                                                        <p>Ship it user story iterate engaging co-working intuitive pitch deck hacker prototype SpaceTeam user centered design big data.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="overflow m-t-30">
-                                                    <div class="btn-form-outer">  <!-- Button Area -->
-                                                        <a href="#services-2" class="btn right-icon btn-services btn-mask">LEARN MORE <i class="icon icon-arrow-right"></i></a>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div> <!-- End: .each-services -->
-
-                                        <div class="each-services col-xs-4">
-                                            <div class="each-services-inner">
-
-                                                <div class="overflow">
-                                                    <div class="features-icon-outer">
-                                                        <i class="icon icon-icon-pens features-icon"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="overflow">
-                                                    <div class="title-outer">
-                                                        <h4 class="title">Design.</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="overflow">
-                                                    <div class="pera-outer">
-                                                        <p>Ship it user story iterate engaging co-working intuitive pitch deck hacker prototype SpaceTeam user centered design big data.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="overflow m-t-30">
-                                                    <div class="btn-form-outer">  <!-- Button Area -->
-                                                        <a href="#services-3" class="btn right-icon btn-services btn-mask">LEARN MORE <i class="icon icon-arrow-right"></i></a>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div> <!-- End: .each-services -->
-
-                                    </div>
-                                    <!-- End: Each Services Section -->
-
-
-                                    <!-- Start: Each Services Part Full Detail -->
-                                    <div class="services-full-view">
-
-                                        <div class="services-details" id="services-1">
-                                            <div class="services-inner relative overflow">
-
-                                                <!-- Button Area -->
-                                                <div class="back-button-outer overflow">
-                                                    <a href="#" class="btn btn-services-back btn-mask"><i class="icon icon-arrow-carrot-left-alt2"></i></a>
-                                                </div>
-
-                                                <!-- Features Image -->
-                                                <div class="col-xs-6">
-                                                    <div class="features-image-outer">
-                                                        <div class="image-outer">
-                                                            <img src="assets/fusion/images/services-1.jpg" alt="Services Image" class="img-responsive">
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- End: Features Image Area -->
-
-                                                <!-- Content Area -->
-                                                <div class="col-xs-6">
-                                                    <div class="services-content-outer">
-
-                                                        <div class="line-outer">
-                                                            <div class="line"></div>
-                                                        </div>
-
-                                                        <div class="section-title-outer overflow">
-                                                            <h3 class="section-title">Strategy.</h3>
-                                                        </div>
-
-                                                        <div class="overflow m-b-15">
-                                                            <div class="title-outer">
-                                                                <h6 class="title relative">PERFECT STARATEGY FORYOUR BRAND</h6>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="overflow">
-                                                            <div class="pera-outer">
-                                                                <p>Chances are unless you are very lucky you will go thru many different relationships before you find your special someone. Finding your sole mate is like gambling. In poker and blackjack you may have to play dozens of hands until you get a winning hand, and it is the same with relationships.</p>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="overflow">
-                                                            <div class="pera-outer">
-
-                                                                <p>During your life you will probably meet some people who seem like they may be the one, or that they are closers, and I thought everything was great, until I started to seriously consider getting married.</p>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="overflow m-t-15">
-                                                            <div class="list-outer">
-                                                                <div class="list col-sm-6">
-                                                                    <div class="row">
-                                                                        <i class="icon icon-icon-ribbon"></i> Award-winning Strategist
-                                                                    </div>
-                                                                </div>
-                                                                <div class="list col-sm-6">
-                                                                    <div class="row">
-                                                                        <i class="icon icon-icon-search-alt"></i> Extended Research
-                                                                    </div>
-                                                                </div>
-                                                                <div class="list col-sm-6">
-                                                                    <div class="row">
-                                                                        <i class="icon icon-icon-document"></i> Bullet-prof Planning
-                                                                    </div>
-                                                                </div>
-                                                                <div class="list col-sm-6">
-                                                                    <div class="row">
-                                                                        <i class="icon icon-icon-like-alt"></i> Trusted by Thousands
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="overflow">
-                                                            <div class="btn-outer m-t-50">
-                                                                <a href="#8" class="btn btn-fill right-icon">GET IN TOUCH <i class="icon icon-arrow-right"></i></a>
-                                                            </div>
-                                                        </div>
-
-                                                    </div> <!-- End: .services-content-outer -->
-                                                </div> <!-- End: Content Area -->
-                                            </div> <!-- End: .services-inner -->
-                                        </div> <!-- End: .services-details -->
-
-                                        <div class="services-details" id="services-2">
-                                            <div class="services-inner relative overflow">
-
-                                                <!-- Button Area -->
-                                                <div class="back-button-outer overflow">
-                                                    <a href="#" class="btn btn-services-back btn-mask"><i class="icon icon-arrow-carrot-left-alt2"></i></a>
-                                                </div>
-
-                                                <!-- Features Image -->
-                                                <div class="col-xs-6">
-                                                    <div class="features-image-outer">
-                                                        <div class="image-outer">
-                                                            <img src="assets/fusion/images/services-1.jpg" alt="Services Image" class="img-responsive">
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- End: Features Image Area -->
-
-                                                <!-- Content Area -->
-                                                <div class="col-xs-6">
-                                                    <div class="services-content-outer">
-
-                                                        <div class="line-outer">
-                                                            <div class="line"></div>
-                                                        </div>
-
-                                                        <div class="section-title-outer overflow">
-                                                            <h3 class="section-title">Strategy.</h3>
-                                                        </div>
-
-                                                        <div class="overflow m-b-15">
-                                                            <div class="title-outer">
-                                                                <h6 class="title relative">PERFECT STARATEGY FORYOUR BRAND</h6>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="overflow">
-                                                            <div class="pera-outer">
-                                                                <p>Chances are unless you are very lucky you will go thru many different relationships before you find your special someone. Finding your sole mate is like gambling. In poker and blackjack you may have to play dozens of hands until you get a winning hand, and it is the same with relationships.</p>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="overflow">
-                                                            <div class="pera-outer">
-
-                                                                <p>During your life you will probably meet some people who seem like they may be the one, or that they are closers, and I thought everything was great, until I started to seriously consider getting married.</p>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="overflow m-t-15">
-                                                            <div class="list-outer">
-                                                                <div class="list col-sm-6">
-                                                                    <div class="row">
-                                                                        <i class="icon icon-icon-ribbon"></i> Award-winning Strategist
-                                                                    </div>
-                                                                </div>
-                                                                <div class="list col-sm-6">
-                                                                    <div class="row">
-                                                                        <i class="icon icon-icon-search-alt"></i> Extended Research
-                                                                    </div>
-                                                                </div>
-                                                                <div class="list col-sm-6">
-                                                                    <div class="row">
-                                                                        <i class="icon icon-icon-document"></i> Bullet-prof Planning
-                                                                    </div>
-                                                                </div>
-                                                                <div class="list col-sm-6">
-                                                                    <div class="row">
-                                                                        <i class="icon icon-icon-like-alt"></i> Trusted by Thousands
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="overflow">
-                                                            <div class="btn-outer m-t-50">
-                                                                <a href="#8" class="btn btn-fill right-icon">GET IN TOUCH <i class="icon icon-arrow-right"></i></a>
-                                                            </div>
-                                                        </div>
-
-                                                    </div> <!-- End: .services-content-outer -->
-                                                </div> <!-- End: Content Area -->
-                                            </div> <!-- End: .services-inner -->
-                                        </div> <!-- End: .services-details -->
-
-                                        <div class="services-details" id="services-3">
-                                            <div class="services-inner relative overflow">
-
-                                                <!-- Button Area -->
-                                                <div class="back-button-outer overflow">
-                                                    <a href="#" class="btn btn-services-back btn-mask"><i class="icon icon-arrow-carrot-left-alt2"></i></a>
-                                                </div>
-
-                                                <!-- Features Image -->
-                                                <div class="col-xs-6">
-                                                    <div class="features-image-outer">
-                                                        <div class="image-outer">
-                                                            <img src="assets/fusion/images/services-1.jpg" alt="Services Image" class="img-responsive">
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- End: Features Image Area -->
-
-                                                <!-- Content Area -->
-                                                <div class="col-xs-6">
-                                                    <div class="services-content-outer">
-
-                                                        <div class="line-outer">
-                                                            <div class="line"></div>
-                                                        </div>
-
-                                                        <div class="section-title-outer overflow">
-                                                            <h3 class="section-title">Strategy.</h3>
-                                                        </div>
-
-                                                        <div class="overflow m-b-15">
-                                                            <div class="title-outer">
-                                                                <h6 class="title relative">PERFECT STARATEGY FORYOUR BRAND</h6>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="overflow">
-                                                            <div class="pera-outer">
-                                                                <p>Chances are unless you are very lucky you will go thru many different relationships before you find your special someone. Finding your sole mate is like gambling. In poker and blackjack you may have to play dozens of hands until you get a winning hand, and it is the same with relationships.</p>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="overflow">
-                                                            <div class="pera-outer">
-
-                                                                <p>During your life you will probably meet some people who seem like they may be the one, or that they are closers, and I thought everything was great, until I started to seriously consider getting married.</p>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="overflow m-t-15">
-                                                            <div class="list-outer">
-                                                                <div class="list col-sm-6">
-                                                                    <div class="row">
-                                                                        <i class="icon icon-icon-ribbon"></i> Award-winning Strategist
-                                                                    </div>
-                                                                </div>
-                                                                <div class="list col-sm-6">
-                                                                    <div class="row">
-                                                                        <i class="icon icon-icon-search-alt"></i> Extended Research
-                                                                    </div>
-                                                                </div>
-                                                                <div class="list col-sm-6">
-                                                                    <div class="row">
-                                                                        <i class="icon icon-icon-document"></i> Bullet-prof Planning
-                                                                    </div>
-                                                                </div>
-                                                                <div class="list col-sm-6">
-                                                                    <div class="row">
-                                                                        <i class="icon icon-icon-like-alt"></i> Trusted by Thousands
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="overflow">
-                                                            <div class="btn-outer m-t-50">
-                                                                <a href="#8" class="btn btn-fill right-icon">GET IN TOUCH <i class="icon icon-arrow-right"></i></a>
-                                                            </div>
-                                                        </div>
-
-                                                    </div> <!-- End: .services-content-outer -->
-                                                </div> <!-- End: Content Area -->
-                                            </div> <!-- End: .services-inner -->
-                                        </div> <!-- End: .services-details -->
-
-                                    </div>
-                                    <!-- End: Each Services Part Full Detail -->
-
-                                </div> <!-- End: .row -->
-                            </div> <!-- End: .container -->
-                        </div> <!-- End: . -->
-
-                    </div>
-                    <!--End: 2nd Page Slider Section
-                        - SERVICES PAGE
-                    ====================================-->
 
 
 
@@ -731,7 +346,21 @@
                                 <div class="col-xs-10 col-xs-offset-1">
                                     <div class="row">
                                         <div class="image text-center">
-                                            <img src="assets/fusion/images/features-1.jpg" alt="Features Image">
+                                                <div id="loading">
+                                                        Loading the model...
+                                                    </div>
+
+                                                    <div id="videoContainer" style="display:none">
+                                                        <video autoplay="true" id="video" style=" -moz-transform: scaleX(-1);
+                                                        -o-transform: scaleX(-1);
+                                                        -webkit-transform: scaleX(-1);
+                                                        transform: scaleX(-1);
+                                                        display: none;
+                                                        ">
+                                                        </video>
+                                                        <canvas id="videoOutput">
+                                            
+                                                    </canvas></div>
                                         </div>
                                     </div>
                                 </div>
@@ -969,7 +598,25 @@
                                 <div class="col-xs-10 col-xs-offset-1">
                                     <div class="row">
                                         <div class="image text-center">
-                                            <img src="assets/fusion/images/3features-1.jpg" alt="Features Image">
+                                                <div id="loading">
+                                                        Loading the model...
+                                                    </div>
+                                                   
+                                                    <div id="main" style="display:none">
+                                                        <video autoplay="true" id="video" style=" -moz-transform: scaleX(-1);
+                                                        -o-transform: scaleX(-1);
+                                                        -webkit-transform: scaleX(-1);
+                                                        transform: scaleX(-1);
+                                                        display: none;
+                                                        ">
+                                                        </video>
+                                                        <canvas id="output">
+                                                    </canvas></div>
+                                                    <style>
+                                                    .dg.main .close-button.close-bottom{
+                                                        display: none;
+                                                    }
+                                                    </style>
                                         </div>
                                     </div>
                                 </div>
@@ -1079,324 +726,6 @@
 
 
 
-                    <!--Start: 6th Page Slider Section
-                        - TESTIMONIAL PAGE
-                    ====================================-->
-                    <div class=" section section-item combine-section hide-overlay semi-dark-background" data-heading="">
-                        <div class="inner-container testimonial-section semi-dark-background" id="testimonial">
-                             <div class="container">
-                                <div class="row section-separator sp-bottom">
-
-                                    <!-- Start: Section Heading -->
-                                    <div class="section-header col-sm-10 col-sm-offset-1">
-                                        <div class="overflow">
-                                            <div class="line-outer">
-                                                <div class="line"></div>
-                                            </div>
-                                        </div>
-                                        <div class="overflow">
-                                            <div class="section-heading-outer m-b-15">
-                                                <p class="sub-heading">Testimonials</p>
-                                            </div>
-                                        </div>
-                                        <div class="overflow">
-                                            <div class="section-heading-outer p-l-50 p-r-50">
-                                                <h2 class="section-heading">We have worked with some amazing companies around the world</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End: Section Heading -->
-
-                                    <div class="clearfix"></div>
-
-                                    <div class="col-xs-12 m-t-30">
-                                        <div class="overflow text-center">
-
-                                            <!-- OUR CLIENTS LOGO -->
-                                            <ul class="nav client-logo">
-                                                <li><img src="assets/fusion/images/clients-logo/1.png" alt=""></li>
-                                                <li><img src="assets/fusion/images/clients-logo/2.png" alt=""></li>
-                                                <li><img src="assets/fusion/images/clients-logo/3.png" alt=""></li>
-                                                <li><img src="assets/fusion/images/clients-logo/4.png" alt=""></li>
-                                                <li><img src="assets/fusion/images/clients-logo/5.png" alt=""></li>
-                                                <li><img src="assets/fusion/images/clients-logo/6.png" alt=""></li>
-                                                <li><img src="assets/fusion/images/clients-logo/7.png" alt=""></li>
-                                            </ul>
-
-                                        </div> <!-- End: .overflow -->
-                                    </div> <!-- End: .col-xs-12 -->
-
-                                    <div class="col-sm-8 col-sm-offset-2 overflow">
-                                        <div class="row testimonial-container">
-                                            <div class="testimonial-wrapper owl-carousel">
-
-                                                <!-- SLIDES -->
-                                                <div class="item">
-
-                                                    <div class="overflow">
-                                                        <div class="image-outer">
-                                                            <img src="assets/fusion/images/testimonial/1.jpg">
-                                                        </div>
-                                                    </div>
-                                                    <div class="overflow m-t-40">
-                                                        <div class="text-outer">
-                                                            <blockquote>“These cartridges can be replaced by the printer ink of similar brand. Compatible Inkjet Cartridge will help you to make extra-ordinary savings with money back guarantee. As soon as the cartridge gets empty the ink that it contains begins to dry”</blockquote>
-                                                        </div>
-                                                    </div>
-                                                    <div class="overflow m-t-40 m-b-30">
-                                                        <div class="profile-outer">
-                                                            <span class="name">ANTHONY WATKINS</span>
-                                                            <span class="position">VP of Product, VISA</span>
-                                                        </div>
-                                                    </div>
-
-                                                </div> <!-- End: .swiper-slider -->
-                                                <div class="item">
-
-                                                    <div class="overflow">
-                                                        <div class="image-outer">
-                                                            <img src="assets/fusion/images/testimonial/2.jpg">
-                                                        </div>
-                                                    </div>
-                                                    <div class="overflow m-t-40">
-                                                        <div class="text-outer">
-                                                            <blockquote>“These cartridges can be replaced by the printer ink of similar brand. Compatible Inkjet Cartridge will help you to make extra-ordinary savings with money back guarantee. As soon as the cartridge gets empty the ink that it contains begins to dry”</blockquote>
-                                                        </div>
-                                                    </div>
-                                                    <div class="overflow m-t-40 m-b-30">
-                                                        <div class="profile-outer">
-                                                            <span class="name">ANTHONY WATKINS</span>
-                                                            <span class="position">VP of Product, VISA</span>
-                                                        </div>
-                                                    </div>
-
-                                                </div> <!-- End: .swiper-slider -->
-                                                <div class="item">
-
-                                                    <div class="overflow">
-                                                        <div class="image-outer">
-                                                            <img src="assets/fusion/images/testimonial/2.jpg">
-                                                        </div>
-                                                    </div>
-                                                    <div class="overflow m-t-40">
-                                                        <div class="text-outer">
-                                                            <blockquote>“These cartridges can be replaced by the printer ink of similar brand. Compatible Inkjet Cartridge will help you to make extra-ordinary savings with money back guarantee. As soon as the cartridge gets empty the ink that it contains begins to dry”</blockquote>
-                                                        </div>
-                                                    </div>
-                                                    <div class="overflow m-t-40 m-b-30">
-                                                        <div class="profile-outer">
-                                                            <span class="name">ANTHONY WATKINS</span>
-                                                            <span class="position">VP of Product, VISA</span>
-                                                        </div>
-                                                    </div>
-
-                                                </div> <!-- End: .swiper-slider -->
-
-                                            </div> <!-- End: .swiper-wrapper -->
-                                        </div> <!-- End: .testimonials-container -->
-                                    </div> <!-- End: .col-xs-12 -->
-
-                                </div> <!-- End: .row -->
-                            </div> <!-- End: .container -->
-                        </div> <!-- End: .inner-container -->
-
-                    </div>
-                    <!--End: 6th Page Slider Section
-                        - TESTIMONIAL PAGE
-                    ====================================-->
-
-
-
-                    <!--Start: 7th Page Slider Section
-                        - OUR TEAM PAGE
-                    ====================================-->
-                    <div class=" section section-item combine-section hide-overlay overflow dark-background" data-heading="">
-                        <div class="inner-container team-member dark-background" id="team">
-                            <div class="container">
-                                <div class="row section-separator sp-bottom">
-
-                                    <!-- Start: Section Heading -->
-                                    <div class="section-header col-sm-10 col-sm-offset-1">
-                                        <div class="overflow">
-                                            <div class="line-outer">
-                                                <div class="line"></div>
-                                            </div>
-                                        </div>
-                                        <div class="overflow">
-                                            <div class="section-heading-outer m-b-15">
-                                                <p class="sub-heading">OUR TEAM</p>
-                                            </div>
-                                        </div>
-                                        <div class="overflow">
-                                            <div class="section-heading-outer p-l-50 p-r-50">
-                                                <h2 class="section-heading">Our Amazing Team</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End: Section Heading -->
-
-                                    <div class="clearfix"></div>
-
-                                    <div class="col-sm-12 grid-item m-t-30">
-                                        <div class="row">
-
-                                            <div class="col-md-3 col-xs-6 each-item overflow text-center relative">
-                                                <div class="item-inner overflow absolute">
-
-                                                    <div class="profile-outer center">
-                                                        <div class="profile-image">
-                                                            <img src="assets/fusion/images/testimonial/2.jpg" alt="Team Member" class="">
-                                                        </div>
-                                                        <div class="profile-content">
-                                                            <span class="name">ANTHONY WATKINS</span>
-                                                            <span class="position">VP of Product, VISA</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="content-detail">
-                                                        <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
-                                                    </div>
-
-                                                </div>
-                                            </div> <!-- End: .each-item -->
-                                            <div class="col-md-3 col-xs-6 each-item overflow text-center relative">
-                                                <div class="item-inner overflow absolute">
-
-                                                    <div class="profile-outer center">
-                                                        <div class="profile-image">
-                                                            <img src="assets/fusion/images/testimonial/3.jpg" alt="Team Member" class="">
-                                                        </div>
-                                                        <div class="profile-content">
-                                                            <span class="name">ANTHONY WATKINS</span>
-                                                            <span class="position">VP of Product, VISA</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="content-detail">
-                                                        <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
-                                                    </div>
-
-                                                </div>
-                                            </div> <!-- End: .each-item -->
-                                            <div class="col-md-3 col-xs-6 each-item overflow text-center relative">
-                                                <div class="item-inner overflow absolute">
-
-                                                    <div class="profile-outer center">
-                                                        <div class="profile-image">
-                                                            <img src="assets/fusion/images/testimonial/1.jpg" alt="Team Member" class="">
-                                                        </div>
-                                                        <div class="profile-content">
-                                                            <span class="name">ANTHONY WATKINS</span>
-                                                            <span class="position">VP of Product, VISA</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="content-detail">
-                                                        <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
-                                                    </div>
-
-                                                </div>
-                                            </div> <!-- End: .each-item -->
-                                            <div class="col-md-3 col-xs-6 each-item overflow text-center relative">
-                                                <div class="item-inner overflow absolute">
-
-                                                    <div class="profile-outer center">
-                                                        <div class="profile-image">
-                                                            <img src="assets/fusion/images/testimonial/4.jpg" alt="Team Member" class="">
-                                                        </div>
-                                                        <div class="profile-content">
-                                                            <span class="name">ANTHONY WATKINS</span>
-                                                            <span class="position">VP of Product, VISA</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="content-detail">
-                                                        <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
-                                                    </div>
-
-                                                </div>
-                                            </div> <!-- End: .each-item -->
-                                            <div class="col-md-3 col-xs-6 each-item overflow text-center relative">
-                                                <div class="item-inner overflow absolute">
-
-                                                    <div class="profile-outer center">
-                                                        <div class="profile-image">
-                                                            <img src="assets/fusion/images/testimonial/5.jpg" alt="Team Member" class="">
-                                                        </div>
-                                                        <div class="profile-content">
-                                                            <span class="name">ANTHONY WATKINS</span>
-                                                            <span class="position">VP of Product, VISA</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="content-detail">
-                                                        <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
-                                                    </div>
-
-                                                </div>
-                                            </div> <!-- End: .each-item -->
-                                            <div class="col-md-3 col-xs-6 each-item overflow text-center relative">
-                                                <div class="item-inner overflow absolute">
-
-                                                    <div class="profile-outer center">
-                                                        <div class="profile-image">
-                                                            <img src="assets/fusion/images/testimonial/6.jpg" alt="Team Member" class="">
-                                                        </div>
-                                                        <div class="profile-content">
-                                                            <span class="name">ANTHONY WATKINS</span>
-                                                            <span class="position">VP of Product, VISA</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="content-detail">
-                                                        <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
-                                                    </div>
-
-                                                </div>
-                                            </div> <!-- End: .each-item -->
-                                            <div class="col-md-3 col-xs-6 each-item overflow text-center relative">
-                                                <div class="item-inner overflow absolute">
-
-                                                    <div class="profile-outer center">
-                                                        <div class="profile-image">
-                                                            <img src="assets/fusion/images/testimonial/7.jpg" alt="Team Member" class="">
-                                                        </div>
-                                                        <div class="profile-content">
-                                                            <span class="name">ANTHONY WATKINS</span>
-                                                            <span class="position">VP of Product, VISA</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="content-detail">
-                                                        <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
-                                                    </div>
-
-                                                </div>
-                                            </div> <!-- End: .each-item -->
-                                            <div class="col-md-3 col-xs-6 each-item overflow text-center relative">
-                                                <div class="item-inner overflow absolute">
-
-                                                    <div class="profile-outer center">
-                                                        <div class="profile-image">
-                                                            <img src="assets/fusion/images/testimonial/8.jpg" alt="Team Member" class="">
-                                                        </div>
-                                                        <div class="profile-content">
-                                                            <span class="name">ANTHONY WATKINS</span>
-                                                            <span class="position">VP of Product, VISA</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="content-detail">
-                                                        <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
-                                                    </div>
-
-                                                </div>
-                                            </div> <!-- End: .each-item -->
-
-
-                                        </div>
-                                    </div> <!-- End: .col-xs-12 -->
-
-                                </div> <!-- End: .row -->
-                            </div> <!-- End: .container -->
-                        </div> <!-- End: .inner-container -->
-
-                    </div>
-                    <!--End: 7th Page Slider Section
-                        - OUR TEAM PAGE
-                    ====================================-->
 
 
 
@@ -1412,19 +741,15 @@
 
                                         <!-- Start: Section Heading -->
                                         <div class="section-header col-sm-10 col-sm-offset-1">
-                                            <div class="overflow">
-                                                <div class="line-outer">
-                                                    <div class="line"></div>
-                                                </div>
-                                            </div>
+
                                             <div class="overflow">
                                                 <div class="section-heading-outer m-b-15">
-                                                    <p class="sub-heading">CONTACT US</p>
+                                                    <p class="sub-heading">VERIFY </p>
                                                 </div>
                                             </div>
                                             <div class="overflow">
                                                 <div class="section-heading-outer p-l-50 p-r-50">
-                                                    <h2 class="section-heading">Let's talk about the project</h2>
+                                                    <h2 class="section-heading">Please verify the quote before I get the your quote</h2>
                                                 </div>
                                             </div>
                                         </div>
@@ -1434,78 +759,150 @@
 
                                         <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 overflow">
                                             <div class="row single-form-outer">
-
-                                                <form id="contact-form" method="post" class="dark-background single-form" action="php/sendmail.php">
-
-                                                    <div class="message col-xs-12">
-                                                        <p class="email-loading"><img src="assets/fusion/images/loading.gif" alt="">&nbsp;&nbsp;&nbsp;Sending...</p>
-                                                        <p class="email-success"><i class="icon icon-icon-check-alt2"></i> Your quote has successfully been sent.</p>
-                                                        <p class="email-failed"><i class="icon icon-icon-close-alt2"></i> Something went wrong!</p>
-                                                    </div>
-
-
-                                                    <div class="col-xs-6">
-                                                        <div class="input-outer">
-                                                            <div class="group relative">
-                                                                <input name="name" class="contact-name form-control" id="contact-name" type="text"  required="">
-                                                                <label class="input-label" for="contact-name">
-                                                                    <span class="label-text">YOUR NAME</span>
-                                                                </label>
+                                                    <form action = "http://localhost:5000/getQuote" method="POST"  class="dark-background single-form">
+    
+    
+                                                        <div class="message col-xs-12">
+                                                            <p class="email-loading"><img src="assets/fusion/images/loading.gif" alt="">&nbsp;&nbsp;&nbsp;Sending...</p>
+                                                            <p class="email-success"><i class="icon icon-icon-check-alt2"></i> Your quote has successfully been sent.</p>
+                                                            <p class="email-failed"><i class="icon icon-icon-close-alt2"></i> Something went wrong!</p>
+                                                        </div>
+    
+    
+                                                        <div class="col-xs-6">
+                                                            <div class="input-outer">
+                                                                <div class="group relative">
+                                                                    <input name="Name" value="shiav" class="contact-name form-control" id="contact-name" type="text"  required="">
+                                                                    <label class="input-label" for="contact-name">
+                                                                        <span class="label-text">YOUR NAME</span>
+                                                                    </label>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-
-                                                    <div class="col-xs-6">
-                                                        <div class="input-outer ">
-                                                            <div class="group relative">
-                                                                <input name="name" class="contact-email form-control" id="contact-email" type="email"  required="">
-                                                                <label class="input-label" for="contact-email">
-                                                                    <span class="label-text">YOUR EMAIL</span>
-                                                                </label>
+    
+                                                        <div class="col-xs-6">
+                                                            <div class="input-outer ">
+                                                                <div class="group relative">
+                                                                    <input name="Email" value="asdf@asdf.com" class="contact-email form-control" id="contact-email" type="email"  required="">
+                                                                    <label class="input-label" for="contact-email">
+                                                                        <span class="label-text">YOUR EMAIL</span>
+                                                                    </label>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-
-                                                    <div class="col-xs-6">
-                                                        <div class="input-outer ">
-                                                            <div class="group relative">
-                                                                <input name="name" class="contact-company form-control" id="contact-company" type="text"  required="">
-                                                                <label class="input-label" for="contact-company">
-                                                                    <span class="label-text">COMPANY</span>
-                                                                </label>
+    
+                                                        <div class="col-xs-6">
+                                                            <div class="input-outer ">
+                                                                <div class="group relative">
+                                                                    <input name="Height" value="90" class="contact-company form-control" id="contact-company" type="text"  required="">
+                                                                    <label class="input-label" for="contact-company">
+                                                                        <span class="label-text">Height</span>
+                                                                    </label>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-
-                                                    <div class="col-xs-6">
-                                                        <div class="input-outer ">
-                                                            <div class="group relative">
-                                                                <input name="name" class="contact-subject form-control" id="contact-subject" type="text"  required="">
-                                                                <label class="input-label" for="contact-subject">
-                                                                    <span class="label-text">SUBJECT</span>
-                                                                </label>
+    
+                                                        <div class="col-xs-6">
+                                                            <div class="input-outer ">
+                                                                <div class="group relative">
+                                                                    <input name="Weight" value="90" class="contact-subject form-control" id="contact-subject" type="text"  required="">
+                                                                    <label class="input-label" for="contact-subject">
+                                                                        <span class="label-text">Weight</span>
+                                                                    </label>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
 
-                                                    <div class="col-xs-12">
-                                                        <div class="input-outer ">
-                                                            <div class="group relative">
-                                                                <textarea class="contact-message form-control" id="contact-message" rows="3" required=""></textarea>
-                                                                <label class="input-label" for="contact-message">
-                                                                    <span class="label-text">YOUR MESSAGE</span>
-                                                                </label>
+                                                        <div class="col-xs-6">
+                                                                <div class="input-outer ">
+                                                                    <div class="group relative">
+                                                                        <input id="rate" name="SmokingRateFactor"  class="contact-subject form-control" id="contact-subject" type="text"  required="">
+                                                                        <label class="input-label" for="contact-subject">
+                                                                            <span class="label-text">SmokingRateFactor</span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                               
+    
+                                                        <div class="col-xs-6">
+                                                            <div class="input-outer ">
+                                                                <div class="group relative">
+                                                                    <input name="Age" value="35" class="contact-subject form-control" id="contact-subject" type="text"  required="">
+                                                                    <label class="input-label" for="contact-subject">
+                                                                        <span class="label-text">Age</span>
+                                                                    </label>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-
-                                                    <!-- Subject Button -->
-                                                    <div class="btn-form text-center col-xs-12">
-                                                        <div class="button-outer relative">
-                                                            <button class="btn btn-fill right-icon">GET IN TOUCH <i class="icon icon-arrow-right"></i></button>
+                                                        <div class="col-xs-6">
+                                                                <div class="input-outer ">
+                                                                    <div class="group relative">
+                                                                        <input name="Gender" value="M" class="contact-subject form-control" id="contact-subject" type="text"  required="">
+                                                                        <label class="input-label" for="contact-subject">
+                                                                            <span class="label-text">Gender</span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                             
+                                                        <div class="col-xs-6" > 
+                                                                <div class="input-outer ">
+                                                                    <div class="group relative">
+                                                                            <select name="Smoker" id="Smoker" class="form-control">
+                                                                                    <option disabled=""></option>
+                                                                                    <option value="N" selected=""> I do not Smoke </option>
+                                                                                    <option value="N"> Occasional Smoker </option>
+                                                                                    <option value="Y"> Regular Smoker </option>
+                                                                                </select>
+                                                                                                <label class="input-label" for="contact-message">
+                                                                            <span class="label-text">Smoking </span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>  
+                                                            <div class="col-xs-6" > 
+                                                                    <div class="input-outer ">
+                                                                        <div class="group relative">
+                                                                                <label >Health</label>
+                                                                                <select name="Health" class="form-control">
+                                                                                    <option disabled="" selected=""></option>
+                                                                                    <option value="H" selected> Healthy </option>
+                                                                                    <option value="UnH"> Un- Healthy </option>
+                                                                                    <option value="MH"> Medium Heathy </option>
+                                                                                </select>
+                                                                            <label class="input-label" for="contact-message">
+                                                                                <span class="label-text">Health </span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>  
+    
+                                                        <div class="col-xs-6" > 
+                                                            <div class="input-outer ">
+                                                                <div class="group relative">
+                                                                        <select name="Drinker"  id="Drinker" class="form-control">
+                                                                                <option disabled=""></option>
+                                                                                <option value="N" selected=""> I dont Drink Alcohol </option>
+                                                                                <option value="Female"> Occasionally consume Alcoohol (Social Drinker) </option>
+                                                                                <option value="Y"> Regular consumption of AlcoholSmoker </option>
+                                                                            </select>
+                                                                    <label class="input-label" for="contact-message">
+                                                                        <span class="label-text">Alcohol Consumption</span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </form>
+    
+                                                        <!-- Subject Button -->
+                                                        <div class="btn-form text-center col-xs-12">
+                                                            <div class="button-outer relative">
+                                                                <button class="btn btn-fill right-icon">GET QUOTE <i class="icon icon-arrow-right"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+    
+                                               
 
                                             </div> <!-- /#testimonials-1 -->
                                         </div> <!-- End: .col-xs-12 -->
@@ -1619,6 +1016,198 @@
                         - CONTACT US PAGE
                     ====================================-->
 
+               
+                    <!--Start: 7th Page Slider Section
+                        - OUR TEAM PAGE
+                    ====================================-->
+                    <div class=" section section-item combine-section hide-overlay overflow dark-background" data-heading="">
+                            <div class="inner-container team-member dark-background" id="team">
+                                <div class="container">
+                                    <div class="row section-separator sp-bottom">
+    
+                                        <!-- Start: Section Heading -->
+                                        <div class="section-header col-sm-10 col-sm-offset-1">
+                                            <div class="overflow">
+                                                <div class="line-outer">
+                                                    <div class="line"></div>
+                                                </div>
+                                            </div>
+                                            <div class="overflow">
+                                                <div class="section-heading-outer m-b-15">
+                                                    <p class="sub-heading">OUR TEAM</p>
+                                                </div>
+                                            </div>
+                                            <div class="overflow">
+                                                <div class="section-heading-outer p-l-50 p-r-50">
+                                                    <h2 class="section-heading">Our Amazing Team</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End: Section Heading -->
+    
+                                        <div class="clearfix"></div>
+    
+                                        <div class="col-sm-12 grid-item m-t-30">
+                                            <div class="row">
+    
+                                                <div class="col-md-3 col-xs-6 each-item overflow text-center relative">
+                                                    <div class="item-inner overflow absolute">
+    
+                                                        <div class="profile-outer center">
+                                                            <div class="profile-image">
+                                                                <img src="assets/fusion/images/testimonial/2.jpg" alt="Team Member" class="">
+                                                            </div>
+                                                            <div class="profile-content">
+                                                                <span class="name">ANTHONY WATKINS</span>
+                                                                <span class="position">VP of Product, VISA</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="content-detail">
+                                                            <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
+                                                        </div>
+    
+                                                    </div>
+                                                </div> <!-- End: .each-item -->
+                                                <div class="col-md-3 col-xs-6 each-item overflow text-center relative">
+                                                    <div class="item-inner overflow absolute">
+    
+                                                        <div class="profile-outer center">
+                                                            <div class="profile-image">
+                                                                <img src="assets/fusion/images/testimonial/3.jpg" alt="Team Member" class="">
+                                                            </div>
+                                                            <div class="profile-content">
+                                                                <span class="name">ANTHONY WATKINS</span>
+                                                                <span class="position">VP of Product, VISA</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="content-detail">
+                                                            <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
+                                                        </div>
+    
+                                                    </div>
+                                                </div> <!-- End: .each-item -->
+                                                <div class="col-md-3 col-xs-6 each-item overflow text-center relative">
+                                                    <div class="item-inner overflow absolute">
+    
+                                                        <div class="profile-outer center">
+                                                            <div class="profile-image">
+                                                                <img src="assets/fusion/images/testimonial/1.jpg" alt="Team Member" class="">
+                                                            </div>
+                                                            <div class="profile-content">
+                                                                <span class="name">ANTHONY WATKINS</span>
+                                                                <span class="position">VP of Product, VISA</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="content-detail">
+                                                            <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
+                                                        </div>
+    
+                                                    </div>
+                                                </div> <!-- End: .each-item -->
+                                                <div class="col-md-3 col-xs-6 each-item overflow text-center relative">
+                                                    <div class="item-inner overflow absolute">
+    
+                                                        <div class="profile-outer center">
+                                                            <div class="profile-image">
+                                                                <img src="assets/fusion/images/testimonial/4.jpg" alt="Team Member" class="">
+                                                            </div>
+                                                            <div class="profile-content">
+                                                                <span class="name">ANTHONY WATKINS</span>
+                                                                <span class="position">VP of Product, VISA</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="content-detail">
+                                                            <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
+                                                        </div>
+    
+                                                    </div>
+                                                </div> <!-- End: .each-item -->
+                                                <div class="col-md-3 col-xs-6 each-item overflow text-center relative">
+                                                    <div class="item-inner overflow absolute">
+    
+                                                        <div class="profile-outer center">
+                                                            <div class="profile-image">
+                                                                <img src="assets/fusion/images/testimonial/5.jpg" alt="Team Member" class="">
+                                                            </div>
+                                                            <div class="profile-content">
+                                                                <span class="name">ANTHONY WATKINS</span>
+                                                                <span class="position">VP of Product, VISA</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="content-detail">
+                                                            <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
+                                                        </div>
+    
+                                                    </div>
+                                                </div> <!-- End: .each-item -->
+                                                <div class="col-md-3 col-xs-6 each-item overflow text-center relative">
+                                                    <div class="item-inner overflow absolute">
+    
+                                                        <div class="profile-outer center">
+                                                            <div class="profile-image">
+                                                                <img src="assets/fusion/images/testimonial/6.jpg" alt="Team Member" class="">
+                                                            </div>
+                                                            <div class="profile-content">
+                                                                <span class="name">ANTHONY WATKINS</span>
+                                                                <span class="position">VP of Product, VISA</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="content-detail">
+                                                            <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
+                                                        </div>
+    
+                                                    </div>
+                                                </div> <!-- End: .each-item -->
+                                                <div class="col-md-3 col-xs-6 each-item overflow text-center relative">
+                                                    <div class="item-inner overflow absolute">
+    
+                                                        <div class="profile-outer center">
+                                                            <div class="profile-image">
+                                                                <img src="assets/fusion/images/testimonial/7.jpg" alt="Team Member" class="">
+                                                            </div>
+                                                            <div class="profile-content">
+                                                                <span class="name">ANTHONY WATKINS</span>
+                                                                <span class="position">VP of Product, VISA</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="content-detail">
+                                                            <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
+                                                        </div>
+    
+                                                    </div>
+                                                </div> <!-- End: .each-item -->
+                                                <div class="col-md-3 col-xs-6 each-item overflow text-center relative">
+                                                    <div class="item-inner overflow absolute">
+    
+                                                        <div class="profile-outer center">
+                                                            <div class="profile-image">
+                                                                <img src="assets/fusion/images/testimonial/8.jpg" alt="Team Member" class="">
+                                                            </div>
+                                                            <div class="profile-content">
+                                                                <span class="name">ANTHONY WATKINS</span>
+                                                                <span class="position">VP of Product, VISA</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="content-detail">
+                                                            <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
+                                                        </div>
+    
+                                                    </div>
+                                                </div> <!-- End: .each-item -->
+    
+    
+                                            </div>
+                                        </div> <!-- End: .col-xs-12 -->
+    
+                                    </div> <!-- End: .row -->
+                                </div> <!-- End: .container -->
+                            </div> <!-- End: .inner-container -->
+    
+                        </div>
+                        <!--End: 7th Page Slider Section
+                            - OUR TEAM PAGE
+                        ====================================-->                    
+
 
                 </div> <!-- End: .row -->
             </div> <!-- End: .container -->
@@ -1645,15 +1234,20 @@
                             </div>
                             <div class="text overflow">
                                 <div class="inner">
-                                    Project One
+                                        Selfie
                                 </div>
                             </div>
                         </div>
 
                         <div class="link-list overflow">
                             <div class="link one overflow">
+
                                 <div class="inner">
-                                    <a class="btn btn-project-detail right-icon btn-mask" href="#features-item-1" data-element="project-detail">PROJECT DETAILS <i class="icon icon-arrow-right"></i></a>
+                                        <button onclick="startWebCamOnly('video','videoOutput','videoContainer')" style="color:black">Start Webcam </button>
+                                        <button onclick="stopWebCamOnly('videoOutput')" style="color:black">Stop Webcam</button>
+                                        <input type="button" id="predict-button" value="predict">
+                                    <a class="btn btn-project-detail right-icon btn-mask" href="#features-item-1" data-element="project-detail"> 
+                                        PROJECT DETAILS <i class="icon icon-arrow-right"></i></a>
                                 </div>
                             </div>
                             <div class="link two overflow">
@@ -1681,7 +1275,7 @@
                             </div>
                             <div class="text overflow">
                                 <div class="inner">
-                                    Project Two
+                                        LifeStyle
                                 </div>
                             </div>
                         </div>
@@ -1717,7 +1311,7 @@
                             </div>
                             <div class="text overflow">
                                 <div class="inner">
-                                    Project Three
+                                        Fitness
                                 </div>
                             </div>
                         </div>
@@ -1725,6 +1319,8 @@
                         <div class="link-list overflow">
                             <div class="link one overflow">
                                 <div class="inner">
+                                     <button onclick="startVideoStream()">Start Webcam </button>
+                                        <button onclick="stopCurrentVideoStream()">Stop Webcam</button>
                                     <a class="btn btn-project-detail right-icon btn-mask" href="#features-item-3" data-element="project-detail">PROJECT DETAILS <i class="icon icon-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -1767,48 +1363,135 @@
 
         
         <script src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.2/build/dat.gui.js"></script>
-        <script src="https://unpkg.com/@tensorflow/tfjs"></script>
-        <script src="https://unpkg.com/@tensorflow-models/posenet"></script>
         <script src="assets/posenet/demo_util.js"></script>
         <script src="assets/posenet/camera.js"></script>
 
         
-    <script type="text/javascript">
-     
-        // get video dom element
-        const video = document.querySelector('video');
+    
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <script src="https://unpkg.com/@tensorflow-models/posenet"></script>
 
-        // request access to webcam
-        navigator.mediaDevices.getUserMedia({
-            video: {
-                width: 426,
-                height: 240
+    <script>
+            const maxVideoSizeOnly = 513;
+            const canvasSizeOnly = 400;
+            
+            async function getCameras() {
+              const devices = await navigator.mediaDevices.enumerateDevices();
+              return devices.filter(({kind}) => kind === 'videoinput');
             }
-        }).then((stream) => video.srcObject = stream);
-
-        // returns a frame encoded in base64
-
-        $("#predict-button").click(function(event) {
-
-            const canvas = document.createElement('canvas');
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            canvas.getContext('2d').drawImage(video, 0, 0);
-            const data = canvas.toDataURL('image/png');
-
-
-            let message = {
-                image: data
+            
+            let currentStream = null;
+            
+            function stopWebCamOnly( camContainer) {
+              document.getElementById(camContainer).style.display = 'none';
+              if (currentStream) {
+                currentStream.getTracks().forEach((track) => {
+                  track.stop();
+                });
+              }
             }
-            console.log(message)
-            $.post("http://localhost:5000/predict", JSON.stringify(message), function(response) {
-                $("#age").text(response.age)
-                $("#gender").text(response.gender)
-                $("#rate").text(response.rate)
-                console.log(response)
-            })
-        });
-        </script>
-    </body>
+            
+            function loadVideo(cameraId,camName,camContainer) {
+              return new Promise((resolve, reject) => {
+                stopWebCamOnly( camContainer);
+                document.getElementById(camContainer).style.display = 'block';
+                document.getElementById(camName).style.display = 'block';
+            
+                const video = document.getElementById(camName);
+            
+                //video.width = maxVideoSizeOnly;
+                //video.height = maxVideoSizeOnly;
+            
+                if (navigator.getUserMedia) {
+                  navigator.getUserMedia({
+                    video: {
+                      width: maxVideoSizeOnly,
+                      height: maxVideoSizeOnly,
+                      deviceId: {exact: cameraId},
+                    },
+                  }, handleVideo, videoError);
+                }
+            
+                function handleVideo(stream) {
+                  currentStream = stream;
+                  video.srcObject = stream;
+            
+                  resolve(video);
+                }
+            
+                function videoError(e) {
+                  // do something
+                  reject(e);
+                }
+              });
+            }
+            
+            function detectPoseInRealTime(video, net,camOutput) {
+              const canvas = document.getElementById(camOutput);
+              const ctx = canvas.getContext('2d');
+              const flipHorizontal = true;
+            
+              canvas.width = canvasSizeOnly;
+              canvas.height = canvasSizeOnly;
+            
+              async function poseDetectionFrame() {
+                  ctx.save();
+                  ctx.scale(-1, 1);
+                  ctx.drawImage(video, 0, 0, canvasSizeOnly*-1, canvasSizeOnly);
+                  ctx.restore();
+            
+                requestAnimationFrame(poseDetectionFrame);
+              }
+            
+              poseDetectionFrame();
+            }
+            
+            async function startWebCamOnly(camName,camOutput,camContainer) {
+              const net = await posenet.load();
+            
+              document.getElementById('loading').style.display = 'none';
+            
+            
+              const cameras = await getCameras();
+            
+              if (cameras.length === 0) {
+                alert('No webcams available.  Reload the page when a webcam is available.');
+                return;
+              }
+            
+              const video = await loadVideo(cameras[0].deviceId,camName,camContainer);
+            
+              detectPoseInRealTime(video, net,camOutput);
+            }
+            
+            navigator.getUserMedia = navigator.getUserMedia ||
+              navigator.webkitGetUserMedia ||
+              navigator.mozGetUserMedia;
+            
+              //startWebCamOnly();
+
+              
+ $("#predict-button").click(function(event) {
+
+const canvas = document.createElement('canvas');
+canvas.width = video.videoWidth;
+canvas.height = video.videoHeight;
+canvas.getContext('2d').drawImage(video, 0, 0);
+const data = canvas.toDataURL('image/png');
+
+
+let message = {
+    image: data
+}
+console.log(message)
+$.post("http://localhost:5000/predict", JSON.stringify(message), function(response) {
+    $("#age").text(response.age)
+    $("#gender").text(response.gender)
+    $("#rate").text(response.rate)
+    console.log(response)
+})
+});
+            </script> 
+</body>
 
 </html>

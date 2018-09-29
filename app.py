@@ -111,21 +111,25 @@ def getPolicyQuote():
        Gender = request.form['Gender']
        Smoker = request.form['Smoker']
        Drinker = request.form['Drinker']
-       Health = request.form['Fitness']
+       Health = request.form['Health']
        Weight = request.form['Weight']
+       SmokingRateFactor = request.form['SmokingRateFactor']
        print('Sudhir Test Form fields')
 
        PolicySilver = 200000
        PolicyGold = 400000
        PolicyDiamond = 1000000	
 
-       PolicySilverPerMonth = math.ceil(PolicySilver/12)
-       PolicyGoldPerMonth = math.ceil(PolicyGold/12)
-       PolicyDiamondPerMonth = math.ceil(PolicyDiamond/12)	
+
 	   
-       Premium = PremiumCalculation(PolicySilver, Age, Height, Gender, Smoker, Drinker, Health, Weight)
-       PremiumGold = PremiumCalculation(PolicyGold, Age, Height, Gender, Smoker, Drinker, Health, Weight)
-       PremiumPlatinum = PremiumCalculation(PolicyDiamond, Age, Height, Gender, Smoker, Drinker, Health, Weight)
+       Premium =  math.ceil(PremiumCalculation(PolicySilver, Age, Height, Gender, Smoker, Drinker, Health, Weight,SmokingRateFactor))
+       PremiumGold =  math.ceil(PremiumCalculation(PolicyGold, Age, Height, Gender, Smoker, Drinker, Health, Weight,SmokingRateFactor))
+       PremiumPlatinum = math.ceil( PremiumCalculation(PolicyDiamond, Age, Height, Gender, Smoker, Drinker, Health, Weight,SmokingRateFactor))
+
+
+       PolicySilverPerMonth = math.ceil(Premium/12)
+       PolicyGoldPerMonth = math.ceil(PremiumGold/12)
+       PolicyDiamondPerMonth = math.ceil(PremiumPlatinum/12)	
        print('Premium is - '+ str(Premium))
        print('PremiumGold is - '+ str(PremiumGold))
        print('PremiumPlatinum is - '+ str(PremiumPlatinum))
@@ -139,7 +143,7 @@ def getPolicyQuote():
     return render_template('QuoteDetails.html', **locals())
  
 
-def PremiumCalculation(PV, Age, Height, Gender, Smoker, Drinker, Health, Weight):
+def PremiumCalculation(PV, Age, Height, Gender, Smoker, Drinker, Health, Weight,SmokingRateFactor):
        ageRange = 25
 	   
        if int(Age) >= 25:
@@ -219,7 +223,7 @@ def PremiumCalculation(PV, Age, Height, Gender, Smoker, Drinker, Health, Weight)
 	   
        #Risk Factor
        print('Age risk factor is ' + str((int(ageRange/10))*5))
-       RF = ((((int(ageRange/10))*5)) + bmicategoryValue + RFSmoker + RFDrinker + RFGender + RFHealth)
+       RF = ((((int(ageRange/10))*5)) + bmicategoryValue + RFSmoker + RFDrinker + RFGender + RFHealth + float(SmokingRateFactor))
        print('Risk Factor calulated is ' + str(RF))
 	   
        #TAX
@@ -227,7 +231,7 @@ def PremiumCalculation(PV, Age, Height, Gender, Smoker, Drinker, Health, Weight)
        print('Tax is ' + str(Tax))
 	   
        #Premium
-       Premium = (PmF + (PmF * RF/100) + PF + Tax )
+       Premium = int((PmF + (PmF * RF/100) + PF + Tax )/3)
 	   
        print('Premium is - '+ str(Premium))
 	   
