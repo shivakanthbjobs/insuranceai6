@@ -182,7 +182,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" style="color:black" data-dismiss="modal">OK</button>
                 </div>
             </div>
         </div>
@@ -294,7 +294,7 @@
                                                     <p class="email-failed">
                                                         <i class="icon icon-icon-close-alt2"></i> Something went wrong!</p>
                                                 </div>
-
+                                                <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 
                                                 <div class="col-xs-6">
                                                     <div class="input-outer">
@@ -305,7 +305,7 @@
                                                             <label class="input-label" for="contact-name">
                                                                 <span class="label-text">YOUR NAME</span>
                                                             </label>
-                                                            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                                                            
                                                         </div>
                                                     </div>
                                                 </div>
@@ -413,196 +413,214 @@
                 <!--Start: 3rd Page Slider Section
                         - PORTFOLIO PAGE 1
                     ====================================-->
-                <div class=" section section-item overflow dark-background" id="features-item-1" data-heading="#animate-heading-1">
-                    <div class="container inner-container center">
-                        <div class="row relative">
-
-                            <div class="col-xs-10 col-xs-offset-1">
-                                <div class="row">
-                                    <div class="image text-center">
-                                        <div id="loading">
-                                            Loading the model...
-                                        </div>
-                                        <div id="videoContainer" style="display:none">
-                                            <video autoplay="true" id="video" muted="muted" style=" -moz-transform: scaleX(-1);
-                                                        -o-transform: scaleX(-1);
-                                                        -webkit-transform: scaleX(-1);
-                                                        transform: scaleX(-1);
-                                                        display: none;
-                                                        ">
-                                            </video>
-                                            <canvas id="videoOutput"></canvas>
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 overflow">
-                                        <div class="row single-form-outer dark-background single-form">
-                                            <div class="dark-background single-form">
-
-                                    <div class="col-xs-6">
-                                        <div class="input-outer ">
-                                            <div class="group relative">
-                                                <input name="AgeHolder" value="35" id="AgeHolder" class="contact-subject form-control" type="text" required="">
-                                                <label class="input-label" for="contact-subject">
-                                                    <span class="label-text">Age</span>
-                                                </label>
+                    <div class=" section section-item overflow dark-background" id="features-item-1" data-heading="#animate-heading-1">
+                            <div class="container inner-container center">
+                                <div class="row relative">
+        
+                                    <div class="col-xs-10 col-xs-offset-1">
+                                        <div class="row">
+                                            <div class="image text-center">
+        
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div class="input-outer ">
-                                            <div class="group relative">
-                                                <input name="GenderHolder" value="M" id="GenderHolder" class="contact-subject form-control" type="text" required="">
-                                                <label class="input-label" for="contact-subject">
-                                                    <span class="label-text">Gender</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-10 col-sm-12 slider-outer center">
-                                <div class="row">
-                                    <div class="overflow">
-                                        <div class="slider text-center">
-
-                                            <div class="project-slider-outer">
-                                                <div class="project-slider owl-carousel">
-
-                                                    <div class="item">
-                                                        <img src="assets/fusion/images/features-3.jpg" alt="Slider Images" class="img-responsive">
+                                            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 overflow">
+                                                <div class="row single-form-outer dark-background single-form">
+                                                    <div class="dark-background single-form">
+         
+                                        
+        
+                                            <div class="col-xs-6">
+                                                <div class="input-outer ">
+                                                    <div class="group relative">
+                                                        <input name="AgeHolder"   style="z-index: 22000;" id="AgeHolder" class="contact-subject form-control" type="text" required="">
+                                                        <label class="input-label" for="contact-subject">
+                                                            <span class="label-text">Age</span>
+                                                        </label>
                                                     </div>
-                                                    <!-- End: .item -->
-                                                    <div class="item">
-                                                        <img src="assets/fusion/images/features-4.jpg" alt="Slider Images" class="img-responsive">
-                                                    </div>
-                                                    <!-- End: .item -->
-                                                    <div class="item">
-                                                        <img src="assets/fusion/images/features-5.jpg" alt="Slider Images" class="img-responsive">
-                                                    </div>
-                                                    <!-- End: .item -->
-                                                    <div class="item">
-                                                        <img src="assets/fusion/images/features-6.jpg" alt="Slider Images" class="img-responsive">
-                                                    </div>
-                                                    <!-- End: .item -->
-                                                    <div class="item">
-                                                        <img src="assets/fusion/images/features-7.jpg" alt="Slider Images" class="img-responsive">
-                                                    </div>
-                                                    <!-- End: .item -->
-
                                                 </div>
                                             </div>
-                                            <!-- End: .project-slider-outer -->
-
-                                            <div class="btn-outer text-left">
-                                                <a href="#" class="btn left-icon btn-slider-back btn-mask">
-                                                    <i class="icon icon-arrow-left"></i> BACK TO PORTFOLIO</a>
+                                            <div class="col-xs-6">
+                                                <div class="input-outer ">
+                                                    <div class="group relative">
+                                                        <input name="GenderHolder"  style="z-index: 22000;" id="GenderHolder" class="contact-subject form-control" type="text" required="">
+                                                        <label class="input-label" for="contact-subject">
+                                                            <span class="label-text">Gender</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <br>
+                                                    <div class="input-outer ">
+                                                        <div class="group relative">
+                                                                <div id="loading">
+                                                                        Loading the model...
+                                                                    </div>
+                                                                    <div id="videoContainer" style="display:none">
+                                                                        <video autoplay="true" id="video" muted="muted" style=" -moz-transform: scaleX(-1);
+                                                                                    -o-transform: scaleX(-1);
+                                                                                    -webkit-transform: scaleX(-1);
+                                                                                    transform: scaleX(-1);
+                                                                                    display: none;
+                                                                                    ">
+                                                                        </video>
+                                                                        <canvas id="videoOutput"></canvas>
+                            
+                                                                    </div>
+                                                                    <br>
+                                                                    <div class="btn-form text-center col-xs-12"  style="z-index: 22000;">
+                                                                            <div class="button-outer relative"  style="z-index: 22000;">
+                                                                                <button id="predict-button"  class="btn btn-fill right-icon">PREDICT AGE & GENDER
+                                                                                    <i class="icon icon-arrow-right"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                            </div>
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
+        
+                                    <div class="col-md-10 col-sm-12 slider-outer center">
+                                        <div class="row">
+                                            <div class="overflow">
+                                                <div class="slider text-center">
+        
+                                                    <div class="project-slider-outer">
+                                                        <div class="project-slider owl-carousel">
+        
+                                                            <div class="item">
+                                                                <img src="assets/fusion/images/features-3.jpg" alt="Slider Images" class="img-responsive">
+                                                            </div>
+                                                            <!-- End: .item -->
+                                                            <div class="item">
+                                                                <img src="assets/fusion/images/features-4.jpg" alt="Slider Images" class="img-responsive">
+                                                            </div>
+                                                            <!-- End: .item -->
+                                                            <div class="item">
+                                                                <img src="assets/fusion/images/features-5.jpg" alt="Slider Images" class="img-responsive">
+                                                            </div>
+                                                            <!-- End: .item -->
+                                                            <div class="item">
+                                                                <img src="assets/fusion/images/features-6.jpg" alt="Slider Images" class="img-responsive">
+                                                            </div>
+                                                            <!-- End: .item -->
+                                                            <div class="item">
+                                                                <img src="assets/fusion/images/features-7.jpg" alt="Slider Images" class="img-responsive">
+                                                            </div>
+                                                            <!-- End: .item -->
+        
+                                                        </div>
+                                                    </div>
+                                                    <!-- End: .project-slider-outer -->
+        
+                                                    <div class="btn-outer text-left">
+                                                        <a href="#" class="btn left-icon btn-slider-back btn-mask">
+                                                            <i class="icon icon-arrow-left"></i> BACK TO PORTFOLIO</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End: .row -->
+                                    </div>
+                                    <!-- End: slider-outer -->
+        
+                                    <div class="col-xs-12 project-detail-outer center">
+        
+                                        <div class="project-detail">
+                                            <div class="project-detail-inner relative semi-dark-background overflow">
+        
+                                                <div class="col-md-6 col-sm-12 vertical-middle project-detail-content">
+        
+                                                    <div class="overflow">
+                                                        <div class="heading-outer">
+                                                            <h2 class="heading">Selfie</h2>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End: .overflow -->
+        
+                                                    <div class="overflow">
+                                                        <ul class="nav list">
+                                                            <li>
+                                                                <p class="sub-heading">AGE &AMP; DESIGN</p>
+                                                            </li>
+                                                            <li>
+                                                                <p class="sub-heading">MARCH 2016</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <!-- End: .overflow -->
+        
+                                                    <div class="overflow">
+                                                        <div class="pera-outer m-t-30">
+                                                            <p>Having a baby can be a nerve wracking experience for new parents – not
+                                                                the nine months of pregnancy, I’m talking about after the infant
+                                                                is brought home from the hospital. It’s always the same thing, by
+                                                                the time they have their third child they have it all figured out,
+                                                                but with number one it’s a learning thing.</p>
+                                                            <p>Baby monitors help you hear your baby’s needs without you having to be
+                                                                in the room with the baby. Some baby monitors are portable, or “mobile”
+                                                                and are small enough that you can carry it in your pocket as you
+                                                                do your daily chores around the house. Depending on your price range
+                                                                it’s best to have a base unit that plugs into the wall. The receiving
+                                                                unit can be like your portable phone, you can carry it around with
+                                                                you, and plug it back into the base unit to be recharged.</p>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End: .overflow -->
+        
+                                                    <div class="overflow">
+                                                        <div class="full-view-outer">
+                                                            <a href="https://dribbble.com/shots/2595241-VOID-Conference" class="btn right-icon btn-mask">SEE THE PROJECT
+                                                                <i class="icon icon-arrow-right"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End: .overflow -->
+        
+                                                </div>
+                                                <!-- End: END LEFT SIDE -->
+        
+                                                <!-- Right side Image -->
+                                                <div class="col-md-6 col-sm-12 vertical-middle overflow project-detail-image">
+                                                    <div class="row text-right display-full">
+                                                        <div class="project-detail-image-outer display-full">
+                                                            <img src="assets/fusion/images/features-2.jpg" alt="Portfolio Image">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End: RIGHT SIDE -->
+        
+                                            </div>
+                                            <!-- End: .project-detail-content -->
+        
+                                            <div class="clearfix"></div>
+        
+                                            <!-- Back Button Area -->
+                                            <div class="overflow">
+                                                <div class="btn-outer text-center m-t-30">
+                                                    <a href="#" class="btn left-icon btn-slider-back btn-mask">
+                                                        <i class="icon icon-arrow-left"></i> BACK TO PORTFOLIO</a>
+                                                </div>
+                                            </div>
+                                            <!-- End: Back Button Area -->
+        
+                                        </div>
+                                        <!-- End: .project-detail -->
+        
+                                    </div>
+                                    <!-- End: .project-detail-outer -->
+        
                                 </div>
                                 <!-- End: .row -->
                             </div>
-                            <!-- End: slider-outer -->
-
-                            <div class="col-xs-12 project-detail-outer center">
-
-                                <div class="project-detail">
-                                    <div class="project-detail-inner relative semi-dark-background overflow">
-
-                                        <div class="col-md-6 col-sm-12 vertical-middle project-detail-content">
-
-                                            <div class="overflow">
-                                                <div class="heading-outer">
-                                                    <h2 class="heading">Selfie</h2>
-                                                </div>
-                                            </div>
-                                            <!-- End: .overflow -->
-
-                                            <div class="overflow">
-                                                <ul class="nav list">
-                                                    <li>
-                                                        <p class="sub-heading">AGE &AMP; DESIGN</p>
-                                                    </li>
-                                                    <li>
-                                                        <p class="sub-heading">MARCH 2016</p>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <!-- End: .overflow -->
-
-                                            <div class="overflow">
-                                                <div class="pera-outer m-t-30">
-                                                    <p>Having a baby can be a nerve wracking experience for new parents – not
-                                                        the nine months of pregnancy, I’m talking about after the infant
-                                                        is brought home from the hospital. It’s always the same thing, by
-                                                        the time they have their third child they have it all figured out,
-                                                        but with number one it’s a learning thing.</p>
-                                                    <p>Baby monitors help you hear your baby’s needs without you having to be
-                                                        in the room with the baby. Some baby monitors are portable, or “mobile”
-                                                        and are small enough that you can carry it in your pocket as you
-                                                        do your daily chores around the house. Depending on your price range
-                                                        it’s best to have a base unit that plugs into the wall. The receiving
-                                                        unit can be like your portable phone, you can carry it around with
-                                                        you, and plug it back into the base unit to be recharged.</p>
-                                                </div>
-                                            </div>
-                                            <!-- End: .overflow -->
-
-                                            <div class="overflow">
-                                                <div class="full-view-outer">
-                                                    <a href="https://dribbble.com/shots/2595241-VOID-Conference" class="btn right-icon btn-mask">SEE THE PROJECT
-                                                        <i class="icon icon-arrow-right"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!-- End: .overflow -->
-
-                                        </div>
-                                        <!-- End: END LEFT SIDE -->
-
-                                        <!-- Right side Image -->
-                                        <div class="col-md-6 col-sm-12 vertical-middle overflow project-detail-image">
-                                            <div class="row text-right display-full">
-                                                <div class="project-detail-image-outer display-full">
-                                                    <img src="assets/fusion/images/features-2.jpg" alt="Portfolio Image">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End: RIGHT SIDE -->
-
-                                    </div>
-                                    <!-- End: .project-detail-content -->
-
-                                    <div class="clearfix"></div>
-
-                                    <!-- Back Button Area -->
-                                    <div class="overflow">
-                                        <div class="btn-outer text-center m-t-30">
-                                            <a href="#" class="btn left-icon btn-slider-back btn-mask">
-                                                <i class="icon icon-arrow-left"></i> BACK TO PORTFOLIO</a>
-                                        </div>
-                                    </div>
-                                    <!-- End: Back Button Area -->
-
-                                </div>
-                                <!-- End: .project-detail -->
-
-                            </div>
-                            <!-- End: .project-detail-outer -->
-
+                            <!-- End: .container -->
                         </div>
-                        <!-- End: .row -->
-                    </div>
-                    <!-- End: .container -->
-                </div>
-                <!--End: 3rd Page Slider Section
-                        - PORTFOLIO PAGE 1
-                    ====================================-->
+                        <!--End: 3rd Page Slider Section
+                                - PORTFOLIO PAGE 1
+                            ====================================-->
 
 
 
@@ -1296,18 +1314,16 @@
                         <div class="link one overflow">
 
                             <div class="inner">
-                                <input type="button" id="predict-button" value="predict">
                                 <a class="btn btn-project-detail right-icon btn-mask" href="#features-item-1" data-element="project-detail">
-                                    PROJECT DETAILS
-                                    <i class="icon icon-arrow-right"></i>
+                                    Neutral Expression 
+                                    
                                 </a>
                             </div>
                         </div>
                         <div class="link two overflow">
                             <div class="inner">
-                                <a class="btn btn-slider right-icon btn-mask" href="#features-item-1" data-element="slider">VIEW SLIDES
-                                    <i class="icon icon-arrow-right"></i>
-                                </a>
+                                <a class="btn btn-slider right-icon btn-mask" href="#features-item-1" data-element="slider">Please
+                               </a>
                             </div>
                         </div>
                         <div class="line"></div>
@@ -1327,12 +1343,12 @@
                         <div class="line"></div>
                         <div class="overflow">
                             <div class="sub-heading-outer">
-                                <p class="sub-heading">BRANDING &AMP; DESIGN</p>
+                                <p class="sub-heading">HEIGHT &AMP; BMI</p>
                             </div>
                         </div>
                         <div class="text overflow">
                             <div class="inner">
-                                LifeStyle
+                                    HEIGHT 
                             </div>
                         </div>
                     </div>
@@ -1340,14 +1356,14 @@
                     <div class="link-list overflow">
                         <div class="link one overflow">
                             <div class="inner">
-                                <a class="btn btn-project-detail right-icon btn-mask" href="#features-item-2" data-element="project-detail">PROJECT DETAILS
+                                <a class="btn btn-project-detail right-icon btn-mask" href="#features-item-2" data-element="project-detail">
                                     <i class="icon icon-arrow-right"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="link two overflow">
                             <div class="inner">
-                                <a class="btn btn-slider right-icon btn-mask" href="#features-item-2" data-element="slider">VIEW SLIDES
+                                <a class="btn btn-slider right-icon btn-mask" href="#features-item-2" data-element="slider">
                                     <i class="icon icon-arrow-right"></i>
                                 </a>
                             </div>

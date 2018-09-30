@@ -65,8 +65,7 @@
 
 
       afterLoad: function(anchorLink, index){
-        stopWebCamOnly('videoOutput')
-        stopWebCamOnly('posenetOutput')
+
         // console.log(index);
   
 
@@ -117,6 +116,8 @@
 
             }             
             else if($(this).attr('href') =='#3'){
+              stopWebCamOnly('videoOutput')
+              stopWebCamOnly('posenetOutput')
               artyom.say("Let's also get a full-length snap .Please stand properly so that I get a great picture. That was really nice!! Time to fill in your weight and social habits               ")
             }
 
@@ -126,6 +127,8 @@
             }
 
             else if($(this).attr('href') =='#5'){
+              stopWebCamOnly('videoOutput')
+              stopWebCamOnly('posenetOutput')
               artyom.say("And, now the results! Please review and change if you are not satisfied              ")
               $("#Name").val($("#NameHolder").val());
               $("#Email").val($("#EmailHolder").val());
