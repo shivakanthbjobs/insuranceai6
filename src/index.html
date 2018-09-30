@@ -301,7 +301,7 @@
                                                         <div class="group relative">
 
 
-                                                            <input name="Name" value="shiav" class="contact-name form-control" id="contact-name" type="text" required="">
+                                                            <input name="NameHolder" value="shiav" class="contact-name form-control" id="NameHolder" type="text" required="">
                                                             <label class="input-label" for="contact-name">
                                                                 <span class="label-text">YOUR NAME</span>
                                                             </label>
@@ -313,7 +313,7 @@
                                                 <div class="col-xs-6">
                                                     <div class="input-outer ">
                                                         <div class="group relative">
-                                                            <input name="Email" value="asdf@asdf.com" class="contact-email form-control" id="contact-email" type="email" required="">
+                                                            <input name="EmailHolder" value="asdf@asdf.com" class="contact-email form-control" id="EmailHolder" type="email" required="">
                                                             <label class="input-label" for="contact-email">
                                                                 <span class="label-text">YOUR EMAIL</span>
                                                             </label>
@@ -324,7 +324,7 @@
                                                 <div class="col-xs-6">
                                                     <div class="input-outer ">
                                                         <div class="group relative">
-                                                            <input name="Height" value="90" class="contact-company form-control" id="contact-company" type="text" required="">
+                                                            <input name="HeightHolder" value="90" class="contact-company form-control" id="HeightHolder" type="text" required="">
                                                             <label class="input-label" for="contact-company">
                                                                 <span class="label-text">Height</span>
                                                             </label>
@@ -335,7 +335,7 @@
                                                 <div class="col-xs-6">
                                                     <div class="input-outer ">
                                                         <div class="group relative">
-                                                            <input name="Weight" value="90" class="contact-subject form-control" id="contact-subject" type="text" required="">
+                                                            <input name="WeightHolder" value="90" class="contact-subject form-control" id="WeightHolder" type="text" required="">
                                                             <label class="input-label" for="contact-subject">
                                                                 <span class="label-text">Weight</span>
                                                             </label>
@@ -345,31 +345,12 @@
 
 
 
-                                                <div class="col-xs-6">
-                                                    <div class="input-outer ">
-                                                        <div class="group relative">
-                                                            <input name="Age" id="Age" class="contact-subject form-control" id="contact-subject" type="text" required="">
-                                                            <label class="input-label" for="contact-subject">
-                                                                <span class="label-text">Age</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-6">
-                                                    <div class="input-outer ">
-                                                        <div class="group relative">
-                                                            <input name="Gender" id="Gender" class="contact-subject form-control" id="contact-subject" type="text" required="">
-                                                            <label class="input-label" for="contact-subject">
-                                                                <span class="label-text">Gender</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+
 
                                                 <div class="col-xs-6">
                                                     <div class="input-outer ">
                                                         <div class="group relative">
-                                                            <select name="Smoker" id="Smoker" class="form-control">
+                                                            <select name="SmokerHolder" id="SmokerHolder" class="form-control">
                                                                 <option disabled=""></option>
                                                                 <option value="N" selected=""> I do not Smoker </option>
                                                                 <option value="N"> Occasional Smoker </option>
@@ -381,27 +362,12 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xs-6">
-                                                    <div class="input-outer ">
-                                                        <div class="group relative">
-                                                            <label>Health</label>
-                                                            <select name="Health" class="form-control">
-                                                                <option disabled="" selected=""></option>
-                                                                <option value="H" selected> Healthy </option>
-                                                                <option value="UnH"> Un- Healthy </option>
-                                                                <option value="MH"> Medium Heathy </option>
-                                                            </select>
-                                                            <label class="input-label" for="contact-message">
-                                                                <span class="label-text">Health </span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+
 
                                                 <div class="col-xs-6">
                                                     <div class="input-outer ">
                                                         <div class="group relative">
-                                                            <select name="Drinker" id="Drinker" class="form-control">
+                                                            <select name="DrinkerHolder" id="DrinkerHolder" class="form-control">
                                                                 <option disabled=""></option>
                                                                 <option value="N" selected=""> I dont Drink Alcohol </option>
                                                                 <option value="Female"> Occasionally consume Alcoohol (Social Drinker) </option>
@@ -411,15 +377,6 @@
                                                                 <span class="label-text">Alcohol Consumption</span>
                                                             </label>
                                                         </div>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Subject Button -->
-                                                <div class="btn-form text-center col-xs-12">
-                                                    <div class="button-outer relative">
-                                                        <button class="btn btn-fill right-icon">GET QUOTE
-                                                            <i class="icon icon-arrow-right"></i>
-                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -475,7 +432,35 @@
                                                         ">
                                             </video>
                                             <canvas id="videoOutput"></canvas>
+
                                         </div>
+                                    </div>
+                                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 overflow">
+                                        <div class="row single-form-outer dark-background single-form">
+                                            <div class="dark-background single-form">
+
+                                    <div class="col-xs-6">
+                                        <div class="input-outer ">
+                                            <div class="group relative">
+                                                <input name="AgeHolder" value="35" id="AgeHolder" class="contact-subject form-control" type="text" required="">
+                                                <label class="input-label" for="contact-subject">
+                                                    <span class="label-text">Age</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="input-outer ">
+                                            <div class="group relative">
+                                                <input name="GenderHolder" value="M" id="GenderHolder" class="contact-subject form-control" type="text" required="">
+                                                <label class="input-label" for="contact-subject">
+                                                    <span class="label-text">Gender</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -788,7 +773,28 @@
                                                         ">
                                             </video>
                                             <canvas id="posenetOutput"></canvas>
+
                                         </div>
+                                    </div>
+                                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 overflow">
+                                        <div class="row single-form-outer dark-background single-form">
+                                            <div class="dark-background single-form">
+
+                                    <div class="col-xs-6">
+                                        <div class="input-outer ">
+                                            <div class="group relative">
+                                                <select name="HealthHolder" id="HealthHolder"  class="form-control">
+                                                    <option disabled="" selected=""></option>
+                                                    <option value="H" selected> Healthy </option>
+                                                    <option value="UnH"> Un- Healthy </option>
+                                                    <option value="MH"> Medium Heathy </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    </div>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -976,7 +982,7 @@
                                                 <div class="col-xs-6">
                                                     <div class="input-outer">
                                                         <div class="group relative">
-                                                            <input name="Name" value="shiav" class="contact-name form-control" id="contact-name" type="text" required="">
+                                                            <input name="Name" class="contact-name form-control" id="Name" type="text" required="">
                                                             <label class="input-label" for="contact-name">
                                                                 <span class="label-text">YOUR NAME</span>
                                                             </label>
@@ -987,7 +993,7 @@
                                                 <div class="col-xs-6">
                                                     <div class="input-outer ">
                                                         <div class="group relative">
-                                                            <input name="Email" value="asdf@asdf.com" class="contact-email form-control" id="contact-email" type="email" required="">
+                                                            <input name="Email"  class="contact-email form-control" id="Email" type="email" required="">
                                                             <label class="input-label" for="contact-email">
                                                                 <span class="label-text">YOUR EMAIL</span>
                                                             </label>
@@ -998,7 +1004,7 @@
                                                 <div class="col-xs-6">
                                                     <div class="input-outer ">
                                                         <div class="group relative">
-                                                            <input name="Height" value="90" class="contact-company form-control" id="contact-company" type="text" required="">
+                                                            <input name="Height" class="contact-company form-control" id="Height" type="text" required="">
                                                             <label class="input-label" for="contact-company">
                                                                 <span class="label-text">Height</span>
                                                             </label>
@@ -1009,7 +1015,7 @@
                                                 <div class="col-xs-6">
                                                     <div class="input-outer ">
                                                         <div class="group relative">
-                                                            <input name="Weight" value="90" class="contact-subject form-control" id="contact-subject" type="text" required="">
+                                                            <input name="Weight"  class="contact-subject form-control" id="Weight" type="text" required="">
                                                             <label class="input-label" for="contact-subject">
                                                                 <span class="label-text">Weight</span>
                                                             </label>
@@ -1020,7 +1026,7 @@
                                                 <div class="col-xs-6">
                                                     <div class="input-outer ">
                                                         <div class="group relative">
-                                                            <input id="rate" name="SmokingRateFactor" class="contact-subject form-control" id="contact-subject" type="text" required="">
+                                                            <input id="SmokingRateFactor" name="SmokingRateFactor" class="contact-subject form-control" type="text" required="">
                                                             <label class="input-label" for="contact-subject">
                                                                 <span class="label-text">SmokingRateFactor</span>
                                                             </label>
@@ -1032,7 +1038,7 @@
                                                 <div class="col-xs-6">
                                                     <div class="input-outer ">
                                                         <div class="group relative">
-                                                            <input name="Age" value="35" class="contact-subject form-control" id="contact-subject" type="text" required="">
+                                                            <input name="Age" class="contact-subject form-control" id="Age" type="text" required="">
                                                             <label class="input-label" for="contact-subject">
                                                                 <span class="label-text">Age</span>
                                                             </label>
@@ -1042,7 +1048,7 @@
                                                 <div class="col-xs-6">
                                                     <div class="input-outer ">
                                                         <div class="group relative">
-                                                            <input name="Gender" value="M" class="contact-subject form-control" id="contact-subject" type="text" required="">
+                                                            <input name="Gender"  class="contact-subject form-control" id="Gender" type="text" required="">
                                                             <label class="input-label" for="contact-subject">
                                                                 <span class="label-text">Gender</span>
                                                             </label>
@@ -1055,7 +1061,7 @@
                                                         <div class="group relative">
                                                             <select name="Smoker" id="Smoker" class="form-control">
                                                                 <option disabled=""></option>
-                                                                <option value="N" selected=""> I do not Smoke </option>
+                                                                <option value="N" > I do not Smoke </option>
                                                                 <option value="N"> Occasional Smoker </option>
                                                                 <option value="Y"> Regular Smoker </option>
                                                             </select>
@@ -1070,8 +1076,8 @@
                                                         <div class="group relative">
                                                             <label>Health</label>
                                                             <select name="Health" class="form-control">
-                                                                <option disabled="" selected=""></option>
-                                                                <option value="H" selected> Healthy </option>
+                                                                <option disabled="" ></option>
+                                                                <option value="H" > Healthy </option>
                                                                 <option value="UnH"> Un- Healthy </option>
                                                                 <option value="MH"> Medium Heathy </option>
                                                             </select>
@@ -1087,7 +1093,7 @@
                                                         <div class="group relative">
                                                             <select name="Drinker" id="Drinker" class="form-control">
                                                                 <option disabled=""></option>
-                                                                <option value="N" selected=""> I dont Drink Alcohol </option>
+                                                                <option value="N" > I dont Drink Alcohol </option>
                                                                 <option value="Female"> Occasionally consume Alcoohol (Social Drinker) </option>
                                                                 <option value="Y"> Regular consumption of AlcoholSmoker </option>
                                                             </select>
@@ -1276,7 +1282,7 @@
                         <div class="line"></div>
                         <div class="overflow">
                             <div class="sub-heading-outer">
-                                <p class="sub-heading">BRANDING &AMP; DESIGN</p>
+                                <p class="sub-heading">FETCH AGE AND  &AMP; GENDER </p>
                             </div>
                         </div>
                         <div class="text overflow">
@@ -1585,11 +1591,13 @@
             //alert('Family Name: ' + profile.getEmail());
             console.log("ID: " + profile.getId()); // Don't send this directly to your server!
             console.log('Full Name: ' + profile.getName());
-            console.log('Given Name: ' + profile.getGivenName());
-            console.log('Family Name: ' + profile.getFamilyName());
-            console.log("Image URL: " + profile.getImageUrl());
+            //console.log('age Name: ' + profile.getGivenName());
+            //console.log('Family Name: ' + profile.getFamilyName());
+            //console.log("Image URL: " + profile.getImageUrl());
 
-            $("#contact-email").val(profile.getEmail());
+            $("#EmailHolder").val(profile.getEmail());
+
+            $("#NameHolder").val(profile.getName());
 
             // The ID token you need to pass to your backend:
             var id_token = googleUser.getAuthResponse().id_token;

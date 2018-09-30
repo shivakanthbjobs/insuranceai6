@@ -117,7 +117,6 @@
 
             }             
             else if($(this).attr('href') =='#3'){
-              startWebCamOnly('posenetVideo','posenetOutput','posenetContainer')
               artyom.say("Let's also get a full-length snap .Please stand properly so that I get a great picture. That was really nice!! Time to fill in your weight and social habits               ")
             }
 
@@ -127,12 +126,22 @@
             }
 
             else if($(this).attr('href') =='#5'){
-              startWebCamOnly('posenetVideo','posenetOutput','posenetContainer')
               artyom.say("And, now the results! Please review and change if you are not satisfied              ")
+              $("#Name").val($("#NameHolder").val());
+              $("#Email").val($("#EmailHolder").val());
+              
+              $("#Height").val($("#HeightHolder").val());
+              $("#Weight").val($("#WeightHolder").val());
+              $("#Age").val($("#AgeHolder").val());
+              $("#Gender").val($("#GenderHolder").val());
+
+              $("#Smoker").val($("#SmokerHolder").val());
+              $("#Health").val($("#HealthHolder").val());
+              $("#Drinker").val($("#DrinkerHolder").val());
+
             }
 
             else if($(this).attr('href') =='#6'){
-              startWebCamOnly('posenetVideo','posenetOutput','posenetContainer')
               artyom.say("")
             }
             
