@@ -2,7 +2,7 @@
     
   'use strict';
 
-
+  
   /**
    * =====================================
    * Function for windows height and width      
@@ -96,8 +96,8 @@
             })
           }
         })
-
-
+        var artyom = new Artyom();
+       
 
         var navigationClickFullPage = '#navbar-nav, #fp-nav';
         $( navigationClickFullPage ).find('a').each( function() {
@@ -106,11 +106,34 @@
             $(this).closest( navigationClickFullPage ).find('.active').removeClass('active');
             $(this).addClass('active');
 
+            if($(this).attr('href') =='#1'){
+             // artyom.say("Now that you have decided to start the purchase journey, you can either login with your gmail account OR enter the details")
+              
+            }        
+
             if($(this).attr('href') =='#2'){
               startWebCamOnly('video','videoOutput','videoContainer')
+              artyom.say("Say Cheeeese ! It's time to pose for a selfie :) We need a nice close-up selfie of yours              ")
+
             }             
+            else if($(this).attr('href') =='#3'){
+              startWebCamOnly('posenetVideo','posenetOutput','posenetContainer')
+              artyom.say("Let's also get a full-length snap .Please stand properly so that I get a great picture. That was really nice!! Time to fill in your weight and social habits               ")
+            }
+
             else if($(this).attr('href') =='#4'){
               startWebCamOnly('posenetVideo','posenetOutput','posenetContainer')
+              artyom.say("You are almost there! Let's check your fitness levels and of course, you can skip this step if you are not comfortable. We just want you to jog for 10 seconds.Just ensure that you are fully visible on the camera. Ready ? Countdown starts - 10,9,8,7,6,5,4,3,2,1 and stop. You are doing great! Let's try another small exercise - bend down and try to touch your feet using your fingers..Wow..that was awesome!              ") 
+            }
+
+            else if($(this).attr('href') =='#5'){
+              startWebCamOnly('posenetVideo','posenetOutput','posenetContainer')
+              artyom.say("And, now the results! Please review and change if you are not satisfied              ")
+            }
+
+            else if($(this).attr('href') =='#6'){
+              startWebCamOnly('posenetVideo','posenetOutput','posenetContainer')
+              artyom.say("")
             }
             
             else {
