@@ -258,7 +258,7 @@
                         - HOME PAGE
                     ====================================-->
                 <div class=" section section-item combine-section hide-overlay overflow" data-heading="">
-                    <div class="overlay-color relative bg-image-2" style="background: assets/images/wizard/BasicInfo.jpg">
+                    <div class="overlay-color relative bg-image-2" style="background: 'assets/images/wizard/BasicInfo.jpg'">
 
                         <div class="inner-container contact-us" id="contact">
                             <div class="container">
@@ -1453,109 +1453,103 @@
     <script src="https://unpkg.com/@tensorflow-models/posenet"></script>
 
     <script>
-        const maxVideoSizeOnly = 513;
-        const canvasSizeOnly = 400;
-        let currentStream = null;
+const maxVideoSizeOnly = 513;
+const canvasSizeOnly = 400;
 
-        async function getCameras() {
-            const devices = await navigator.mediaDevices.enumerateDevices();
-            return devices.filter(({ kind }) => kind === 'videoinput');
-        }
+async function getCameras() {
+  const devices = await navigator.mediaDevices.enumerateDevices();
+  return devices.filter(({kind}) => kind === 'videoinput');
+}
 
+let currentStream = null;
 
+function stopWebCamOnly( camContainer) {
+  document.getElementById(camContainer).style.display = 'none';
+  
+  if (currentStream) {
+    currentStream.getTracks().forEach((track) => {
+      track.stop();
+    });
+  }
+}
 
-        function stopWebCamOnly(camContainer) {
-            document.getElementById(camContainer).style.display = 'none';
+function loadVideo(cameraId,camName,camContainer) {
+  return new Promise((resolve, reject) => {
+    stopWebCamOnly( camContainer);
+    document.getElementById(camContainer).style.display = 'block';
+	document.getElementById(camName).style.display = 'block';
+		
 
-            HTMLVideoElement.stop
-            if (currentStream) {
-                currentStream.getTracks().forEach((track) => {
-                    track.stop();
-                });
-            }
-        }
+    const video = document.getElementById(camName);
 
-        function loadVideo(cameraId, camName, camContainer) {
-            return new Promise((resolve, reject) => {
-                stopWebCamOnly(camContainer);
-                document.getElementById(camContainer).style.display = 'block';
-                document.getElementById(camName).style.display = 'none';
+    //video.width = maxVideoSizeOnly;
+    //video.height = maxVideoSizeOnly;
 
+    if (navigator.getUserMedia) {
+      navigator.getUserMedia({
+        video: {
+          width: maxVideoSizeOnly,
+          height: maxVideoSizeOnly,
+          deviceId: {exact: cameraId},
+        },
+      }, handleVideo, videoError);
+    }
 
-                const video = document.getElementById(camName);
+    function handleVideo(stream) {
+      currentStream = stream;
+      video.srcObject = stream;
 
-                //video.width = maxVideoSizeOnly;
-                //video.height = maxVideoSizeOnly;
+      resolve(video);
+    }
 
-                if (navigator.getUserMedia) {
-                    navigator.getUserMedia({
-                        video: {
-                            width: maxVideoSizeOnly,
-                            height: maxVideoSizeOnly,
-                            deviceId: { exact: cameraId },
-                        },
-                    }, handleVideo, videoError);
-                }
+    function videoError(e) {
+      // do something
+      reject(e);
+    }
+  });
+}
 
-                function handleVideo(stream) {
-                    currentStream = stream;
-                    video.srcObject = stream;
+function detectPoseInRealTime(video, net,camOutput) {
+  const canvas = document.getElementById(camOutput);
+  const ctx = canvas.getContext('2d');
+  const flipHorizontal = true;
 
-                    resolve(video);
-                }
+  canvas.width = canvasSizeOnly;
+  canvas.height = canvasSizeOnly;
 
-                function videoError(e) {
-                    // do something
-                    reject(e);
-                }
-            });
-        }
+  async function poseDetectionFrame() {
+      ctx.save();
+      ctx.scale(-1, 1);
+      ctx.drawImage(video, 0, 0, canvasSizeOnly*-1, canvasSizeOnly);
+      ctx.restore();
 
-        function detectPoseInRealTime(video, net, camOutput) {
-            const canvas = document.getElementById(camOutput);
-            document.getElementById(camOutput).style.display = 'block';
-            const ctx = canvas.getContext('2d');
-            const flipHorizontal = true;
+    requestAnimationFrame(poseDetectionFrame);
+  }
 
-            canvas.width = canvasSizeOnly;
-            canvas.height = canvasSizeOnly;
+  poseDetectionFrame();
+}
 
-            async function poseDetectionFrame() {
-                ctx.save();
-                ctx.scale(-1, 1);
-                ctx.drawImage(video, 0, 0, canvasSizeOnly * -1, canvasSizeOnly);
-                ctx.restore();
+async function startWebCamOnly(camName,camOutput,camContainer) {
+  const net = await posenet.load();
 
-                requestAnimationFrame(poseDetectionFrame);
-            }
+  document.getElementById('loading').style.display = 'none';
+  
 
-            poseDetectionFrame();
-        }
+  const cameras = await getCameras();
 
-        async function startWebCamOnly(camName, camOutput, camContainer) {
+  if (cameras.length === 0) {
+    alert('No webcams available.  Reload the page when a webcam is available.');
+    return;
+  }
 
-            navigator.getUserMedia = navigator.getUserMedia ||
-                navigator.webkitGetUserMedia ||
-                navigator.mozGetUserMedia;
+  const video = await loadVideo(cameras[0].deviceId,camName,camContainer);
 
-            HTMLVideoElement.stop
-            const net = await posenet.load();
+  detectPoseInRealTime(video, net,camOutput);
+}
 
-            document.getElementById('loading').style.display = 'none';
-
-
-            const cameras = await getCameras();
-
-            if (cameras.length === 0) {
-                alert('No webcams available.  Reload the page when a webcam is available.');
-                return;
-            }
-
-            const video = await loadVideo(cameras[0].deviceId, camName, camContainer);
-            HTMLMediaElement.play
-            detectPoseInRealTime(video, net, camOutput);
-        }
-
+navigator.getUserMedia = navigator.getUserMedia ||
+  navigator.webkitGetUserMedia ||
+  navigator.mozGetUserMedia;
 
 
     </script>
@@ -1582,7 +1576,7 @@
             })
         });
 
-        HTMLVideoElement.stop 
+        //HTMLVideoElement.stop 
     </script>
 
     <script>

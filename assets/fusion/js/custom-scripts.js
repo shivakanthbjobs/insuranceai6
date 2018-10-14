@@ -111,6 +111,7 @@
             }        
 
             if($(this).attr('href') =='#2'){
+              stopWebCamOnly('posenetOutput')
               startWebCamOnly('video','videoOutput','videoContainer')
               artyom.say("It's time to pose for a selfie :) We need a nice close-up selfie of yours with a neural emotion to predict your age and gender , Once you are ready ,Please click on  Predict AgeGender               ")
 
@@ -118,12 +119,13 @@
             else if($(this).attr('href') =='#3'){
               stopWebCamOnly('videoOutput')
               stopWebCamOnly('posenetOutput')
-              artyom.say("Let's also get a full-length snap with Mobile Phone  for measuring your Height , In a count of three , you count down starts now 3 2 1                ")
+              artyom.say("Let's also get a full-length snap with Mobile Phone  for measuring your Height , In a count of three , you count down starts now 3, 2, 1,                ")
             }
 
             else if($(this).attr('href') =='#4'){
+              stopWebCamOnly('videoOutput')
               startWebCamOnly('posenetVideo','posenetOutput','posenetContainer')
-              artyom.say("You are almost there! Let's check your fitness levels and of course, you can skip this step . We just want to see your jogging skils for 10 seconds , Please stand up and ensure you are fully visible on the camera , Ready cound down start now , 10 9 8 7 6 5 4 3 2 1 and stop , Lets try another small excercise Bend , and try to touch your feet , at the cound of 3, you count down start now , 3 2 1 , thank you              ") 
+              artyom.say("You are almost there! Let's check your fitness levels and of course, you can skip this step . We just want to see your jogging skills for 10 seconds , Please stand up and ensure you are fully visible on the camera , Ready cound down start now , 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, and stop , Lets try another small excercise Bend , and try to touch your feet , at the cound of 3, you count down start now , 3 2 1 , thank you              ") 
             }
 
             else if($(this).attr('href') =='#5'){

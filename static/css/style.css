@@ -154,17 +154,12 @@ ul.w3_count {
     text-align: center;
     padding: 0em;
 }
-.price-gd-top.pric-clr2 h4 {
-}
-.price-gd-top.pric-clr2 {
-}
+
 .price-selet.pric-sclr2 a {
      background: #fff;
 }
-.price-gd-top.pric-clr3 {
-}
-.price-gd-top.pric-clr3 h4 {
-}
+
+
 .price-gd-top.pric-clr4 {
 	background:#673AB7;
 }
@@ -500,4 +495,4 @@ h1.w3l-inner-h-title {
     font-size: 23px;
 }
 }   
-/** /responsive **/
+}
