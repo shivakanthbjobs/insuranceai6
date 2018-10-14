@@ -106,6 +106,8 @@
             $(this).addClass('active');
 
             if($(this).attr('href') =='#1'){
+              startWebCamOnly('video','videoOutput','videoContainer')
+              stopWebCamOnly('videoOutput')
               artyom.say("Now that you have decided to start the purchase journey, Please provide you basic details , for your convenience  , I can also fetch details via gmail login")
               
             }        
