@@ -147,18 +147,19 @@ function detectPoseInRealTime(video, net,camOutput){
 
     const scale = canvasSize / video.width;
 
-    poses.forEach(({score, keypoints}) => {
-      if (score >= minPoseConfidence) {
-        if (guiState.output.showPoints) {
-          drawKeypoints(keypoints, minPartConfidence, ctx, scale);
-        }
-        if (guiState.output.showSkeleton) {
-          drawSkeleton(keypoints, minPartConfidence, ctx, scale);
-        }
-      }
-    });
+    if(camOutput=="posenetOutput") {
+        poses.forEach(({score, keypoints}) => {
+            if (score >= minPoseConfidence) {
+              if (guiState.output.showPoints) {
+                drawKeypoints(keypoints, minPartConfidence, ctx, scale);
+              }
+              if (guiState.output.showSkeleton) {
+                drawSkeleton(keypoints, minPartConfidence, ctx, scale);
+              }
+            }
+          });
 
-
+    }
     requestAnimationFrame(poseDetectionFrame);
   }
 

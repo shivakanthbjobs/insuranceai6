@@ -96,8 +96,6 @@
           }
         })
         var artyom = new Artyom();
-        stopWebCamOnly('videoOutput')
-        stopWebCamOnly('posenetOutput')
        
 
         var navigationClickFullPage = '#navbar-nav, #fp-nav';
