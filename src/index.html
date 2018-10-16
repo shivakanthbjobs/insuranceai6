@@ -85,7 +85,7 @@
 
     <!-- Start: Splash Screen
         =================================== -->
-
+<!-- 
     <div class="intro-content " style="z-index: 2200;">
         
         
@@ -124,12 +124,12 @@
         
             <div class="splash fade-in" id="particles-js"  style="z-index: 2000;">
         
-            </div>
+            </div> -->
 
 
 
 
-    <div class="modal fade" id="privacy" tabindex="-1" role="dialog" aria-labelledby="privacyLabel">
+    <!-- <div class="modal fade" id="privacy" tabindex="-1" role="dialog" aria-labelledby="privacyLabel">
         <div class="modal-dialog " role="document" background:black>
             <div class="modal-content container" style="background: black;width:auto;">
                 <div class="modal-body">
@@ -186,7 +186,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <!-- Start: Navbar  Area
@@ -456,16 +456,15 @@
                                                                         Loading the model...
                                                                     </div>
                                                                     <div id="videoContainer" style="display:none">
-                                                                        <video autoplay="true" id="video" muted="muted" style=" -moz-transform: scaleX(-1);
-                                                                                    -o-transform: scaleX(-1);
-                                                                                    -webkit-transform: scaleX(-1);
-                                                                                    transform: scaleX(-1);
-                                                                                    display: none;
-                                                                                    ">
-                                                                        </video>
-                                                                        <canvas id="videoOutput"></canvas>
-                            
-                                                                    </div>
+                                                                            <video autoplay="true" id="video" style=" -moz-transform: scaleX(-1);
+                                                                            -o-transform: scaleX(-1);
+                                                                            -webkit-transform: scaleX(-1);
+                                                                            transform: scaleX(-1);
+                                                                            display: none;
+                                                                            ">
+                                                                            </video>
+                                                                            <canvas id="videoOutput">
+                                                                        </canvas></div>
                                                                     <br>
                                                                     <div class="btn-form text-center col-xs-12"  style="z-index: 22000;">
                                                                             <div class="button-outer relative"  style="z-index: 22000;">
@@ -809,16 +808,17 @@
 
                                                                 <div class="image text-center"></div>
                                                                 <div id="posenetContainer" style="display:none">
-                                                                    <video autoplay="true" id="posenetVideo" muted="muted" style=" -moz-transform: scaleX(-1);
-                                                                                -o-transform: scaleX(-1);
-                                                                                -webkit-transform: scaleX(-1);
-                                                                                transform: scaleX(-1);
-                                                                                display: none;
-                                                                                ">
-                                                                    </video>
-                                                                    <canvas id="posenetOutput"></canvas>
-                        
-                                                                </div>
+                                                                        <video autoplay="true" id="posenetVideo" style=" -moz-transform: scaleX(-1);
+                                                                        -o-transform: scaleX(-1);
+                                                                        -webkit-transform: scaleX(-1);
+                                                                        transform: scaleX(-1);
+                                                                        display: none;
+                                                                        ">
+                                                                        </video>
+                                                                        <canvas id="posenetOutput">
+                                                                    </canvas></div>
+
+
                                                                 <br>
                                                                 <div class="btn-form text-center col-xs-12"  style="z-index: 22000;">
                                                                         <!-- <div class="button-outer relative"  style="z-index: 22000;">
@@ -1477,105 +1477,10 @@
 
     <script src="https://unpkg.com/@tensorflow/tfjs"></script>
     <script src="https://unpkg.com/@tensorflow-models/posenet"></script>
+    <script type="text/javascript" src="assets/posenet/demo_util.js"></script>
+    <script type="text/javascript" src="assets/posenet/camera.js"></script>
 
     <script>
-const maxVideoSizeOnly = 700;
-const canvasSizeOnly = 700;
-
-async function getCameras() {
-  const devices = await navigator.mediaDevices.enumerateDevices();
-  return devices.filter(({kind}) => kind === 'videoinput');
-}
-
-let currentStream = null;
-
-function stopWebCamOnly( camContainer) {
-  document.getElementById(camContainer).style.display = 'none';
-  
-  if (currentStream) {
-    currentStream.getTracks().forEach((track) => {
-      track.stop();
-    });
-  }
-}
-
-function loadVideo(cameraId,camName,camContainer) {
-  return new Promise((resolve, reject) => {
-    stopWebCamOnly( camContainer);
-    document.getElementById(camContainer).style.display = 'block';
-	document.getElementById(camName).style.display = 'block';
-		
-
-    const video = document.getElementById(camName);
-
-    //video.width = maxVideoSizeOnly;
-    //video.height = maxVideoSizeOnly;
-
-    if (navigator.getUserMedia) {
-      navigator.getUserMedia({
-        video: {
-          width: maxVideoSizeOnly,
-          height: maxVideoSizeOnly,
-          deviceId: {exact: cameraId},
-        },
-      }, handleVideo, videoError);
-    }
-
-    function handleVideo(stream) {
-      currentStream = stream;
-      video.srcObject = stream;
-
-      resolve(video);
-    }
-
-    function videoError(e) {
-      // do something
-      reject(e);
-    }
-  });
-}
-
-function detectPoseInRealTime(video, net,camOutput) {
-  const canvas = document.getElementById(camOutput);
-  const ctx = canvas.getContext('2d');
-  const flipHorizontal = true;
-
-  canvas.width = canvasSizeOnly;
-  canvas.height = canvasSizeOnly;
-
-  async function poseDetectionFrame() {
-      ctx.save();
-      ctx.scale(-1, 1);
-      ctx.drawImage(video, 0, 0, canvasSizeOnly*-1, canvasSizeOnly);
-      ctx.restore();
-
-    requestAnimationFrame(poseDetectionFrame);
-  }
-
-  poseDetectionFrame();
-}
-
-async function startWebCamOnly(camName,camOutput,camContainer) {
-  const net = await posenet.load();
-
-  document.getElementById('loading').style.display = 'none';
-  
-
-  const cameras = await getCameras();
-
-  if (cameras.length === 0) {
-    alert('No webcams available.  Reload the page when a webcam is available.');
-    return;
-  }
-
-  const video = await loadVideo(cameras[0].deviceId,camName,camContainer);
-
-  detectPoseInRealTime(video, net,camOutput);
-}
-
-navigator.getUserMedia = navigator.getUserMedia ||
-  navigator.webkitGetUserMedia ||
-  navigator.mozGetUserMedia;
 
 
     </script>
