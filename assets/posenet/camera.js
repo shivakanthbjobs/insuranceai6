@@ -1,5 +1,5 @@
-const maxVideoSize = 600;
-const canvasSize = 600;
+const maxVideoSize = 550;
+const canvasSize = 550;
 
 async function getCameras() {
   const devices = await navigator.mediaDevices.enumerateDevices();

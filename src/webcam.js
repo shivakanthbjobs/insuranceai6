@@ -83,9 +83,9 @@ export class Webcam {
   adjustVideoSize(width, height) {
     const aspectRatio = width / height;
     if (width >= height) {
-      this.webcamElement.width = aspectRatio * this.webcamElement.height;
+      this.webcamElement.width = 550;
     } else if (width < height) {
-      this.webcamElement.height = this.webcamElement.width / aspectRatio;
+      this.webcamElement.height = 550;
     }
   }
 
