@@ -134,17 +134,18 @@
               stopWebCamOnly('videoOutput')
               stopWebCamOnly('posenetOutput')
               artyom.say("And, now the results! Please review and change if you are not satisfied   , once you are ready click on the Get Quote button            ")
-              $("#Name").val($("#NameHolder").val());
-              $("#Email").val($("#EmailHolder").val());
+              $("#Name").val($("#NameHolder").val()).focus();
               
-              $("#Height").val($("#HeightHolder").val());
-              $("#Weight").val($("#WeightHolder").val());
-              $("#Age").val($("#AgeHolder").val());
-              $("#Gender").val($("#GenderHolder").val());
+              $("#Email").val($("#EmailHolder").val()).focus();
+              
+              $("#Height").val($("#HeightHolder").val()).focus();
+              $("#Weight").val($("#WeightHolder").val()).focus();
+              $("#Age").val($("#AgeHolder").val()).focus();
+              $("#Gender").val($("#GenderHolder").val()).focus();
 
-              $("#Smoker").val($("#SmokerHolder").val());
-              $("#Health").val($("#HealthHolder").val());
-              $("#Drinker").val($("#DrinkerHolder").val());
+              $("#Smoker").val($("#SmokerHolder").val()).focus();
+              $("#Health").val($("#HealthHolder").val()).focus();
+              $("#Drinker").val($("#DrinkerHolder").val()).focus();
 
             }
 

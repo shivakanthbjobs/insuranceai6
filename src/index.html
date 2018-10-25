@@ -1504,7 +1504,9 @@
             console.log(message)
             $.post("http://localhost:5000/predict", JSON.stringify(message), function (response) {
                 $("#AgeHolder").val(response.age)
+                $("#AgeHolder").focus();
                 $("#GenderHolder").val(response.gender)
+                $("#GenderHolder").focus();
                 $("#SmokingRateFactor").val(response.rate)
                 console.log(response)
             })
@@ -1539,9 +1541,9 @@
             //console.log('Family Name: ' + profile.getFamilyName());
             //console.log("Image URL: " + profile.getImageUrl());
 
-            $("#EmailHolder").val(profile.getEmail());
+            $("#EmailHolder").val(profile.getEmail()).focus();
 
-            $("#NameHolder").val(profile.getName());
+            $("#NameHolder").val(profile.getName()).focus();
 
             // The ID token you need to pass to your backend:
             var id_token = googleUser.getAuthResponse().id_token;
