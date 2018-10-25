@@ -7,6 +7,8 @@
 // orig method which is the require for previous bundles
 
 // eslint-disable-next-line no-global-assign
+var cellphoneheight = 1;
+var personheight = 1;
 parcelRequire = (function (modules, cache, entry) {
   // Save the require from previous bundle to this closure if any
   var previousRequire = typeof parcelRequire === 'function' && parcelRequire;
@@ -37218,8 +37220,8 @@ var run = function () {
                   classProb = box.classProb,
                   className = box.className;
 
-
-              drawRect(left, top, right - left, bottom - top, className + ' Confidence: ' + Math.round(classProb * 100) + '%');
+            drawRect(left, top, right-left, bottom-top,className, className + ' Confidence: ' + Math.round(classProb * 100) + '%');
+            //  drawRect(left, top, right - left, bottom - top, className + ' Confidence: ' + Math.round(classProb * 100) + '%');
             });
 
             _context2.next = 14;
@@ -37309,21 +37311,31 @@ var webcam = new _webcam.Webcam(document.getElementById('webcam'));
 
 var webcamElem = document.getElementById('webcam-wrapper');
 
-function drawRect(x, y, w, h) {
-  var text = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-  var color = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 'red';
-
-  var rect = document.createElement('div');
-  rect.classList.add('rect');
-  rect.style.cssText = 'top: ' + y + '; left: ' + x + '; width: ' + w + '; height: ' + h + '; border-color: ' + color;
-
-  var label = document.createElement('div');
-  label.classList.add('label');
-  label.innerText = text;
-  rect.appendChild(label);
-
-  webcamElem.appendChild(rect);
-}
+function drawRect(x, y, w, h,className, text = '', color = 'red') {
+    const rect = document.createElement('div');
+    rect.classList.add('rect');
+    rect.style.cssText = `top: ${y}; left: ${x}; width: ${w}; height: ${h}; border-color: ${color}`;
+  
+    const label = document.createElement('div');
+    label.classList.add('label');
+    
+    
+    if (className == "person"){
+        personheight =  h;
+        
+    }
+    label.innerText = text 
+    if (className == "cell phone"){
+        cellphoneheight =  h;
+        label.innerText = text + "Height is = " + (2.25*(15 * personheight/cellphoneheight));
+    }
+    
+    
+    
+    rect.appendChild(label);
+  
+    webcamElem.appendChild(rect);
+  }
 
 function clearRects() {
   var rects = document.getElementsByClassName('rect');
