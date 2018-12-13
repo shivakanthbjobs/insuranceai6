@@ -84,7 +84,7 @@
 
     <!-- Start: Splash Screen
         =================================== -->
-<!-- 
+
     <div class="intro-content " style="z-index: 2200;">
         
         
@@ -123,12 +123,12 @@
         
             <div class="splash fade-in" id="particles-js"  style="z-index: 2000;">
         
-            </div> -->
+            </div>
 
 
 
 
-    <!-- <div class="modal fade" id="privacy" tabindex="-1" role="dialog" aria-labelledby="privacyLabel">
+    <div class="modal fade" id="privacy" tabindex="-1" role="dialog" aria-labelledby="privacyLabel">
         <div class="modal-dialog " role="document" background:black>
             <div class="modal-content container" style="background: black;width:auto;">
                 <div class="modal-body">
@@ -185,7 +185,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
 
     <!-- Start: Navbar  Area
@@ -1459,7 +1459,7 @@
     <!-- SCRIPTS
         ========================================-->
     <script src="assets/fusion/js/plagin-js/preloader.js"></script>
-    <script src="assets/fusion/bootstrap/js/bootstrap.min.js`"></script>
+    <script src="assets/fusion/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/fusion/js/plagin-js/plagin.js"></script>
 
     <!-- Custom Script
@@ -1484,6 +1484,31 @@
     <script type="text/javascript" src="assets/yolo/yolo.js"></script>
 
     <script>
+function removejscssfile(filename, filetype){
+    var targetelement=(filetype=="js")? "script" : (filetype=="css")? "link" : "none" //determine element type to create nodelist from
+    var targetattr=(filetype=="js")? "src" : (filetype=="css")? "href" : "none" //determine corresponding attribute to test for
+    var allsuspects=document.getElementsByTagName(targetelement)
+    for (var i=allsuspects.length; i>=0; i--){ //search backwards within nodelist for matching elements to remove
+    if (allsuspects[i] && allsuspects[i].getAttribute(targetattr)!=null && allsuspects[i].getAttribute(targetattr).indexOf(filename)!=-1)
+        allsuspects[i].parentNode.removeChild(allsuspects[i]) //remove element by calling parentNode.removeChild()
+    }
+}
+
+function loadjscssfile(filename, filetype){
+	if (filetype=="js"){ //if filename is a external JavaScript file
+		var fileref=document.createElement('script')
+		fileref.setAttribute("type","text/javascript")
+		fileref.setAttribute("src", filename)
+	}
+	else if (filetype=="css"){ //if filename is an external CSS file
+		var fileref=document.createElement("link")
+		fileref.setAttribute("rel", "stylesheet")
+		fileref.setAttribute("type", "text/css")
+		fileref.setAttribute("href", filename)
+	}
+	if (typeof fileref!="undefined")
+		document.getElementsByTagName("head")[0].appendChild(fileref)
+}
 
 
     </script>

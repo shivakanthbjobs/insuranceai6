@@ -1,0 +1,151 @@
+// Templage Defult Veriables
+@import "variable.less";
+
+// This File Import Some Helping Function
+@import "../bootstrap/less/variables.less";
+@import "less-function.less";
+
+
+@media (max-width: 1400px) and (min-width: 991px) {
+
+
+
+	/**
+	 * ========================================
+	 * Portfolio Section Single Image Style
+	 * ========================================
+	 */
+	.image {
+		img {
+			width: 700px;
+		}
+	}
+
+
+
+	/**
+	 * ========================================
+	 * Slider Area Style
+	 * ========================================
+	 */
+	.slider {
+		padding: 0 100px;
+	}
+
+
+
+	/**
+	 * ========================================
+	 * Portfolio Project Detail Content Style
+	 * ========================================
+	 */
+	.link-list {
+	    right: 78px;
+	}
+
+}
+
+
+@media (max-width: @screen-sm-max) {
+
+	/**
+	 * =======================
+	 * Top Navigation
+	 * =======================
+	 */
+	.main-navbar-top {
+		.navbar-header {
+			float: left;
+		}
+
+		.navbar-collapse-right {
+			float: right;
+		}
+	}
+
+
+
+	/**
+	 * ========================================
+	 * Portfolio Section Single Image Style
+	 * ========================================
+	 */
+	.image {
+		img {
+			width: 100%;
+		}
+	}
+
+
+
+	/**
+	 * ========================================
+	 * Portfolio Project Detail Content Style
+	 * ========================================
+	 */
+	.project-detail {
+		.project-detail-image-outer {
+			text-align: center;
+
+			img {
+				// width: 33%;
+			}
+		}
+		
+	}
+
+	.link-list {
+	    .link {
+			.inner {
+				text-align: right;
+			}
+		}
+
+		.line {
+		    left: 0px;
+	        float: right;
+		}
+	}
+
+	.vertical-middle {
+		display: block;
+	    vertical-align: middle;
+	    float: none;
+	}
+}
+
+
+@media (max-width: @screen-xs-max) {
+
+	/**
+	 * =======================
+	 * Top Navigation
+	 * =======================
+	 */
+	.main-navbar-top {
+		.navbar-header {
+			float: left;
+		}
+
+		.navbar-nav {
+			display: block;
+		}
+
+		.navbar-collapse-right {
+			float: right;
+		}
+	}
+
+
+}
+
+
+@media (max-width: 480px) {
+
+}
+
+
+@media (max-width: 320px) {
+
+}
+
