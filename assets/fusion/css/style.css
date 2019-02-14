@@ -134,7 +134,8 @@
  */
 body {
   font-family: 'Open Sans', sans-serif;
-  color: rgba(255, 255, 255, 0.9);
+  /* color: rgba(255, 255, 255, 0.9); */
+  color: #222930;
   font-size: 14px;
   font-style: none;
   line-height: 27px;
@@ -143,7 +144,10 @@ body {
   overflow-y: hidden !important;
   text-align: left;
   position: relative;
-  background-color: #171717;
+  background-size:cover;
+  /* background-color: #F7F7F7; */
+  /* background: url(../images/bg_top.gif); */
+  background-image:  url(../GoodBackgrounds/Lovepik_com-500624783-artificial-intelligence-background.jpg);
 }
 a {
   text-decoration: none !important;
@@ -175,6 +179,12 @@ a {
   -ms-perspective: 1000;
   -moz-perspective: 1000;
   -webkit-perspective: 1000;
+}
+
+.label-text {
+  color: #5680E9 !important;
+  font-size: medium;
+;
 }
 a:hover {
   color: #ffffff;
@@ -282,7 +292,7 @@ h6 {
  */
 .section-heading {
   font-family: 'Merriweather', serif;
-  color: #ffffff;
+  color: #222930;
   display: inline-block;
   padding-bottom: 0px;
   margin: 0;
@@ -292,10 +302,12 @@ h6 {
 }
 .sub-heading {
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: medium;
   line-height: 40px;
   font-weight: 600;
-  color: #f7ac54;
+  /* color: #f7ac54; */
+ color: #00ffff;
+
   text-transform: uppercase;
   margin-bottom: 0px;
 }
@@ -404,7 +416,7 @@ section.section {
   -moz-border-radius: 0 0 0 0 ;
   -webkit-border-radius: 0 0 0 0 ;
   border: none;
-  color: #ffffff;
+  color: #4EB1BA;
   cursor: pointer;
   display: inline-block;
   padding: 0;
@@ -788,8 +800,8 @@ section.section {
   background-color: transparent;
   border: 0px solid;
   border-radius: 0;
-  box-shadow: 0 0 0 0 #fff;
-  color: #ffffff;
+  /* box-shadow: 0 0 0 0 #fff; */
+  color: #5680E9 !important;
   margin-bottom: 20px;
   height: 55px;
   z-index: 100;
@@ -824,9 +836,10 @@ section.section {
   margin: 0;
   padding: 0;
   text-align: left;
-  font-size: 14px;
+  font-size: medium;
   font-weight: 400;
   line-height: 60px;
+  color: 
 }
 .single-form .input-label {
   position: absolute;
@@ -921,7 +934,7 @@ section.section {
 }
 .single-form .form-control:focus + .input-label .label-text {
   font-size: 11px;
-  color: #f7ac54;
+  color: #5680E9;
   transform: translate3d(0, -26px, 0);
   -o-transform: translate3d(0, -26px, 0);
   -ms-transform: translate3d(0, -26px, 0);
@@ -1012,7 +1025,7 @@ section.section {
   background-color: #202020;
 }
 .dark-background {
-  background-color: #171717;
+  /* background-color: #171717; */
 }
 /**
  * =======================
@@ -1340,7 +1353,7 @@ section.section {
  * ========================================
  */
 .bg-image-1 {
-  background: url('../images/background-1.jpg');
+  /* background: url('../images/background-1.jpg'); */
   -o-background-size: cover;
   -ms-background-size: cover;
   -moz-background-size: cover;
@@ -1349,7 +1362,7 @@ section.section {
   background-position: 50% 50%;
   background-attachment: initial;
   background-repeat: no-repeat;
-  background-color: #171717;
+  /* background-color: #171717; */
 }
 .home-section .heading-outer {
   position: relative;
@@ -2021,7 +2034,7 @@ section.section {
  * ========================================
  */
 .bg-image-2 {
-  background: url('../images/background-1.jpg');
+  /* background: url('../images/background-1.jpg'); */
   -o-background-size: cover;
   -ms-background-size: cover;
   -moz-background-size: cover;
@@ -2030,7 +2043,7 @@ section.section {
   background-position: 50% 50%;
   background-attachment: initial;
   background-repeat: no-repeat;
-  background-color: #171717;
+  /* background-color: #171717; */
 }
 .contact-us .single-form-outer {
   padding: 25px;
@@ -3497,6 +3510,7 @@ section.section {
   -ms-transform: translate3d( 0px, -110%, 0px );
   -moz-transform: translate3d( 0px, -110%, 0px );
   -webkit-transform: translate3d( 0px, -110%, 0px );
+  color:#0288AD;
 }
 .each-portfolio-heading .heading-text .line {
   transform: translate3d( 0px, -110%, 0px );
@@ -3579,6 +3593,7 @@ section.section {
   -ms-transform: translate3d( 0px, 110%, 0px );
   -moz-transform: translate3d( 0px, 110%, 0px );
   -webkit-transform: translate3d( 0px, 110%, 0px );
+  color:#0288AD;
 }
 .each-portfolio-heading.active {
   /* Line Style */
@@ -4288,3 +4303,16 @@ section.section {
   -moz-transform: translate3d(0, -50%, 0);
   -webkit-transform: translate3d(0, -50%, 0);
 }
+
+.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{
+  color : white !important;
+}
+
+.dark-background {
+  background-color: white;
+}
+
+.inner {
+  color:white !important;
+}
+
